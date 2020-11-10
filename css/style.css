@@ -1,0 +1,64 @@
+
+
+.container {
+  /* margin: top;
+  text-align: center; */
+  padding: 2%;
+  height: 100%;
+  width:100%;
+  background-color: rgb(255, 214, 214);
+  border: 5px solid black;
+}
+
+body {
+  /* display: flex; */
+  margin: 0;
+  padding: 0;
+}
+
+#nav {
+  right:0px;
+  top:0px;
+  position:fixed;
+  background-color: aquamarine;
+  height:100%;
+  padding:10px;
+  width:30px;
+}
+
+.error{
+  margin:auto;
+  text-align: center;
+}
+
+li{
+  list-style-type:none;
+}
+
+ul#tab-headings li{
+  display:inline;
+}
+
+.header{
+  font-size: 16pt;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width:50px;
+  border:2px solid grey;
+}
+
+#debug{
+  position:fixed;
+  margin:auto;
+  text-align:center;
+  bottom:0px;
+  width:60%;
+  border:10px solid grey;
+}
+
+.parent{
+
+}
+
+.inline-block-child {
+  display: inline-block;
+}
