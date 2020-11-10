@@ -52,7 +52,7 @@ ul#tab-headings li{
 }
 
 #debug{
-  position:absolute;
+  position:fixed;
   margin:auto;
   bottom:0px;
   width:60%;
