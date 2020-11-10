@@ -38,26 +38,22 @@
       </div>
     </div> <!-- close nav div -->
 
-    <ul id="tab-headings">
-      <li>
-      <!-- <div class="tab" id="shortList"> -->
-        <header id="shortList">Short List Title</header>
-      <!-- </div> - close shortlist -->
-      </li>
-      <li>
-      <!-- <div class="tab" id="totalList"> -->
-        <header id="totalList">Total List Title</header>
-      <!-- </div> close totallist -->
-      </li>
-    </ul>
-    <section class="content hide" id="shortContent">
-      Content for the page - short content
-    </section>
+    <div id="shortListHeader" class="header">Short List Title</div>
 
-    <section class="content hide" id="totalContent">
-      Content for the page - total content
+    <div id="totalListHeader" class="header">Total List Title</div>
+
+    <section id="content">
+      <section class="content hidden" id="shortContent">
+        Content for the page - short content
+      </section>
+
+      <section class="content hidden" id="totalContent">
+        Content for the page - total content
+      </section>
     </section>
   </div> <!-- close container -->
+
+  <div id="debug">Debug: </div>
 
 </body>
 </html>

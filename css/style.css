@@ -46,8 +46,15 @@ ul#tab-headings li{
   display:inline;
 }
 
-header{
+.header{
   font-size: 16pt;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+#debug{
+  position:absolute;
+  margin:auto;
+  bottom:0px;
+  width:60%;
+  background-color: darkgrey;
+}
