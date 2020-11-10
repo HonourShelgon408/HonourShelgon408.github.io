@@ -23,16 +23,12 @@ body {
 #nav {
   right:0px;
   top:0px;
-  position:relative;
-  float:right;
+  /* position:relative;
+  float:right; */
   background-color: aquamarine;
   height:100%;
   padding:10px;
   width:15px;
-}
-
-#content{
-  border:5px dashed goldenrod;
 }
 
 li{
@@ -46,8 +42,12 @@ ul#tab-headings li{
 .header{
   font-size: 16pt;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  width:100px;
+  width:200px;
   border:2px solid grey;
+}
+
+#content{
+  border:5px dashed goldenrod;
 }
 
 #debug{
