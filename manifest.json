@@ -1,0 +1,9 @@
+{
+  "name": "PWA",
+  "short_name": "PWA",
+  "lang": "en-UK",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "purple",
+  "theme_color": "purple"
+}

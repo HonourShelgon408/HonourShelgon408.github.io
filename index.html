@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PWA</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- icon library -->
+
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>		
+  <script src="js/swReg.js"></script> <!-- registers and handles service worker through sw.js -->
+  <script src="js/main.js"></script> <!-- javascript for the page -->
+
+  <meta name="theme-color" content="blue"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="/images/favicon.png"/>
+  <link rel="icon" href="https://cdn.onlinewebfonts.com/svg/img_305138.png"/>
+
+</head>
+<body>
+  <div class="container">
+    <!-- <h1 class="title">Hello World!</h1> -->
+    <div id="nav">
+      <div id="nav-head">
+        <a href="toggle()" class="icon">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      <div id="nav-tail">
+        <ul class="nav-menu">
+          <a><li>About</li></a>
+          <a><li>Notifications</li></a>
+          <a><li>Settings</li></a>
+        </ul>
+      </div>
+    </div> <!-- close nav div -->
+
+    <ul id="tab-headings">
+      <li>
+      <!-- <div class="tab" id="shortList"> -->
+        <header id="shortList">Short List Title</header>
+      <!-- </div> - close shortlist -->
+      </li>
+      <li>
+      <!-- <div class="tab" id="totalList"> -->
+        <header id="totalList">Total List Title</header>
+      <!-- </div> close totallist -->
+      </li>
+    </ul>
+    <section class="content hide" id="shortContent">
+      Content for the page - short content
+    </section>
+
+    <section class="content hide" id="totalContent">
+      Content for the page - total content
+    </section>
+  </div> <!-- close container -->
+
+</body>
+</html>
