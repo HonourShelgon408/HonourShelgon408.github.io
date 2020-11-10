@@ -24,6 +24,7 @@ body {
   right:0px;
   top:0px;
   position:relative;
+  float:right;
   background-color: aquamarine;
   height:100%;
   padding:10px;
