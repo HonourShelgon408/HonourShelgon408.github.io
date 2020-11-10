@@ -49,12 +49,15 @@ ul#tab-headings li{
 .header{
   font-size: 16pt;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width:5%;
+  border:2px solid blue;
 }
 
 #debug{
   position:fixed;
   margin:auto;
+  text-align:center;
   bottom:0px;
   width:60%;
-  background-color: darkgrey;
+  border:10px solid grey;
 }
