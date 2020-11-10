@@ -29,7 +29,7 @@ $(document).ready(function(){
 
     $("#totalContent").hide();
     $("#shortContent").show();
-    $("div#nav-tail").hide("fast");
+    $("div#nav-tail").hide();
     $("div#nav-tail").addClass("hidden");
 
     $("#nav").innerHTML = $.getJSON('https://ipgeolocation.abstractapi.com/v1/?api_key=<your_api_key>', function(data) {
