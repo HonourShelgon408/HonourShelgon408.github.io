@@ -18,9 +18,11 @@ $(document).ready(function(){
     function toggle(){
         if($('div#nav-tail').hasClass('hidden')){
             $("div#nav-tail").show();
+            $("div#nav-tail").removeClass('hidden');
         }
         else{
             $("div#nav-tail").hide();
+            $("div#nav-tail").addClass('hidden');
         }
     }
 
