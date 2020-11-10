@@ -14,7 +14,6 @@ $(document).ready(function(){
     //     // $("#shortList").css
     // });
 
-
     function toggle(){
         if($('div#nav-tail').hasClass('hidden')){
             $("div#nav-tail").show();
@@ -31,9 +30,9 @@ $(document).ready(function(){
     $("div#nav-tail").hide("fast");
     $("div#nav-tail").addClass("hidden");
 
-    $("#nav").innerHTML($.getJSON('https://ipgeolocation.abstractapi.com/v1/?api_key=<your_api_key>', function(data) {
+    $("#nav").innerHTML = $.getJSON('https://ipgeolocation.abstractapi.com/v1/?api_key=<your_api_key>', function(data) {
         console.log(JSON.stringify(data, null, 2));
-      }));
+      });
     
 
     // $("div#nav").mouseleave(function(){
