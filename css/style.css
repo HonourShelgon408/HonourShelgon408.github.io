@@ -61,3 +61,11 @@ ul#tab-headings li{
   width:60%;
   border:10px solid grey;
 }
+
+.parent{
+
+}
+
+.inline-block-child {
+  display: inline-block;
+}
