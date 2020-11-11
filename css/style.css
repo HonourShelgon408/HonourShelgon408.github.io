@@ -29,6 +29,12 @@ body {
   padding:10px;
 }
 
+#nav-head{
+  float:right;
+  top:0px;
+  padding:5px;
+}
+
 .change{
 
 }
