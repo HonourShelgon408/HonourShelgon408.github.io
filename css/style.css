@@ -21,14 +21,12 @@ body {
 }
 
 #nav {
-  right:0px;
   top:0px;
   /* position:relative; */
   float:right; 
   background-color: aquamarine;
-  height:100%;
+  height:90%;
   padding:10px;
-  width:15px;
 }
 
 .change{
@@ -49,6 +47,10 @@ ul#tab-headings li{
   /* width:200px; */
   border:2px solid grey;
   display:inline-block;
+  width: -webkit-fit-content;
+  height: -webkit-fit-content;
+  width: -moz-fit-content;
+  height: -moz-fit-content;
 }
 
 #content{
