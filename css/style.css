@@ -30,6 +30,8 @@ body {
   text-align: center;
 }
 
+
+
 #nav-head{
   float:right;
   top:0px;
@@ -40,8 +42,6 @@ body {
   padding:3px;
   position:relative;
 }
-
-
 
 li{
   list-style-type:none;

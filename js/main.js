@@ -8,6 +8,16 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     return check;
   };
 
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+    // Prevent the mini-infobar from appearing on mobile
+    e.preventDefault();
+    // Stash the event so it can be triggered later.
+    deferredPrompt = e;
+    // Update UI notify the user they can install the PWA
+    showInstallPromotion();
+    });
+
   function toggle(){
     if($('div#nav-tail').hasClass('hidden')){
         $("div#nav-tail").show();
