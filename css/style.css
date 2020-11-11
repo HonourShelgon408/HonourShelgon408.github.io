@@ -30,8 +30,14 @@ li, a, button {
   border: 5px solid blueviolet;
 }
 
-#nav {
+header{
   justify-content: space-between;
+  display:flex;
+  align-items:center;
+  padding:30px 10%;
+}
+
+#nav {
   top:0px;
   /* position:relative; */
   float:right; 
@@ -41,12 +47,12 @@ li, a, button {
   padding:10px;
   text-align: center;
 }
-
+/* 
 #nav-head{
   float:right;
   top:0px;
   padding:3px;
-}
+} */
 
 #nav-tail{
   padding:3px;
@@ -61,7 +67,7 @@ ul#tab-headings li{
   display:inline;
 }
 
-header{
+.header{
   font-size: 16pt;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   border:2px solid grey;
@@ -70,6 +76,7 @@ header{
   height: -webkit-fit-content;
   width: -moz-fit-content;
   height: -moz-fit-content;
+  
 }
 
 #content{
