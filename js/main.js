@@ -18,6 +18,26 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     showInstallPromotion();
     });
 
+    function bt(btNum){
+        // generate a random number
+        var pndrnd=Math.floor(Math.random()*10000000000);
+     
+        // Enter the list of pixels below. Remove any extra entries below.
+        var btPixel=new Array();
+        btPixel[0]="http://www.pxl.com/0/ord="+pndrnd+"?";
+        btPixel[25]="http://www.pxl.com/25/ord="+pndrnd+"?";
+        btPixel[50]="http://www.pxl.com/50/ord="+pndrnd+"?";
+        btPixel[75]="http://www.pxl.com/75/ord="+pndrnd+"?";
+        btPixel[100]="http://www.pxl.com/100/ord="+pndrnd+"?";
+        btPixel['btUnmute']="http://www.pxl.com/unmute/ord="+pndrnd+"?";
+     
+        // Fire the pixel
+        var img = document.createElement("img");
+        img.setAttribute("src", btPixel[btNum]);
+        img.setAttribute("style", "display:none");  
+        document.body.appendChild(img);
+    }
+
   function toggle(){
     if($('div#nav-tail').hasClass('hidden')){
         $("div#nav-tail").show();
