@@ -18,15 +18,51 @@
   <link rel="icon" href="https://cdn.onlinewebfonts.com/svg/img_305138.png"/>
 
 </head>
-
+<!-- 
 <script>
     $(function(){
       $("#body").load("body.html"); 
     });
-</script>
+</script> -->
 
 <body id="body">
 
+
+  <div class="container">
+    <!-- <h1 class="title">Hello World!</h1> -->
+
+    <div id="nav">
+      <div id="nav-head" onclick="toggle()">
+        <a class="icon">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      <div id="nav-tail">
+        <ul class="nav-menu">
+          <li>Log in</li>
+          <li>About</li>
+          <li>Notifications</li>
+          <li>Settings</li>
+        </ul>
+      </div>
+    </div> <!-- close nav div -->
+
+    <div id="header" class="parent">
+      <div id="shortListHeader" class="header child inline-block-child">Short List Title</div>
+      <div id="totalListHeader" class="header child inline-block-child">Total List Title</div>
+    </div>
+    <section id="content" class="content-parent">
+      <section class="content-child hidden" id="shortContent">
+        Content for the page - short content
+      </section>
+
+      <section class="content-child hidden" id="totalContent">
+        Content for the page - total content
+      </section>
+    </section>
+  </div> <!-- close container -->
+
+  <div id="debug">Debug: </div>
 </body>
 
 
