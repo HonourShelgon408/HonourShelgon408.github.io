@@ -27,9 +27,9 @@ $(document).ready(function(){
     $("div#nav-tail").hide();
     $("div#nav-tail").addClass("hidden");
 
-    $("#nav").innerHTML = $.getJSON('https://ipgeolocation.abstractapi.com/v1/?api_key=<your_api_key>', function(data) {
-        console.log(JSON.stringify(data, null, 2));
-    });
+    // $("#nav").innerHTML = $.getJSON('https://ipgeolocation.abstractapi.com/v1/?api_key=<your_api_key>', function(data) {
+    //     console.log(JSON.stringify(data, null, 2));
+    // });
     
 
     // $("div#nav").mouseleave(function(){
