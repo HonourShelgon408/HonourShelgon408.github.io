@@ -27,17 +27,21 @@ body {
   background-color: aquamarine;
   height:90%;
   padding:10px;
+  text-align: center;
 }
 
 #nav-head{
   float:right;
   top:0px;
-  padding:5px;
+  padding:3px;
 }
 
-.change{
-
+#nav-tail{
+  padding:3px;
+  position:relative;
 }
+
+
 
 li{
   list-style-type:none;
