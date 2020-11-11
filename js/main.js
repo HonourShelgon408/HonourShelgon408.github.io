@@ -1,5 +1,5 @@
 
-window.mobileCheck = function() { //returns true if mobile device
+window.mobileCheck = function() { //returns boolean "true" if mobile device
     let check = false;
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
         // true for mobile device
@@ -21,12 +21,6 @@ window.mobileCheck = function() { //returns true if mobile device
 
 
 $(document).ready(function(){
-    // $("#shortList").click(function(){
-    //     // $("#shortList").css
-    // });
-
-    
-
     $("#totalContent").hide();
     $("#shortContent").show();
     $("div#nav-tail").hide();
@@ -34,7 +28,7 @@ $(document).ready(function(){
 
     $("#nav").innerHTML = $.getJSON('https://ipgeolocation.abstractapi.com/v1/?api_key=<your_api_key>', function(data) {
         console.log(JSON.stringify(data, null, 2));
-      });
+    });
     
 
     // $("div#nav").mouseleave(function(){
