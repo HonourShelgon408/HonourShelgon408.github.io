@@ -37,6 +37,11 @@ header{
   padding:30px 10%;
 }
 
+#logo{
+  max-width: max-content;
+  min-width: min-content;
+}
+
 #nav {
   top:0px;
   /* position:relative; */
