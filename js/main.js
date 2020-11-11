@@ -13,10 +13,12 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     if($('div#nav-tail').hasClass('hidden')){
         $("div#nav-tail").show();
         $("div#nav-tail").removeClass('hidden');
+        console.log("showing_nav");
     }
     else{
         $("div#nav-tail").hide();
         $("div#nav-tail").addClass('hidden');
+        console.log("hiding_nav");
     }
 }
 
