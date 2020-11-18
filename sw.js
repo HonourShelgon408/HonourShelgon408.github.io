@@ -33,42 +33,36 @@ self.addEventListener('activate', function(){
 });   //fired when the service worker has been installed
       //and again when  
 
+/* 
+helps with offline functionality
+Service worker can intercept calls made from the site to serve
+data from the cache instead of the server */
 self.addEventListener('fetch', function(event) {
   console.log("fetched ", event.request.url);
-  event.respondWith(
-    caches.match(event.request).then(function(response) {
-      console.log("fetched ", event);
-      return response || fetch(event.request);
-    })
-  );
+  // event.respondWith(
+  //   caches.match(event.request).then(function(response) {
+  //     //console.log("fetched ", event.request.url);
+  //     return response || fetch(event.request);
+  //   })
+  // );
 });
 
-
-
-/*
-
-self.addEventListener('fetch', function(e) {
-  e.respondWith(
-    caches.match(e.request).then(function(response) {
-      if(response){
-        console.log("fetching", e.request.url);
-        return response; //|| fetch(e.request);
-      }
-      return fetch(e.request).then(function(response) {
-        if (response.status === 404) {
-          console.log("404 error");
-          return null;
-        }
-        return caches.open(cached_urls).then(function(cache) {
-         cache.put(e.request.url, response.clone());
-          return response;
-        });
-      });
-    }).catch(function(error){
-      console.log("error on request");
-      return caches.match('error.html');
-    })
-  );
-});
-
-*/
+// self.addEventListener('fetch', function(event) {
+//   console.log("fetched ", event.request.url);
+//   event.respondWith(
+//     caches.match(event.request).then( response => {
+//       //console.log("fetched ", event.request.url);
+//       return response || fetch(event.request).then(fetchRes => {
+//         return caches.open(filesToCache).then(cache => {
+//           cache.put(event.request.url, fetchRes.clone());
+//           limitCacheSize(filesToCache, 50);
+//           return fetchRes;
+//         })
+//       })
+//     }).catch(() => {
+//       if(event.request.url.infexOf('.html') > -1){
+//         return caches.match('/error.html');
+//       }
+//     })
+//   );
+// });
