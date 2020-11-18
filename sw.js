@@ -17,7 +17,7 @@ showInstallPromotion();
 });
 
 
-/* Start the service worker and cache all of the app's content */
+/* install service worker and cache files needed in offline mode */
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(cacheName).then(function(cache) {
@@ -29,14 +29,15 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('activate', function(){
-  console.log('now ready to handle fetches!');
-});
+  console.log('Service worker activated; now ready to handle fetches!');
+});   //fired when the service worker has been installed
+      //and again when  
 
 self.addEventListener('fetch', function(event) {
   console.log("fetched ", event.request.url);
   event.respondWith(
     caches.match(event.request).then(function(response) {
-      console.log("fetched ", event.request.url);
+      console.log("fetched ", event);
       return response || fetch(event.request);
     })
   );
