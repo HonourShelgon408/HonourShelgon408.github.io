@@ -8,6 +8,20 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     return check;
   };
 
+  const addNote = function (data, id){
+      const html = `
+      <div class="note" data-id='${id}'>
+        <div class="noteContent">
+            <span class="noteTitle">${data.title}</span>
+        
+            <span class="noteBody">${data.body}</span>
+        </div>
+        <div class="noteControls">
+            <input type="button" data-id="${id}">Delete</button>
+        </div>
+      </div>
+      `
+  }
 
   function toggle(){
     if($('div#nav-tail').hasClass('hidden')){

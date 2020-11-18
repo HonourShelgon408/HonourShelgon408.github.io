@@ -112,3 +112,7 @@ ul#tab-headings li{
 .inline-block-child {
   display: inline-block;
 }
+
+.adminText{
+  background: blueviolet;
+}

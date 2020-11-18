@@ -9,7 +9,14 @@ db.collection('noteId').onSnapshot(function(snapshot){
     // removed = something removed from db
 
     snapshot.docChanges().forEach(function(change){
-        console.log(change, " ", change.doc.data());
+        var dbChange = change.type;
+        //console.log(change, " ", change.doc.data()), " ", change.doc.id;
+        if(dbChange === 'added'){
+            addNote(change.doc.data(),change.doc.id);
+        }
+        else if(dbChange === 'removed'){
+            deleteNote(change.doc.data(),change.doc.id);
+        }
     });
 
     
