@@ -7,7 +7,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     }
     return check;
   };
-
+  const notes = document.querySelector('#totalContent');
   const addNote = function (data, id){
       const html = `
       <div class="note" data-id='${id}'>
@@ -20,8 +20,12 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
             <input type="button" data-id="${id}">Delete</button>
         </div>
       </div>
-      `
+      `;
+
+      notes.innerHTML += html;
   }
+
+
 
   function toggle(){
     if($('div#nav-tail').hasClass('hidden')){
