@@ -70,6 +70,7 @@ header{
 
 li{
   list-style-type:none;
+  display:inline-flex;
 }
 
 ul#tab-headings li{

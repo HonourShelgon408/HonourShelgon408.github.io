@@ -22,7 +22,7 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(cacheName).then(function(cache) {
       return cache.addAll(filesToCache).then(function(){
-        console.log("installed");
+        console.log("Service Worker Installed: ", event);
       }); //need to handle addAll since if one fails they all fail
     })
   );
