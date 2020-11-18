@@ -5,8 +5,4 @@ window.onload = () => {
             console.log("Service worker registered!"/* , reg */);
         });
     }
-
-    
-    import 'firebase/firebase-app';
-    import 'firebase/firebase-storage';
 }
