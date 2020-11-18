@@ -1,6 +1,18 @@
 // real-time listener
+//collection gets reference to a firebase database
+//snapshot acts as a listener to return the current state of the database
 db.collection('noteId').onSnapshot(function(snapshot){
-    //takes snapshot of database at that time and returns it in the callback function
-    //returns this snapshot to us
-    console.log("SNAPSHOT: " , snapshot.docChanges())
+
+    //console.log("SNAPSHOT: " , snapshot.docChanges());
+    //docchanges returns all alterations since last snapshot
+    // c = something added to db
+    // removed = something removed from db
+
+    snapshot.docChanges().forEach(function(change){
+        console.log(change, " ", change.doc.data());
+    });
+
+    
+
+
 });
