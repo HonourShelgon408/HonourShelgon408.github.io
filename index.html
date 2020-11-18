@@ -20,7 +20,7 @@
   <link rel="icon" href="/images/favicon.png"/>
   <link rel="icon" href="https://cdn.onlinewebfonts.com/svg/img_305138.png"/>
 
-  
+
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
@@ -45,7 +45,7 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
-    // const db = firebase.firesStore();
+    const db = firebase.firesStore();
     console.log(firebase);
   </script>
 
@@ -103,9 +103,9 @@
     </section>
   </div> <!-- close container -->
 
-  <script src="js/swReg.js"></script> <!-- registers and handles service worker through sw.js -->
-  <script src="js/main.js"></script> <!-- javascript for the page -->
-  <script src="js/db.js"></script> <!-- database for the page -->
+  <script defer src="js/swReg.js"></script> <!-- registers and handles service worker through sw.js -->
+  <script defer src="js/main.js"></script> <!-- javascript for the page -->
+  <script defer src="js/db.js"></script> <!-- database for the page -->
 
 
 
