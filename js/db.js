@@ -8,15 +8,19 @@ db.collection('noteId').onSnapshot(function(snapshot){
     // c = something added to db
     // removed = something removed from db
 
+        //loop through changes in db and handle accordingly
     snapshot.docChanges().forEach(function(change){
         var dbChange = change.type;
-        //console.log(change, " ", change.doc.data()), " ", change.doc.id;
         if(dbChange === 'added'){
+            console.log("Note added" ,change.doc.id);
             addNote(change.doc.data(),change.doc.id);
         }
         else if(dbChange === 'removed'){
+            console.log("Note removed" ,change.doc.id);
             deleteNote(change.doc.data(),change.doc.id);
         }
+    //console.log(change, " ", change.doc.data()), " ", change.doc.id;
+
     });
 
     
