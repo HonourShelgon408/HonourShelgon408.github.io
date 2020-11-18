@@ -47,9 +47,10 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
-    // const db = firebase.firesStore();
+    const db = firebase.firesstore();
     console.log(firebase);
-    // console.log(db);
+    console.log(firebase.firestore());
+    console.log(db);
   </script>
 
 </head>
