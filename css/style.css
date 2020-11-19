@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
 
+
+/* selectors and tags css files*/
+
 /* setting some defaults */
 *{
   box-sizing: border-box;
@@ -142,15 +145,16 @@ ul#tab-headings li{
 }
 
 .noteTitle{
-  padding:10px;
+  margin:5px;
 }
 
 .noteContent{
-  padding:10px;
+  margin:5px;
+  padding:5px;
 }
 
 .note-child{
   text-align:center;
-  justify-content: center;
-  border-radius:20px;
+  justify-content:center;
+  border-radius:15px;
 }
