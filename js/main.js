@@ -11,13 +11,13 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
   const addNote = function (data, id){
       const html = `
       <div class="note" data-id='${id}'>
-        <div class="noteContent">
-            <span class="noteTitle">${data.title}</span>
+        <div class="noteContent note-child">
+            <p style="font-size:16pt;"><i><span class="noteTitle">${data.title}</span></i></p>
         
-            <span class="noteBody">${data.body}</span>
+            <p><span class="noteBody">${data.body}</span></p>
         </div>
-        <div class="noteControls">
-            <button data-id="${id}">Delete</button>
+        <div class="noteControls note-child">
+            <p><button data-id="${id}">Delete</button><p>
         </div>
       </div>
       `;

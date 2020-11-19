@@ -38,6 +38,15 @@ header{
   background-color: rgb(0, 0, 100);
 }
 
+li{
+  list-style-type:none;
+  display:inline-flex;
+}
+
+ul#tab-headings li{
+  display:inline;
+}
+
 #logo{
   max-width: 300px;
 }
@@ -68,14 +77,7 @@ header{
   justify-content: space-evenly;
 }
 
-li{
-  list-style-type:none;
-  display:inline-flex;
-}
 
-ul#tab-headings li{
-  display:inline;
-}
 
 .header{
   justify-content: space-between;
@@ -117,7 +119,6 @@ ul#tab-headings li{
   background: blueviolet;
 }
 
-
 .note{
   background-color: slategray;
   border:1px solid slategray;
@@ -133,4 +134,10 @@ ul#tab-headings li{
 
 .noteContent{
   padding:10px;
+}
+
+.note-child{
+  text-align:center;
+  justify-content: center;
+  border-radius:20px;
 }
