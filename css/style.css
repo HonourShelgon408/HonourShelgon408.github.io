@@ -16,8 +16,10 @@ li, a, button {
 }
 
 button{
-  border-radius: 20px;
-  border:none;
+  /* border-radius: 20px;
+  border:none; */
+  text-shadow: -2px 0 #CCC, 0 1px #CCC, 1px 0 black, 0 -1px black;
+
 }
 
 .delete{
