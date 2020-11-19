@@ -15,6 +15,15 @@ li, a, button {
   text-decoration: none;
 }
 
+button{
+  border-radius: 20px;
+  border:none;
+}
+
+.delete{
+  color:red;
+}
+
 /* for error.html */
 .error{ 
   margin:auto;
