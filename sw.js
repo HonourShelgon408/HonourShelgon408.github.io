@@ -3,8 +3,7 @@ var filesToCache = [ /* array of filenames referenced by relativity */
   'index.html',
   'css/style.css',
   'js/main.js',
-  'error.html',
-  'js/db.js'
+  'error.html'
 ];
 
 let deferredPrompt;
