@@ -38,33 +38,11 @@ self.addEventListener('activate', function(){
 });   //fired when the service worker has been installed
       //and again when  
 
-/* 
-helps with offline functionality
-Service worker can intercept calls made from the site to serve
-data from the cache instead of the server */
-
-/*
 self.addEventListener('fetch', function(event) {
   if(event.request.url.indexOf('firestore.googleapis.com') === -1){ //dont want to store any googleapi calls from firebase
-    console.log("fetched ", event.request.url);
     event.respondWith(
-      caches.match(event.request).then(function(response) {
-        //console.log("fetched ", event.request.url);
-        return response || fetch(event.request);
-      })
-    );
-  }
-});
-
-*/
-
-self.addEventListener('fetch', function(event) {
-  if(event.request.url.indexOf('firestore.googleapis.com') === -1){ //dont want to store any googleapi calls from firebase
-    
-    event.respondWith(
-      caches.match(event.request).then( response => {
-        //console.log("fetched ", event.request.url);
-        return response || fetch(event.request).then(fetchRes => {
+      caches.match(event.request).then( response => { //response will be the matched file 
+        return response || fetch(event.request).then(fetchRes => { //if cannot get file, return original request
           return caches.open(filesToCache).then(cache => {
             cache.put(event.request.url, fetchRes.clone());
             limitCacheSize(filesToCache, 50);
