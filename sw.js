@@ -38,13 +38,15 @@ helps with offline functionality
 Service worker can intercept calls made from the site to serve
 data from the cache instead of the server */
 self.addEventListener('fetch', function(event) {
-  console.log("fetched ", event.request.url);
-  // event.respondWith(
-  //   caches.match(event.request).then(function(response) {
-  //     //console.log("fetched ", event.request.url);
-  //     return response || fetch(event.request);
-  //   })
-  // );
+  if(event.request.url.indexOf('firestore.googleapis.com') === -1){
+    console.log("fetched ", event.request.url);
+    event.respondWith(
+      caches.match(event.request).then(function(response) {
+        //console.log("fetched ", event.request.url);
+        return response || fetch(event.request);
+      })
+    );
+  }
 });
 
 // self.addEventListener('fetch', function(event) {

@@ -1,3 +1,14 @@
+//offline data
+db.enablePersistence.catch(function(error){
+    if(error.code == "failed-precondition"){
+        console.log("Peristence failed"); //multiple tabs would cause this error
+    }
+    else if(error.code = "uninplemented"){
+        console.log("Persistence is not available"); //no browser support
+    }
+});
+
+
 // real-time listener
 //collection gets reference to a firebase database
 //snapshot acts as a listener to return the current state of the database
