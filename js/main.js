@@ -7,7 +7,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     }
     return check;
   };
-  const notes = document.querySelector('#totalContent');
+  const totalNotes = document.querySelector('#totalContent');
   const addNote = function (data, id){
       const html = `
       <div class="note" data-id='${id}'>
@@ -21,7 +21,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
       </div>
       `;
 
-      notes.innerHTML += html;
+      totalNotes.innerHTML += html;
   }
 
 
@@ -30,12 +30,12 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     if($('div#nav-tail').hasClass('hidden')){
         $("div#nav-tail").show();
         $("div#nav-tail").removeClass('hidden');
-        console.log("showing_nav");
+        //console.log("showing_nav");
     }
     else{
         $("div#nav-tail").hide();
         $("div#nav-tail").addClass('hidden');
-        console.log("hiding_nav");
+        //console.log("hiding_nav");
     }
 }
 
