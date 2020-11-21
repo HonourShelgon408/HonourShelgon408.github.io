@@ -139,9 +139,9 @@ ul#tab-headings li{
 .note{
   background-color: slategray;
   border:1px solid slategray;
-  border-radius: 50px;
-  padding:20px;
-  margin:10px;
+  border-radius: 20px;
+  padding:5px;
+  margin:5px;
 
 }
 

@@ -13,7 +13,6 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
       <div class="note" data-id='${id}'>
         <div class="noteContent note-child">
             <p style="font-size:16pt;"><i><span class="noteTitle">${data.title}</span></i></p>
-        
             <p><span class="noteBody">${data.body}</span></p>
         </div>
         <div class="noteControls note-child">
