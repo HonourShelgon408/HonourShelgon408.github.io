@@ -1,5 +1,5 @@
 //offline data
-db.enablePersistence.catch(function(error){
+db.enablePersistence().catch(function(error){
     if(error.code == "failed-precondition"){
         console.log("Peristence failed"); //multiple tabs would cause this error
     }
