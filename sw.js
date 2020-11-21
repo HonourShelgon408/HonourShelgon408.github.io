@@ -1,11 +1,13 @@
-var cacheName = 'scheduler';
+var cacheName = 'scheduler-v1';
 var filesToCache = [ /* array of filenames referenced by relativity */
-  'index.html',
-  'css/style.css',
-  'js/main.js',
+  '/', /* just the index page default - request urls */
+  '/index.html',
+  '/css/style.css',
+  '/js/main.js',
   'error.html',
   'images/favicon.png',
-  'images/muse car.jpg'
+  'images/muse car.jpg',
+  'https://cdn.onlinewebfonts.com/svg/img_305138.png'
 ];
 
 let deferredPrompt;
@@ -30,6 +32,7 @@ self.addEventListener('install', function(event) {
   );
 });
 
+/*  */
 self.addEventListener('activate', function(){
   console.log('Service worker activated; now ready to handle fetches!');
 });   //fired when the service worker has been installed
