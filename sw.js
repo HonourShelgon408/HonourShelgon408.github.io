@@ -37,8 +37,10 @@ self.addEventListener('activate', function(){
 helps with offline functionality
 Service worker can intercept calls made from the site to serve
 data from the cache instead of the server */
+
+/*
 self.addEventListener('fetch', function(event) {
-  if(event.request.url.indexOf('firestore.googleapis.com') === -1){ //-1 is a false
+  if(event.request.url.indexOf('firestore.googleapis.com') === -1){ //dont want to store any googleapi calls from firebase
     console.log("fetched ", event.request.url);
     event.respondWith(
       caches.match(event.request).then(function(response) {
@@ -49,22 +51,26 @@ self.addEventListener('fetch', function(event) {
   }
 });
 
-// self.addEventListener('fetch', function(event) {
-//   console.log("fetched ", event.request.url);
-//   event.respondWith(
-//     caches.match(event.request).then( response => {
-//       //console.log("fetched ", event.request.url);
-//       return response || fetch(event.request).then(fetchRes => {
-//         return caches.open(filesToCache).then(cache => {
-//           cache.put(event.request.url, fetchRes.clone());
-//           limitCacheSize(filesToCache, 50);
-//           return fetchRes;
-//         })
-//       })
-//     }).catch(() => {
-//       if(event.request.url.infexOf('.html') > -1){
-//         return caches.match('/error.html');
-//       }
-//     })
-//   );
-// });
+*/
+
+self.addEventListener('fetch', function(event) {
+  if(event.request.url.indexOf('firestore.googleapis.com') === -1){ //dont want to store any googleapi calls from firebase
+    console.log("fetched ", event.request.url);
+    event.respondWith(
+      caches.match(event.request).then( response => {
+        //console.log("fetched ", event.request.url);
+        return response || fetch(event.request).then(fetchRes => {
+          return caches.open(filesToCache).then(cache => {
+            cache.put(event.request.url, fetchRes.clone());
+            limitCacheSize(filesToCache, 50);
+            return fetchRes;
+          })
+        })
+      }).catch(() => {
+        if(event.request.url.infexOf('.html') > -1){
+          return caches.match('/error.html');
+        }
+      })
+    );
+  }
+});
