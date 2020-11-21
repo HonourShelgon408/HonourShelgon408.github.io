@@ -1,9 +1,9 @@
 //offline data
 db.enablePersistence().catch(function(error){
     if(error.code == "failed-precondition"){
-        console.log("Peristence failed"); //multiple tabs would cause this error
+        console.log("persistence failed"); //multiple tabs would cause this error
     }
-    else if(error.code = "uninplemented"){
+    else if(error.code = "unimplemented"){
         console.log("Persistence is not available"); //no browser support
     }
 });

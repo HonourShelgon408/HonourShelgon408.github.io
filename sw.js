@@ -3,7 +3,8 @@ var filesToCache = [ /* array of filenames referenced by relativity */
   'index.html',
   'css/style.css',
   'js/main.js',
-  'error.html'
+  'error.html',
+  'js/db.js'
 ];
 
 let deferredPrompt;
@@ -66,8 +67,8 @@ self.addEventListener('fetch', function(event) {
             return fetchRes;
           })
         })
-      }).catch(() => {
-        if(event.request.url.infexOf('.html') > -1){
+      }).catch((e) => {
+        if(e.request.url.infexOf('.html') > -1){
           return caches.match('/error.html');
         }
       })
