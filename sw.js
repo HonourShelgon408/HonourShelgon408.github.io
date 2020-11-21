@@ -60,7 +60,7 @@ self.addEventListener('fetch', function(event) {
 
 self.addEventListener('fetch', function(event) {
   if(event.request.url.indexOf('firestore.googleapis.com') === -1){ //dont want to store any googleapi calls from firebase
-    console.log("fetched ", event.request.url);
+    
     event.respondWith(
       caches.match(event.request).then( response => {
         //console.log("fetched ", event.request.url);
@@ -68,6 +68,7 @@ self.addEventListener('fetch', function(event) {
           return caches.open(filesToCache).then(cache => {
             cache.put(event.request.url, fetchRes.clone());
             limitCacheSize(filesToCache, 50);
+            console.log("fetched ", event.request.url);
             return fetchRes;
           })
         })
