@@ -7,7 +7,9 @@ var filesToCache = [ /* array of filenames referenced by relativity */
   'error.html',
   'images/favicon.png',
   'images/muse car.jpg',
-  'https://cdn.onlinewebfonts.com/svg/img_305138.png'
+  'https://cdn.onlinewebfonts.com/svg/img_305138.png',
+  'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css', /** interesting css libraries */
+  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' /** just hamburger icon currently */
 ];
 
 let deferredPrompt;
