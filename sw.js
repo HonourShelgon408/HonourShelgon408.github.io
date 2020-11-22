@@ -1,4 +1,4 @@
-var cacheName = 'scheduler-v2';
+var cacheName = 'scheduler-v3';
 var filesToCache = [ /* array of filenames referenced by relativity */
   '/', /* just the index page default - request urls */
   '/index.html',
@@ -35,14 +35,14 @@ self.addEventListener('install', function(event) {
 /*  fired when the service worker has been installed
     and again when  */
 self.addEventListener('activate', function(event){
-  event.waitUntil(){
+  event.waitUntil(
     caches.keys().then(keys => {  //caches.keys returns the keys of the caches in the browser
       console.log(keys);
       return Promise.all(keys /*takes array of promises (our keys), when each resolves the return is resolves - forces js to wait*/
         .filter(key => key !== cacheName) /* if the caches found dont match the name, it is kept in the array then we map the delete function to it */
         .map(key => caches.delete(key))) /* caches.delete is a promise to delete a cache */
     })
-  }
+  )
   //console.log('Service worker activated; now ready to handle fetches!');
 });
 
