@@ -32,11 +32,19 @@ self.addEventListener('install', function(event) {
   );
 });
 
-/*  */
-self.addEventListener('activate', function(){
-  console.log('Service worker activated; now ready to handle fetches!');
-});   //fired when the service worker has been installed
-      //and again when  
+/*  fired when the service worker has been installed
+    and again when  */
+self.addEventListener('activate', function(event){
+  event.waitUntil(){
+    caches.keys().then(keys => {  //caches.keys returns the keys of the caches in the browser
+      console.log(keys);
+      return Promise.all(keys /*takes array of promises (our keys), when each resolves the return is resolves - forces js to wait*/
+        .filter(key => key !== cacheName) /* if the caches found dont match the name, it is kept in the array then we map the delete function to it */
+        .map(key => caches.delete(key))) /* caches.delete is a promise to delete a cache */
+    })
+  }
+  //console.log('Service worker activated; now ready to handle fetches!');
+});
 
 self.addEventListener('fetch', function(event) {
   if(event.request.url.indexOf('firestore.googleapis.com') === -1){ //dont want to store any googleapi calls from firebase
@@ -45,7 +53,7 @@ self.addEventListener('fetch', function(event) {
         return response || fetch(event.request).then(fetchRes => { //if cannot get file, return original request
           return caches.open(filesToCache).then(cache => {
             cache.put(event.request.url, fetchRes.clone());
-            limitCacheSize(filesToCache, 50);
+            limitCacheSize(filesToCache, 5);
             console.log("fetched ", event.request.url);
             return fetchRes;
           })
