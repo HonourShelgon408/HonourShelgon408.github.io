@@ -1,4 +1,4 @@
-var cacheName = 'scheduler-v1';
+var cacheName = 'scheduler-v2';
 var filesToCache = [ /* array of filenames referenced by relativity */
   '/', /* just the index page default - request urls */
   '/index.html',
@@ -59,7 +59,7 @@ self.addEventListener('fetch', function(event) {
           })
         })
       }).catch((e) => {
-        if(e.request.url.infexOf('.html') > -1){
+        if(event.request.url.infexOf('.html') > -1){
           return caches.match('/error.html');
         }
       })
