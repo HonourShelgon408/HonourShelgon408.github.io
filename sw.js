@@ -1,4 +1,5 @@
 var cacheName = 'scheduler-v3';
+var dynamicCache = 'dynamic-v1';
 var filesToCache = [ /* array of filenames referenced by relativity */
   '/', /* just the index page default - request urls */
   '/index.html',
@@ -52,10 +53,10 @@ self.addEventListener('fetch', function(event) {
   if(event.request.url.indexOf('firestore.googleapis.com') === -1){ //dont want to store any googleapi calls from firebase
     event.respondWith(
       caches.match(event.request).then( response => { //response will be the matched file 
-        return response || fetch(event.request).then(fetchRes => { //if cannot get file, return original request
-          return caches.open(filesToCache).then(cache => {
-            cache.put(event.request.url, fetchRes.clone());
-            limitCacheSize(filesToCache, 5);
+        return response || fetch(event.request).then(fetchRes => { //if cannot get file from the cache, return original request and attempt to get from server - which once retrieved, carry on with alias "fetchRes"
+          return caches.open(dynamicCache).then(cache => { //when response comes back, we take that response "fetchRes", open the dynamic cache and put the response for that new page, stored for the future
+            cache.put(event.request.url, fetchRes.clone()); // add & addAll go to the server, get the resource and place it in the cache
+            limitCacheSize(filesToCache, 5); //(above) clone fetchRes event object as we dont want to use up the return of the event without returning something to the user - we need to return fetchRes tot he user but also cache it
             console.log("fetched ", event.request.url);
             return fetchRes;
           })
