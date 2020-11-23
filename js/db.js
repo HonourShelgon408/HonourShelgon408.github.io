@@ -23,7 +23,7 @@ db.collection('noteId').onSnapshot(function(snapshot){
         var dbChange = change.type;
         if(dbChange === 'added'){
             console.log("Note added" ,change.doc.id);
-            addNote(change.doc.data(),change.doc.id);
+            addNewNote(change.doc.data(),change.doc.id);
         }
         else if(dbChange === 'removed'){
             console.log("Note removed",change.doc.id);

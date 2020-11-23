@@ -24,8 +24,8 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
       totalNotes.innerHTML += html;
   }
 
-  const totalNotes = document.querySelector('#prioritySect');
-  const addNote = function (data, id){
+  const priorityNotes = document.querySelector('#prioritySect');
+  const addNewNote = function (data, id){
       const html = `
       <div class="container grey-text text-darken-1" data-id='${id}'>
         <div class="card-panel white row">
@@ -40,7 +40,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
       </div>
       `;
 
-      totalNotes.innerHTML += html;
+      priorityNotes.innerHTML += html;
   }
 
 
