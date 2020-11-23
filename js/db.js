@@ -51,4 +51,5 @@ form.addEventListener('submit', evt => {
 
     form.noteTitle.value = '';
     form.noteBody.value = '';
-})
+});
+
