@@ -29,11 +29,11 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
       const html = `
       <div class="container grey-text text-darken-1 note data-id='${id}'">
         <div class="card-panel noteContent row">
-            <div class="noteBody">
-                <h2 class="noteTitle">${data.title}</h2>
-                <p class="noteBody">${data.body}</p>
+            <div class="">
+                <h2 class="">${data.title}</h2>
+                <p class="">${data.body}</p>
             </div>
-            <div class="noteDelete">
+            <div class="">
                 <i> class="material-icons">delete_outline</i>
             </div>
         </div>
