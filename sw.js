@@ -61,8 +61,8 @@ self.addEventListener('fetch', function(event) {
             return fetchRes;
           })
         })
-      }).catch((e) => {
-        if(event.request.url.infexOf('.html') > -1){
+      }).catch(e => {
+        if(event.request.url.indexOf('.html') > -1){
           return caches.match('/error.html');
         }
       })
