@@ -4,7 +4,9 @@ var filesToCache = [ /* array of filenames referenced by relativity */
   '/', /* just the index page default - request urls */
   '/index.html',
   '/css/style.css',
+  '/css/materialize.min.css',
   '/js/main.js',
+  '/js/materialize.min.css',
   'error.html',
   'images/favicon.png',
   'images/muse car.jpg',
