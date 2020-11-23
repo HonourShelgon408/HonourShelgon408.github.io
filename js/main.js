@@ -27,14 +27,14 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
   const priorityNotes = document.querySelector('#prioritySect');
   const addNewNote = function (data, id){
       const html = `
-      <div class="container grey-text text-darken-1" data-id='${id}'>
-        <div class="card-panel white row">
-            <div class="noteContent note-child">
-                <p style="font-size:16pt;"><i><span class="noteTitle">${data.title}</span></i></p>
-                <p><span class="noteBody">${data.body}</span></p>
+      <div class="container grey-text text-darken-1 note data-id='${id}'">
+        <div class="card-panel noteContent row">
+            <div class="noteBody">
+                <h2 class="noteTitle">${data.title}</h2>
+                <p class="noteBody">${data.body}</p>
             </div>
-            <div class="noteControls note-child">
-                <i class="material-icons" data-id="${id}>delete_outline</i>
+            <div class="noteDelete">
+                <i> class="material-icons">delete_outline</i>
             </div>
         </div>
       </div>
