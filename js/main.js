@@ -28,12 +28,14 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
   const addNote = function (data, id){
       const html = `
       <div class="container grey-text text-darken-1" data-id='${id}'>
-        <div class="noteContent note-child">
-            <p style="font-size:16pt;"><i><span class="noteTitle">${data.title}</span></i></p>
-            <p><span class="noteBody">${data.body}</span></p>
-        </div>
-        <div class="noteControls note-child">
-            <i class="material-icons" data-id="${id}>delete_outline</i>
+        <div class="card-panel white row">
+            <div class="noteContent note-child">
+                <p style="font-size:16pt;"><i><span class="noteTitle">${data.title}</span></i></p>
+                <p><span class="noteBody">${data.body}</span></p>
+            </div>
+            <div class="noteControls note-child">
+                <i class="material-icons" data-id="${id}>delete_outline</i>
+            </div>
         </div>
       </div>
       `;
