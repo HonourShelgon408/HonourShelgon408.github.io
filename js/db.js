@@ -23,7 +23,7 @@ db.collection('noteId').onSnapshot(function(snapshot){
         var dbChange = change.type;
         if(dbChange === 'added'){
             console.log("Note added" ,change.doc.id);
-            addNewNote(change.doc.data(),change.doc.id);
+            // addNote(change.doc.data(),change.doc.id);                                important!!!!!!!!!
         }
         else if(dbChange === 'removed'){
             console.log("Note removed",change.doc.id);
@@ -33,19 +33,19 @@ db.collection('noteId').onSnapshot(function(snapshot){
     });
 });
 
-// const form = document.querySelector('prioritySect');
-// form.addEventListener('submit', evt => {
-//     evt.preventDefault();
-//     const note = {
-//         title: form.noteTitle.value, /** id of input in form */
-//         body: form.noteBody.value
-//     };
+const form = document.querySelector('shortListHeader');
+form.addEventListener('submit', evt => {
+    evt.preventDefault();
+    const note = {
+        title: form.noteTitle.value, /** id of input in form */
+        body: form.noteBody.value
+    };
     
-//     db.collection('noteId').add(note).catch(function(e){
-//         console.log(e); /**print out error if there is one */
-//     });
+    db.collection('noteId').add(note).catch(function(e){
+        console.log(e); /**print out error if there is one */
+    });
 
-//     form.noteTitle.value = '';
-//     form.noteBody.value = '';
-// });
+    form.noteTitle.value = '';
+    form.noteBody.value = '';
+});
 
