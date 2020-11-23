@@ -20,12 +20,16 @@ li, a, button {
 
 button{
   background-color: orangered;
-  color: blanchedalmond;
+  color: white;
   border-radius: 20px;
   border:none;
   padding:5px;
-  
+}
 
+button:hover {
+  transition-timing-function: ease-in;
+  border-radius:30px;
+  border:1px solid black
 }
 
 .delete{
