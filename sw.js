@@ -50,6 +50,7 @@ self.addEventListener('activate', function(event){
   //console.log('Service worker activated; now ready to handle fetches!');
 });
 
+/*
 self.addEventListener('fetch', function(event) {
   if(event.request.url.indexOf('firestore.googleapis.com') === -1){ //dont want to store any googleapi calls from firebase
     event.respondWith(
@@ -70,3 +71,5 @@ self.addEventListener('fetch', function(event) {
     );
   }
 });
+
+*/
