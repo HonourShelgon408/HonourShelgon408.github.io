@@ -34,7 +34,21 @@ db.collection('noteId').onSnapshot(function(snapshot){
 
     });
 
-    
-
 
 });
+
+const form = document.querySelector('');
+form.addEventListener('submit', evt => {
+    evt.preventDefault();
+    const note = {
+        title: form.noteTitle.value, /** id of input in form */
+        body: form.noteBody.value
+    };
+    
+    db.collection('noteId').add(note).catch(function(e){
+        console.log(e); /**print out error if there is one */
+    });
+
+    form.noteTitle.value = '';
+    form.noteBody.value = '';
+})
