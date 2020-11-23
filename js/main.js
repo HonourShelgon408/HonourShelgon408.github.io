@@ -33,7 +33,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
                 <h2 class="">${data.title}</h2>
                 <p class="">${data.body}</p>
             </div>
-            <div class="">
+            <div class="noteDelete">
                 <i> class="material-icons">delete_outline</i>
             </div>
         </div>
