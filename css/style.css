@@ -90,8 +90,8 @@ ul#tab-headings li{
 } */
 
 #nav-tail{
-  transition: height 2s;
-  transition-timing-function: linear;
+  /* transition: height 2s;
+  transition-timing-function: linear; */
   padding:3px;
   position:relative;
   text-align: center;
