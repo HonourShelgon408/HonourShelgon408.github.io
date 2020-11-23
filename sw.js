@@ -4,12 +4,11 @@ var filesToCache = [ /* array of filenames referenced by relativity */
   '/', /* just the index page default - request urls */
   '/index.html',
   '/css/style.css',
-  '/css/materialize.min.css',
   '/js/main.js',
-  '/js/materialize.min.css',
   'error.html',
   'images/favicon.png',
   'images/muse car.jpg',
+  'note.svg',
   'https://cdn.onlinewebfonts.com/svg/img_305138.png',
   'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css', /** interesting css libraries */
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' /** just hamburger icon currently */
