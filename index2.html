@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scheduler</title>
+
+    <link rel="stylesheet"  href="css/style.css">
+    <link rel="manifest"    href="/manifest.json">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- icon library -->
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <meta name="theme-color" content="blue"/>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+  
+    <link rel="icon" href="/images/favicon.png"/>
+    <link rel="icon" href="https://cdn.onlinewebfonts.com/svg/img_305138.png"/>
+  
+  
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+    <!-- <script src="./firebase-init.js"></script> -->
+  
+  
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-analytics.js"></script>
+    <script>
+      // const firebase = require("firebase");
+      // // Required for side-effects
+      // require("firebase/firestore");
+  
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyBqo_x81m26uliOXF9k8Sz3fE1ZGOXu6wU",
+        authDomain: "pwa-scheduler-a9307.firebaseapp.com",
+        databaseURL: "https://pwa-scheduler-a9307.firebaseio.com",
+        projectId: "pwa-scheduler-a9307",
+        storageBucket: "pwa-scheduler-a9307.appspot.com",
+        messagingSenderId: "418459451060",
+        appId: "1:418459451060:web:adebb639b89724c36821e1",
+        measurementId: "G-1EC78QP9Q1"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      const db = firebase.firestore();
+      console.log(firebase);
+      console.log(db);
+  
+      
+    </script>
+  
+</head>
+<body>
+
+    <nav class="z-depth-0"> <!--flattens with no drop shadown -->
+        <div class="nav-wrapper container">
+            <a href="/">Food<span>Ninja</span></a> <!--title  -->
+            <span class="right grey-text text-darken-1"> <!--positions span to right of nav -->
+                <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i> <!-- i tag to display burger icon -->
+            </span>
+        </div>
+    </nav>
+    
+</body>
+</html>
