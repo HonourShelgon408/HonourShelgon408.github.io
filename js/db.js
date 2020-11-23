@@ -8,7 +8,6 @@ db.enablePersistence().catch(function(error){
     }
 });
 
-
 // real-time listener
 //collection gets reference to a firebase database
 //snapshot acts as a listener to return the current state of the database
@@ -31,10 +30,7 @@ db.collection('noteId').onSnapshot(function(snapshot){
             deleteNote(change.doc.data(),change.doc.id);
         }
     //console.log(change, " ", change.doc.data()), " ", change.doc.id;
-
     });
-
-
 });
 
 const form = document.querySelector('shortListHeader');
