@@ -7,6 +7,12 @@
   --title: #0277bd ;
 }
 
+#superScheduler{
+  /* width:10px;
+  height:20px; */
+  object-fit: cover;
+}
+
 /* layout styles */
 nav{
   background: var(--primary);
