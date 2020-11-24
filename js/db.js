@@ -33,7 +33,7 @@ db.collection('noteId').onSnapshot(function(snapshot){
     });
 });
 
-const form = document.querySelector('shortListHeader');
+const form = document.querySelector('#body');
 form.addEventListener('submit', evt => {
     evt.preventDefault();
     const note = {
