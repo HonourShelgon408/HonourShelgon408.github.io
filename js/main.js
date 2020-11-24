@@ -7,24 +7,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     }
     return check;
   };
-  const totalNotes = document.querySelector('#totalContent');
-  const addNote = function (data, id){
-      const html = `
 
-      <div class="card-panel note row" data-id="${id}">
-            <i class="material-icons">toc</i>
-            <div class="note-details">
-                <div class="note-title"><p style="font-size:16pt;">${data.title}</p></div>
-                <div class="note-ingredients">${data.body}</div>
-            </div>
-            <div class="note-delete note-controls">
-                <span class="delete"> <i class="material-icons" data-id="${id}">delete_outline</i> </span>
-            </div>
-        </div>
-      `;
-
-      totalNotes.innerHTML += html;
-  }
 
   const priorityNotes = document.querySelector('#content');
   const addNewNote = function (data, id){
@@ -35,8 +18,8 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
                 <div class="note-title">${data.title}</div>
                 <div class="note-ingredients">${data.body}</div>
             </div>
-            <div class="note-delete">
-                <p class="delete"><button data-id="${id}"><i class="material-icons">delete_outline</i></p>
+            <div class="note-delete note-controls">
+                <span class="delete"><button data-id="${id}"><i class="material-icons">delete_outline</i></span>
             </div>
         </div>
       `;
