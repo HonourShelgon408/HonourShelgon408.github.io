@@ -24,23 +24,22 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
       totalNotes.innerHTML += html;
   }
 
-  const priorityNotes = document.querySelector('#prioritySect');
+  const priorityNotes = document.querySelector('#content');
   const addNewNote = function (data, id){
       const html = `
-      <div class="container grey-text text-darken-1 note data-id='${id}'">
-        <div class="card-panel noteContent row">
-            <div class="">
-                <h2 class="">${data.title}</h2>
-                <p class="">${data.body}</p>
+      <div class="card-panel note row data-id='${id}'">
+            <i class="material-icons">toc</i>
+            <div class="recipe-details">
+                <div class="recipe-title">${data.title}</div>
+                <div class="recipe-ingredients">${data.body}</div>
             </div>
-            <div class="noteDelete">
-                <i> class="material-icons">delete_outline</i>
+            <div class="recipe-delete">
+                <p class="delete"><button data-id="${id}"><i class="material-icons">delete_outline</i></p>
             </div>
         </div>
-      </div>
       `;
 
-      priorityNotes.innerHTML += html;
+      content.innerHTML += html;
   }
 
 
