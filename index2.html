@@ -62,7 +62,7 @@
 </head>
 <body class="grey lighten-4">
 
-    <nav class="z-depth-0"> <!--flattens with no drop shadown -->
+    <nav class="z-depth-0 light-blue"> <!--flattens with no drop shadown -->
         <div class="nav-wrapper container">
             <a href="/index2.html"><span>Scheduler</span></a> <!--title  -->
             <a class="right grey-text text-darken-1"> <!--positions span to right of nav -->
@@ -73,8 +73,8 @@
     </nav>
 
     <!-- side nav -->
-    <ul id="side-menu" class="sidenav side-menu">
-        <li><a class="subheader">Add a new note</a></li>
+    <ul id="side-menu" class="sidenav side-menu z-depth-5">
+        <li><a class="subheader">Super Scheduler <br> - Organiser Extraordinaire</a></li>
         <li><a class="waves-effect">Home</a></li>
         <li><a href="/pages/about.html" class="wave-effect">About</a></li>
         <li><div class="divider"</li>
@@ -90,7 +90,7 @@
 
 
     <!-- recipes -->
-    <div class="recipes container grey-text text-darken-1">
+    <div class="recipes container grey-text text-darken-1" id="content">
         <div class="card-panel recipe row">
             <i class="material-icons">toc</i>
         <div class="recipe-details">
@@ -166,9 +166,9 @@
     
 
     <!-- add note side nav -->
-    <div id="side-form" class="sidenav side-form">
+    <div id="side-form" class="sidenav side-form z-depth-5 col s12 l4">
         <form class="add-note container section">
-        <h6 >Add New Note</h6>
+        <h6 >Add a New Note</h6>
         <div class="divider"></div>
         <div class="input-field">
             <input placeholder="Title of the note like 'Buy lightbulbs'" id="title" type="text" class="validate">
