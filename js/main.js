@@ -10,15 +10,17 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
   const totalNotes = document.querySelector('#totalContent');
   const addNote = function (data, id){
       const html = `
-      <div class="note" data-id='${id}'>
-        <div class="noteContent note-child">
-            <p style="font-size:16pt;"><i><span class="noteTitle">${data.title}</span></i></p>
-            <p><span class="noteBody">${data.body}</span></p>
+
+      <div class="card-panel note row" data-id="${id}">
+            <i class="material-icons">toc</i>
+            <div class="note-details">
+                <div class="note-title"><p style="font-size:16pt;">${data.title}</p></div>
+                <div class="note-ingredients">${data.body}</div>
+            </div>
+            <div class="note-delete note-controls">
+                <span class="delete"> <i class="material-icons" data-id="${id}">delete_outline</i> </span>
+            </div>
         </div>
-        <div class="noteControls note-child">
-            <p class="delete"><button data-id="${id}">Delete</button><p>
-        </div>
-      </div>
       `;
 
       totalNotes.innerHTML += html;
@@ -29,11 +31,11 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
       const html = `
       <div class="card-panel note row data-id='${id}'">
             <i class="material-icons">toc</i>
-            <div class="recipe-details">
-                <div class="recipe-title">${data.title}</div>
-                <div class="recipe-ingredients">${data.body}</div>
+            <div class="note-details">
+                <div class="note-title">${data.title}</div>
+                <div class="note-ingredients">${data.body}</div>
             </div>
-            <div class="recipe-delete">
+            <div class="note-delete">
                 <p class="delete"><button data-id="${id}"><i class="material-icons">delete_outline</i></p>
             </div>
         </div>
@@ -93,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // nav menu
     const menus = document.querySelectorAll('.side-menu');
     M.Sidenav.init(menus, {edge: 'right'});
-    // add recipe form
+    // add note form
     const forms = document.querySelectorAll('.side-form');
     M.Sidenav.init(forms, {edge: 'left'});
   });
