@@ -35,7 +35,7 @@ db.collection('noteId').onSnapshot(function(snapshot){
 
 
 /** add new note object to the database */
-const form = document.querySelector('#side-form');
+const form = document.querySelector('form');
 form.addEventListener('submit', evt => {
     evt.preventDefault(); //prevent page reload - default behaviour
     const note = {
