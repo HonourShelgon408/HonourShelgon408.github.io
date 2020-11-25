@@ -55,5 +55,5 @@ form.addEventListener('submit', evt => {
 
 const notesContainer = document.querySelector('.notes');
 notesContainer.addEventListener('click', function(e){
-  console.log("notes listener: " + e)  
+  console.log({e})  
 })
