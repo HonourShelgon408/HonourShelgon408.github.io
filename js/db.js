@@ -55,5 +55,10 @@ form.addEventListener('submit', evt => {
 
 const notesContainer = document.querySelector('.notes');
 notesContainer.addEventListener('click', function(e){
-  console.log({e})  
+  console.log({e});
+  if(e.target.tagName === 'I'){
+      const id = e.target.getAttribute('data-id');
+      db.collection('noteId').doc(id).delete();
+
+  }
 })
