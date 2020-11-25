@@ -51,3 +51,9 @@ form.addEventListener('submit', evt => {
     form.noteBody.value = '';
 });
 
+/**delete note */
+
+const notesContainer = document.querySelector('notes');
+notesContainer.addEventListener('click', function(e){
+  console.log("notes listener: " + e)  
+})

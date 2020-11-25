@@ -1,5 +1,5 @@
-var cacheName = 'scheduler-v6';
-var dynamicCache = 'dynamic-v6';
+var cacheName = 'scheduler-v7';
+var dynamicCache = 'dynamic-v7';
 var filesToCache = [ /* array of filenames referenced by relativity */
   '/', /* just the index page default - request urls */
   '/index.html',
