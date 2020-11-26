@@ -10,10 +10,10 @@ var filesToCache = [ /* array of filenames referenced by relativity */
   '/css/tutorial.css',
   '/js/main.js',
   '/error.html',
-  'images/favicon.png',
-  'images/muse car.jpg',
-  // 'images/appIcon.png',
-  // 'images/ss.png',
+  '/images/favicon.png',
+  '/images/muse car.jpg',
+  '/images/appIcon.png',
+  '/images/ss.png',
   'https://cdn.onlinewebfonts.com/svg/img_305138.png',/** icon for phone home screen and URL search */
   'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css', /** interesting css libraries */
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' /** just hamburger icon currently */
