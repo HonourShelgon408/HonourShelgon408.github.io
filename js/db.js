@@ -15,8 +15,6 @@ db.collection('noteId').onSnapshot(function(snapshot){
 
     //console.log("SNAPSHOT: " , snapshot.docChanges());
     //docchanges returns all alterations since last snapshot
-    // c = something added to db
-    // removed = something removed from db
 
         //loop through changes in db and handle accordingly
     snapshot.docChanges().forEach(function(change){

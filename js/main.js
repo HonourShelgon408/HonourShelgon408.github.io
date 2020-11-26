@@ -10,7 +10,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
 
 /**render note to the DOM */
   const priorityNotes = document.querySelector('#content');
-  const addNewNote = (data, id) => {
+  function addNewNote (data, id) {
       const html = `
       <div class="card-panel note row data-id='${id}'">
             <i class="material-icons">toc</i>
@@ -27,6 +27,23 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
   };
 
 
+     /** unrender note from the DOM  */
+     function deleteNote (id) {
+        if(id != null && id != undefined){
+          const note = document.querySelector(`.note[data-id='${id}']`); /**css attribute selector=> get element of class with attribute that is 'data-id=*insert id of element*' */
+          console.log("deleteNote note element");/**backticks allow the insertion of variables */
+          console.log(note);
+          note.remove(); /**DOM method to remove childNode */
+        }
+    };
+    
+
+
+  function reloadContent(){
+    var container = document.getElementById('content');
+    var content = container.innerHTML;
+    container.innerHTML = content; 
+  }
 
 
 
@@ -57,16 +74,7 @@ function toggle(){
 
 $(document).ready(function(){
 
-    /** unrender note from the DOM  */
-  const deleteNote = (id) => {
-    if(id != null && id != undefined){
-      const note = document.querySelector(`.note[data-id='${id}']`); /**css attribute selector=> get element of class with attribute that is 'data-id=*insert id of element*' */
-      console.log("deleteNote note element");/**backticks allow the insertion of variables */
-      console.log(note);
-      note.remove(); /**DOM method to remove childNode */
-    }
-};
-
+ 
     $("#totalContent").hide();
     $("#shortContent").show();
     $("div#nav-tail").hide();
