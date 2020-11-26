@@ -27,10 +27,10 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
       content.innerHTML += html;
   };
 
-
+/** delete note from the DOM  */
   const deleteNote = (id) => {
       const note = document.querySelector(`.note[data-id=${id}]`); /**attribute selector in css => get element of class with attribute that is 'data-id=*insert id of element*' */
-      return note.remove(); /**dom method */
+      note.remove(); /**dom method */
   }
 
 
