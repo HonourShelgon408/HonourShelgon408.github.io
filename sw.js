@@ -3,15 +3,16 @@ var dynamicCache = 'dynamic-v6';
 var filesToCache = [ /* array of filenames referenced by relativity */
   '/', /* just the index page default - request urls */
   '/index.html',
+  '/manifest.json',
   '/index2.html',
   '/css/style.css',
+  '/css/tutorial.css',
   '/js/main.js',
-  'error.html',
-  '/manifest.json',
+  // 'error.html',
   'images/favicon.png',
   'images/muse car.jpg',
-  'images/appIcon.png',
-  'images/ss.png',
+  // 'images/appIcon.png',
+  // 'images/ss.png',
   'https://cdn.onlinewebfonts.com/svg/img_305138.png',/** icon for phone home screen and URL search */
   'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css', /** interesting css libraries */
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' /** just hamburger icon currently */
@@ -72,6 +73,6 @@ self.addEventListener('fetch', event => {
           return caches.match('/error.html');
         }
       })
-    ).catch(e=>{console.log(e)});
+    );
   }
 });
