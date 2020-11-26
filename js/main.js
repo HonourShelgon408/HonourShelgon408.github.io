@@ -8,7 +8,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     return check;
   };
 
-
+/**render note to the DOM */
   const priorityNotes = document.querySelector('#content');
   const addNewNote = (data, id) => {
       const html = `
@@ -27,7 +27,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
       content.innerHTML += html;
   };
 
-/** delete note from the DOM  */
+/** unrender note from the DOM  */
   const deleteNote = (id) => {
       const note = document.querySelector(`.note[data-id=${id}]`); /**attribute selector in css => get element of class with attribute that is 'data-id=*insert id of element*' */
       note.remove(); /**DOM method to remove childNode */
