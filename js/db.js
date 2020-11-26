@@ -58,7 +58,7 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
     console.log(isDeleteButton + ":isDeleteButton, " + tagName + ":tagName ");
     if(tagName === 'I' && tagName != null && tagName != undefined && isDeleteButton === true){
         const id = e.target.getAttribute('data-id');
-        console.log("id: " + id);
+        //console.log("id: " + id);
         db.collection('noteId').doc(id).delete();
     }
 })
