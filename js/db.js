@@ -26,7 +26,7 @@ db.collection('noteId').onSnapshot(function(snapshot){
             addNewNote(change.doc.data(),change.doc.id);                              
         }
         else if(dbChange === 'removed'){
-            console.log("Note removed - id:",change.doc.id);
+            //console.log("Note removed - id:",change.doc.id);
             deleteNote(change.doc.id);
         }
     //console.log(change, " ", change.doc.data()), " ", change.doc.id;
@@ -46,19 +46,17 @@ form.addEventListener('submit', evt => {
     db.collection('noteId').add(note).catch(function(error){
         console.log(error);
     });
-
+    /**wipe the note for the next note */
     form.noteTitle.value = '';
     form.noteBody.value = '';
 });
 
 /**delete note */
-
 const notesContainer = document.querySelector('.notes');
 notesContainer.addEventListener('click', e => {
   console.log({e});
   if(e.target.tagName === 'I'){
       const id = e.target.getAttribute('data-id');
       db.collection('noteId').doc(id).delete();
-
   }
 })

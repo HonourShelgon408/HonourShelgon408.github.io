@@ -69,7 +69,6 @@ self.addEventListener('fetch', event => {
         })
       }).catch(e => {
         if(event.request.url.indexOf('.html') > -1){
-          console.log({e});
           return caches.match('/error.html');
         }
       })
