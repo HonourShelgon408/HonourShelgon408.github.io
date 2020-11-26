@@ -6,6 +6,7 @@ var filesToCache = [ /* array of filenames referenced by relativity */
   '/css/style.css',
   '/js/main.js',
   'error.html',
+  '/manifest.json',
   'images/favicon.png',
   'images/muse car.jpg',
   'images/appIcon.png',
@@ -52,7 +53,7 @@ self.addEventListener('activate', function(event){
 
 
 self.addEventListener('fetch', function(event) {
-  if(event.request.url.indexOf('firestore.googleapis.com') === -1){ //dont want to store any googleapi calls from firebase
+  if(event.request.url.indexOf('firebase.googleapis.com') === -1){ //dont want to store any googleapi calls from firebase
     event.respondWith(
       caches.match(event.request).then( response => { //response will be the matched file 
         return response || fetch(event.request).then(fetchRes => { //if cannot get file from the cache, return original request and attempt to get from server - which once retrieved, carry on with alias "fetchRes"

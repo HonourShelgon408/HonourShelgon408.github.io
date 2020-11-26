@@ -40,6 +40,8 @@ button:hover {
 .error{ 
   margin:auto;
   text-align: center;
+
+  padding:50px;
 }
 
 .container {
