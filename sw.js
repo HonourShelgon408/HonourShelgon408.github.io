@@ -3,6 +3,7 @@ var dynamicCache = 'dynamic-v6';
 var filesToCache = [ /* array of filenames referenced by relativity */
   '/', /* just the index page default - request urls */
   '/index.html',
+  '/index2.html',
   '/css/style.css',
   '/js/main.js',
   'error.html',
@@ -41,7 +42,7 @@ self.addEventListener('install', function(event) {
 /*  fired when the service worker has been installed and again when  */
 self.addEventListener('activate', function(event){
   event.waitUntil(
-    caches.keys().then(keys => {  //caches.keys returns the keys of the caches in the browser
+    caches.keys().then(keys => {  //caches.keys returns the keys of the caches in the browser - ie: dynamic-v5
       console.log(keys);
       return Promise.all(keys /*takes array of promises (our keys), when each resolves the return is resolves - forces js to wait*/
         .filter(key => key !== cacheName) /* if the caches found dont match the name, it is kept in the array then we map the delete function to it */
@@ -52,16 +53,16 @@ self.addEventListener('activate', function(event){
 });
 
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', event => {
   if(event.request.url.indexOf('firestore.googleapis.com') === -1){ //dont want to store any googleapi calls from firebase
     event.respondWith(
-      caches.match(event.request).then( function(response) { //response will be the matched file 
+      caches.match(event.request).then( response => { //response will be the matched file 
         return response || fetch(event.request).then(fetchRes => { //if cannot get file from the cache, return original request and attempt to get from server - which once retrieved, carry on with alias "fetchRes"
           return caches.open(dynamicCache).then(cache => { //when response comes back, we take that response "fetchRes", open the dynamic cache and put the response for that new page, stored for the future
             const cacheClone = fetchRes.clone();
             cache.put(event.request.url, cacheClone); // add & addAll go to the server, get the resource and place it in the cache
             limitCacheSize(filesToCache, 15); //(above) clone fetchRes event object as we dont want to use up the return of the event without returning something to the user - we need to return fetchRes tot he user but also cache it
-            console.log("fetched ", event.request.url);
+            console.log(event.request.url);
             return fetchRes;
           })
         })
