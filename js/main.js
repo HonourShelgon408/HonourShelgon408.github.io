@@ -26,16 +26,6 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
       content.innerHTML += html;
   };
 
-/** unrender note from the DOM  */
-  const deleteNote = (id) => {
-      if(id != null && id != undefined){
-        const note = document.querySelector(`.note[data-id='${id}']`); /**attribute selector in css => get element of class with attribute that is 'data-id=*insert id of element*' */
-        console.log("deleteNote note element");
-        console.log(note);
-        note.remove(); /**DOM method to remove childNode */
-      }
-  };
-
 
 
 
@@ -66,6 +56,17 @@ function toggle(){
 }
 
 $(document).ready(function(){
+
+    /** unrender note from the DOM  */
+  const deleteNote = (id) => {
+    if(id != null && id != undefined){
+      const note = document.querySelector(`.note[data-id='${id}']`); /**css attribute selector=> get element of class with attribute that is 'data-id=*insert id of element*' */
+      console.log("deleteNote note element");/**backticks allow the insertion of variables */
+      console.log(note);
+      note.remove(); /**DOM method to remove childNode */
+    }
+};
+
     $("#totalContent").hide();
     $("#shortContent").show();
     $("div#nav-tail").hide();
