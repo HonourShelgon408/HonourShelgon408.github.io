@@ -30,6 +30,8 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
   const deleteNote = (id) => {
       if(id != null && id != undefined){
         const note = document.querySelector(`.note[data-id=${id}]`); /**attribute selector in css => get element of class with attribute that is 'data-id=*insert id of element*' */
+        console.log("deleteNote note element");
+        console.log(note);
         note.remove(); /**DOM method to remove childNode */
       }
   }
