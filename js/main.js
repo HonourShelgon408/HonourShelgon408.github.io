@@ -10,7 +10,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
 
 
   const priorityNotes = document.querySelector('#content');
-  const addNewNote = function (data, id){
+  const addNewNote = (data, id) => {
       const html = `
       <div class="card-panel note row data-id='${id}'">
             <i class="material-icons">toc</i>
@@ -27,8 +27,8 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
       content.innerHTML += html;
   };
 
-  
-  const deleteNote = function(id){
+
+  const deleteNote = (id) => {
       const note = document.querySelector(`.note[data-id=${id}]`); /**attribute selector in css => get element of class with attribute that is 'data-id=*insert id of element*' */
       note.remove(); /**dom method */
   }
