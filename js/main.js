@@ -19,7 +19,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
                 <div class="note-ingredients">${data.body}</div>
             </div>
             <div class="note-delete note-controls">
-                <span class="delete"><i class="material-icons" data-id="${id}">delete_outline</i></span>
+                <i class="material-icons delete" data-id="${id}">delete_outline</i>
             </div>
         </div>
       `;

@@ -20,7 +20,7 @@ db.collection('noteId').onSnapshot(function(snapshot){
 
         //loop through changes in db and handle accordingly
     snapshot.docChanges().forEach(function(change){
-        var dbChange = change.type;
+        const dbChange = change.type;
         if(dbChange === 'added'){
             console.log("Note added - id:", change.doc.id);
             addNewNote(change.doc.data(),change.doc.id);                              
@@ -41,7 +41,6 @@ form.addEventListener('submit', evt => {
         title: form.noteTitle.value, /** id of input in form */
         body: form.noteBody.value
     };
-    
     db.collection('noteId').add(note).catch(function(error){
         console.log(error);
     });
@@ -53,7 +52,7 @@ form.addEventListener('submit', evt => {
 /**delete note */
 const notesContainer = document.querySelector('.notes');
 notesContainer.addEventListener('click', e => { /**listen for a click anywhere in the notes area, then if that click was in the I tag for the delete, take the ID and send a delete request to Firestore */
-  console.log({e});
+  console.log(e.target.tagName + " === 'I'?" );
   if(e.target.tagName === 'I'){
       const id = e.target.getAttribute('data-id');
       db.collection('noteId').doc(id).delete();
