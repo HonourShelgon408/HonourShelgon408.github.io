@@ -53,9 +53,8 @@ form.addEventListener('submit', evt => {
 const notesContainer = document.querySelector('.notes');
 notesContainer.addEventListener('click', e => { /**listen for a click anywhere in the notes area, then if that click was in the I tag for the delete, take the ID and send a delete request to Firestore */
     const tagName = e.target.tagName;
-    console.log(e.target.tagName);
     const isDeleteButton = e.target.classList.contains('delete-icon');
-    console.log(isDeleteButton, ":isDeleteButton, " , tagName , ":tagName ");
+    console.log(isDeleteButton + ":isDeleteButton, " + tagName + ":tagName ");
     if(tagName === 'I' && tagName != null && tagName != undefined && isDeleteButton === true){
         const id = e.target.getAttribute('data-id');
         db.collection('noteId').doc(id).delete();
