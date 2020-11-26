@@ -30,12 +30,26 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
 /** delete note from the DOM  */
   const deleteNote = (id) => {
       const note = document.querySelector(`.note[data-id=${id}]`); /**attribute selector in css => get element of class with attribute that is 'data-id=*insert id of element*' */
-      note.remove(); /**dom method */
+      note.remove(); /**DOM method to remove childNode */
   }
 
 
 
-  function toggle(){
+
+
+/** javascript for index2 */
+
+document.addEventListener('DOMContentLoaded', function() {
+    // nav menu
+    const menus = document.querySelectorAll('.side-menu');
+    M.Sidenav.init(menus, {edge: 'right'});
+    // add note form
+    const forms = document.querySelectorAll('.side-form');
+    M.Sidenav.init(forms, {edge: 'left'});
+});
+
+  
+function toggle(){
     if($('div#nav-tail').hasClass('hidden')){
         $("div#nav-tail").show();
         $("div#nav-tail").removeClass('hidden');
@@ -47,7 +61,6 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
         //console.log("hiding_nav");
     }
 }
-
 
 $(document).ready(function(){
     $("#totalContent").hide();
@@ -77,14 +90,3 @@ $(document).ready(function(){
     });
 
 });
-
-/** javascript for index2 */
-
-document.addEventListener('DOMContentLoaded', function() {
-    // nav menu
-    const menus = document.querySelectorAll('.side-menu');
-    M.Sidenav.init(menus, {edge: 'right'});
-    // add note form
-    const forms = document.querySelectorAll('.side-form');
-    M.Sidenav.init(forms, {edge: 'left'});
-  });

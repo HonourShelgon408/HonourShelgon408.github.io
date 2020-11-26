@@ -53,7 +53,7 @@ form.addEventListener('submit', evt => {
 
 /**delete note */
 const notesContainer = document.querySelector('.notes');
-notesContainer.addEventListener('click', e => {
+notesContainer.addEventListener('click', e => { /**listen for a click anywhere in the notes area, then if that click was in the I tag for the delete, take the ID and send a delete request to Firestore */
   console.log({e});
   if(e.target.tagName === 'I'){
       const id = e.target.getAttribute('data-id');

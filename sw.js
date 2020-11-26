@@ -75,3 +75,14 @@ self.addEventListener('fetch', event => {
     );
   }
 });
+
+// cache size limit function
+const limitCacheSize = (name, size) => {
+  caches.open(name).then(cache => {
+    cache.keys().then(keys => {
+      if(keys.length > size){
+        cache.delete(keys[0]).then(limitCacheSize(name, size));
+      }
+    });
+  });
+};
