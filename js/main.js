@@ -43,6 +43,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     var container = document.getElementById('content');
     var content = container.innerHTML;
     container.innerHTML = content; 
+    console.log("reloaded content");
   }
 
 
