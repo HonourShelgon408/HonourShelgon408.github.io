@@ -26,6 +26,7 @@ db.collection('noteId').onSnapshot(function(snapshot){
         else if(dbChange === 'removed'){
             console.log(dbChange, " " , change.doc.id);
             deleteNote(change.doc.id);
+            reloadContent();
         }
     //console.log(change, " ", change.doc.data()), " ", change.doc.id;
     });
