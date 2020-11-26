@@ -40,7 +40,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
 
 
   function reloadContent(){
-    var container = document.getElementById('content');
+    var container = document.getElementById('#content');
     var content = container.innerHTML;
     container.innerHTML = content; 
     console.log("reloaded content");
