@@ -72,6 +72,6 @@ self.addEventListener('fetch', event => {
           return caches.match('/error.html');
         }
       })
-    );
+    ).catch(e=>{console.log(e)});
   }
 });
