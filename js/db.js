@@ -26,7 +26,6 @@ db.collection('noteId').onSnapshot(function(snapshot){
         else if(dbChange === 'removed'){
             console.log(dbChange, " " , change.doc.id);
             deleteNote(change.doc.id);
-            reloadContent();
         }
     //console.log(change, " ", change.doc.data()), " ", change.doc.id;
     });
@@ -45,8 +44,8 @@ form.addEventListener('submit', evt => {
         console.log(error);
     });
     /**wipe the note for the next note */
-    form.noteTitle.value = '';
-    form.noteBody.value = '';
+    // form.noteTitle.value = '';                                                                           /** NEED TO UNDO */
+    // form.noteBody.value = '';
 });
 
 /**delete note */
