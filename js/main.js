@@ -23,14 +23,15 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
             </div>
         </div>
       `;
-
       content.innerHTML += html;
   };
 
 /** unrender note from the DOM  */
   const deleteNote = (id) => {
-      const note = document.querySelector(`.note[data-id=${id}]`); /**attribute selector in css => get element of class with attribute that is 'data-id=*insert id of element*' */
-      note.remove(); /**DOM method to remove childNode */
+      if(id != null && id != undefined){
+        const note = document.querySelector(`.note[data-id=${id}]`); /**attribute selector in css => get element of class with attribute that is 'data-id=*insert id of element*' */
+        note.remove(); /**DOM method to remove childNode */
+      }
   }
 
 

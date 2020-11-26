@@ -52,9 +52,10 @@ form.addEventListener('submit', evt => {
 /**delete note */
 const notesContainer = document.querySelector('.notes');
 notesContainer.addEventListener('click', e => { /**listen for a click anywhere in the notes area, then if that click was in the I tag for the delete, take the ID and send a delete request to Firestore */
-  console.log(e.target.tagName + " === 'I'?" );
-  if(e.target.tagName === 'I'){
-      const id = e.target.getAttribute('data-id');
-      db.collection('noteId').doc(id).delete();
-  }
+    const tagName = e.target.tagname;
+    const isDeleteButton = e.target.classList.contains('note-delete');
+    if(tagName === 'I' && tagName != null && tagName != undefined && isDeleteButton == true){
+        const id = e.target.getAttribute('data-id');
+        db.collection('noteId').doc(id).delete();
+    }
 })
