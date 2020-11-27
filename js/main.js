@@ -41,11 +41,13 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     function deleteNewNote (id){
         if(id != null && id != undefined){
             const notes = document.querySelector('.hiddenId');
+            console.log({notes});
             let i;
             for(i = 0; i < notes.length; i++) {
                 if (notes[i].innerHTML === id) {
+                    console.log(notes[i].innerHTML + " " + id)
                     let elementNode = recipe[i].parentNode.parentNode;
-                    elementNode.remove();
+                    elementNode.remove().then(console.log("remove").catch(console.log("merde")));
                 }
             }
         }
