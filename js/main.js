@@ -48,7 +48,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
             for(i = 0; i < notes.length; i++) {
                 if (notes[i].innerHTML === id) {
                     console.log(notes[i].innerHTML + " " + id)
-                    let elementNode = recipe[i].parentNode.parentNode;
+                    let elementNode = notes[i].parentNode.parentNode;
                     elementNode.remove().then(console.log("remove").catch(console.log("merde")));
                 }
             }
