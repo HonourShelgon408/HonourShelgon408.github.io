@@ -21,6 +21,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
             <div class="note-delete note-controls">
                 <i class="material-icons delete-icon" data-id="${id}">delete_outline</i>
             </div>
+            <div class="hiddenId" style="opacity: 0">${id}</div>
         </div>
       `;
       content.innerHTML += html;
@@ -36,6 +37,20 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
           note.remove(); /**DOM method to remove childNode */
         }
     };
+
+    function deleteNewNote (id){
+        if(id != null && id != undefined){
+            const notes = document.querySelector('.hiddenId');
+            let i;
+            for(i = 0; i < notes.length; i++) {
+                if (notes[i].innerHTML === id) {
+                    let elementNode = recipe[i].parentNode.parentNode;
+                    elementNode.remove();
+                }
+            }
+        }
+    }
+
     
 
 
