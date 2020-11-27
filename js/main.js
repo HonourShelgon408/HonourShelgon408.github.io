@@ -43,7 +43,8 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
         console.log("deleteNewNote");
         if(id != null && id != undefined){
             const notes = document.querySelector('.hiddenId');
-            console.log({notes});
+            console.log(notes);
+            console.log(notes.innerHTML);
             let i;
             for(i = 0; i < notes.length; i++) {
                 if (notes[i].innerHTML === id) {
