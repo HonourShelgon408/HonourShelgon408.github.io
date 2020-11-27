@@ -1,4 +1,4 @@
-var versionNum = 'v2.6';
+var versionNum = 'v2.7';
 var cacheName = 'scheduler-' + versionNum;
 var dynamicCache = 'dynamic-'+ versionNum;
 var filesToCache = [ /* array of filenames referenced by relativity */
