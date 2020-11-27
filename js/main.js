@@ -40,7 +40,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     };
 
     function deleteNewNote (id){
-        console.log("deleteNewNote");)
+        console.log("deleteNewNote");
         if(id != null && id != undefined){
             const notes = document.querySelector('.hiddenId');
             console.log({notes});
