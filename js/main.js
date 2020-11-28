@@ -22,7 +22,6 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
                 <i class="material-icons delete-icon" data-id="${id}">delete_outline</i>
                 
             </div>
-            <div class="hiddenId" style="opacity: 0">${id}</div>
         </div>
       `;
       content.innerHTML += html;
