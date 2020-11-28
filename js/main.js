@@ -20,9 +20,9 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
             </div>
             <div class="note-delete note-controls">
                 <i class="material-icons delete-icon" data-id="${id}">delete_outline</i>
-                <div class="hiddenId" style="opacity: 0">${id}</div>
+                
             </div>
-            
+            <div class="hiddenId" style="opacity: 0">${id}</div>
         </div>
       `;
       content.innerHTML += html;
@@ -41,9 +41,10 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     };
 
     function deleteNewNote (id){
+        
+        console.log(`.note[data-id='${id}']`);
         const query = `.note[data-id='${id}']`;
         console.log(query);
-        console.log(`.note[data-id='${id}']`);
         if(id != null && id != undefined){
             const notes = document.querySelector('.hiddenId');
             console.log(notes);
