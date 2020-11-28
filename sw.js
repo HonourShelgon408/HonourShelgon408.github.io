@@ -1,4 +1,4 @@
-var versionNum = 'v2.7';
+var versionNum = 'v2.8';
 var cacheName = 'scheduler-' + versionNum;
 var dynamicCache = 'dynamic-'+ versionNum;
 var filesToCache = [ /* array of filenames referenced by relativity */
@@ -18,6 +18,7 @@ var filesToCache = [ /* array of filenames referenced by relativity */
   'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css', /** interesting css libraries */
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' /** just hamburger icon currently */
 ];
+
 
 let deferredPrompt;
 self.addEventListener('beforeinstallprompt', (e) => {
