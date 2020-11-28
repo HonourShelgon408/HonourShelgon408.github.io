@@ -12,7 +12,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
   const priorityNotes = document.querySelector('#content');
   function addNewNote (data, id) {
       const html = `
-      <div class="card-panel note row data-id='${id}'">
+      <div class="card-panel row note" data-id='${id}'>
             <i class="material-icons">toc</i>
             <div class="note-details">
                 <div class="note-title">${data.title}</div>
@@ -31,8 +31,8 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
      /** derender note from the DOM  */
      function deleteNote (id) {
         if(id != null && id != undefined){
-          console.log(`.note`);
-          const note = document.querySelector(`.note`);        /**css attribute selector=> get element of class with attribute that is 'data-id=*insert id of element*' */
+          console.log(`.note[data-id='${id}']`);
+          const note = document.querySelector(`.note[data-id='${id}']`);        /**css attribute selector=> get element of class with attribute that is 'data-id=*insert id of element*' */
           console.log("deleteNote note element: " + id);                        /**backticks allow the insertion of variables */
           console.log(note);
           note.remove();                                                        /**DOM method to remove childNode */
