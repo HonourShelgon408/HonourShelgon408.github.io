@@ -17,6 +17,10 @@ var filesToCache = [ /* array of filenames referenced by relativity */
   'https://cdn.onlinewebfonts.com/svg/img_305138.png',/** icon for phone home screen and URL search */
   'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css', /** interesting css libraries */
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' /** just hamburger icon currently */
+  /**
+   * decided not to cache the settings/about/signin/login/contact us pages since its not guarenteed that a user would require these, 
+   * however they'd get added into the dynamic cache if they were used anyway 
+   */
 ];
 
 
