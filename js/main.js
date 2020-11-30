@@ -52,6 +52,19 @@ document.addEventListener('DOMContentLoaded', function() {
     M.Sidenav.init(forms, {edge: 'left'});
 });
 
+function toggle(){
+    if($('div#nav-tail').hasClass('hidden')){
+        $("div#nav-tail").show();
+        $("div#nav-tail").removeClass('hidden');
+        //console.log("showing_nav");
+    }
+    else{
+        $("div#nav-tail").hide();
+        $("div#nav-tail").addClass('hidden');
+        //console.log("hiding_nav");
+    }
+}
+
 
 $(document).ready(function(){
 
@@ -83,17 +96,6 @@ $(document).ready(function(){
         $("#shortContent").hide(function(){$("#totalContent").addClass("hidden");});
     });
 
-    function toggle(){
-        if($('div#nav-tail').hasClass('hidden')){
-            $("div#nav-tail").show();
-            $("div#nav-tail").removeClass('hidden');
-            //console.log("showing_nav");
-        }
-        else{
-            $("div#nav-tail").hide();
-            $("div#nav-tail").addClass('hidden');
-            //console.log("hiding_nav");
-        }
-    }
+
 
 });
