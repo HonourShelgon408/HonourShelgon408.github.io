@@ -16,6 +16,12 @@
       "src": "/images/ss-512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "/images/ss-maskable.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
-  ],
+  ]
 }
