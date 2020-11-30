@@ -13,6 +13,7 @@ var filesToCache = [ /* array of filenames referenced by relativity */
   '/images/appIcon.png',
   '/images/ss-192.png',
   '/images/ss-512.png',
+  '/images/ss-maskable.png',
   'https://cdn.onlinewebfonts.com/svg/img_305138.png',/** icon for phone home screen and URL search */
   'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css', /** interesting css libraries */
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' /** just hamburger icon currently */
