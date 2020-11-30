@@ -39,36 +39,6 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
         }
     };
 
-    function deleteNewNote (id){
-        
-        console.log(`.note[data-id='${id}']`);
-        const query = `.note[data-id='${id}']`;
-        console.log(query);
-        if(id != null && id != undefined){
-            const notes = document.querySelector('.hiddenId');
-            console.log(notes);
-            console.log(notes.innerHTML);
-            let i;
-            for(i = 0; i < notes.length; i++) {
-                if (notes[i].innerHTML === id) {
-                    console.log(notes[i].innerHTML + " " + id)
-                    let elementNode = notes[i].parentNode.parentNode;
-                    elementNode.remove().then(console.log("remove").catch(console.log("merde")));
-                }
-            }
-        }
-    }
-
-    
-
-
-//   function reloadContent(){
-//     var container = document.getElementById('#content');
-//     var content = container.innerHTML;
-//     container.innerHTML = content; 
-//     console.log("reloaded content");
-//   }
-
 
 
 /** javascript for index2 */
@@ -82,22 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
     M.Sidenav.init(forms, {edge: 'left'});
 });
 
-  
-function toggle(){
-    if($('div#nav-tail').hasClass('hidden')){
-        $("div#nav-tail").show();
-        $("div#nav-tail").removeClass('hidden');
-        //console.log("showing_nav");
-    }
-    else{
-        $("div#nav-tail").hide();
-        $("div#nav-tail").addClass('hidden');
-        //console.log("hiding_nav");
-    }
-}
 
 $(document).ready(function(){
 
+    $('.tooltipped').tooltip();
  
     $("#totalContent").hide();
     $("#shortContent").show();
@@ -124,5 +82,18 @@ $(document).ready(function(){
         $("#totalContent").show(function(){$("#totalContent").removeClass("hidden");});
         $("#shortContent").hide(function(){$("#totalContent").addClass("hidden");});
     });
+
+    function toggle(){
+        if($('div#nav-tail').hasClass('hidden')){
+            $("div#nav-tail").show();
+            $("div#nav-tail").removeClass('hidden');
+            //console.log("showing_nav");
+        }
+        else{
+            $("div#nav-tail").hide();
+            $("div#nav-tail").addClass('hidden');
+            //console.log("hiding_nav");
+        }
+    }
 
 });
