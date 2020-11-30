@@ -1,9 +1,21 @@
 {
   "name": "PWA",
-  "short_name": "Scheduler",
+  "short_name": "S.Scheduler",
   "lang": "en-UK",
   "start_url": "index2.html",
   "display": "standalone",
   "background_color": "white",
-  "theme_color": "white"
+  "theme_color": "white",
+  "icons": [
+    {
+      "src": "/images/ss-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/ss-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
 }
