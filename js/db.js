@@ -44,8 +44,8 @@ form.addEventListener('submit', evt => {
         console.log(error);
     });
     /**wipe the note for the next note */
-    // form.noteTitle.value = '';                                                                           /** NEED TO UNDO */
-    // form.noteBody.value = '';
+    form.noteTitle.value = '';                                                                           /** NEED TO UNDO */
+    form.noteBody.value = '';
 });
 
 /**delete note */
