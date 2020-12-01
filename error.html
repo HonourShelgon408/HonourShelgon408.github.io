@@ -22,17 +22,59 @@
     <link rel="apple-touch-icon" href="/images/appIcon.png">
     <link rel="icon" href="/images/appIcon.png"/>   
     
+
+    
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+    <!-- <script src="./firebase-init.js"></script> -->
+  
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-analytics.js"></script>
+    <script>
+      // const firebase = require("firebase");
+      // // Required for side-effects
+      // require("firebase/firestore");
+  
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyBqo_x81m26uliOXF9k8Sz3fE1ZGOXu6wU",
+        authDomain: "pwa-scheduler-a9307.firebaseapp.com",
+        databaseURL: "https://pwa-scheduler-a9307.firebaseio.com",
+        projectId: "pwa-scheduler-a9307",
+        storageBucket: "pwa-scheduler-a9307.appspot.com",
+        messagingSenderId: "418459451060",
+        appId: "1:418459451060:web:adebb639b89724c36821e1",
+        measurementId: "G-1EC78QP9Q1"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      const db = firebase.firestore();
+      console.log(firebase);
+      console.log(db);
+  
+      
+    </script>
   
   </head>
   <body class="container black white-text">
-    <div class="col s6"><i class="material-icons red-text text-darken-1">warning</i></div>
-    <div class="col s6 error center-align container"><h1 class="flow-text">Error 404 - page not found</h1></div>
+    <div class="col s12">
+      <div class="col s6"><i class="material-icons red-text text-darken-1">warning</i></div>
+      <div class="col s6 error center-align container"><h1 class="flow-text">Error 404 - page not found</h1></div>
+    </div>
     <div>
       <p class="col s12 flow-text z-depth-5">You may have navigated to the wrong page or a page under development. Please click the button below to return to the Scheduler home page.</p>
     </div>
     
-    <div class="valign-wrapper" style="height:500px;">
-      <a href="/index2.html" class="btn-large indigo center-align">Return Home</a>
+    <div class="valign-wrapper" style="height:400px;">
+      <div class="center-align">
+        <a href="/index2.html" class="btn-large blue lighten-2">Return Home</a>
+      </div>
     </div>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script defer src="js/swReg.js"></script> <!-- registers and handles service worker through sw.js -->
