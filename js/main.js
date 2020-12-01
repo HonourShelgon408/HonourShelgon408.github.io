@@ -12,11 +12,11 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
   const priorityNotes = document.querySelector('#content');
   function addNewNote (data, id) {
       const html = `
-      <div class="card-panel row note" data-id='${id}'>
+      <div class="card-panel row note hoverable" data-id='${id}'>
             <i class="material-icons">toc</i>
             <div class="note-details">
                 <div class="note-title truncate">${data.title}</div>
-                <div class="note-ingredients flow-text truncate">${data.body}</div>
+                <div class="note-ingredients truncate">${data.body}</div>
             </div>
             <div class="note-delete note-controls">
                 <i class="material-icons delete-icon" data-id="${id}">delete_outline</i>
