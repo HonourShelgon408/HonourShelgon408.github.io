@@ -103,17 +103,24 @@
 
     <!-- add note side nav -->
     <div id="side-form" class="sidenav side-form z-depth-5 col s12 l4">
-        <form class="add-note container section">
+        <form class="add-note container section"> <!-- ID'S IN THIS FORM REFERENCED IN DB.JS TO GET DATA FROM FORM-->
         <h6 >Add a New Note</h6>
         <div class="divider"></div>
-        <div class="input-field">
-            <input placeholder="Title of the note like 'Buy lightbulbs'" id="noteTitle" type="text" class="validate">
+        <div class="input-field input-title">
+            <input placeholder="...conquer the world" id="noteTitle" type="text" class="validate">
             <label for="title">Note Title</label>
         </div>
-        <div class="input-field">
-            <input placeholder="extra information e.g. 45w x2 & 35 x4" id="noteBody" type="text" class="validate">
+        <div class="input-field input-details">
+            <input placeholder="...yourself, and your fears" id="noteBody" type="text" class="validate">
             <label for="body">Details</label>
         </div>
+
+        <div class="input-field input-details">
+            <textarea placeholder="...yourself, and your fears" rows = "10" cols = "40" id="" type="text" class="validate"></textarea>
+            <label for="body">Details</label>
+        </div>
+
+
         <div class="input-field center">
             <button class="btn-small">Add</button>
         </div>

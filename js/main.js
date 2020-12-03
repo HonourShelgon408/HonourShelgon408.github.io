@@ -69,6 +69,12 @@ function toggle(){
 $(document).ready(function(){
 
     $('.tooltipped').tooltip();
+
+    // $('.input-field').addEventListener("click",function(){
+    //     this.addClass('active');
+    // });
+
+    M.updateTextFields(); //adds active class to an element when someone is typing in it - moves the placeholder to above the typing area
  
     $("#totalContent").hide();
     $("#shortContent").show();
