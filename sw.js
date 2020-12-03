@@ -3,9 +3,8 @@ var cacheName = 'scheduler-' + versionNum;
 var dynamicCache = 'dynamic-'+ versionNum;
 var filesToCache = [ /* array of filenames referenced by relativity */
   '/', /* just the index page default - request urls */
-  '/index.html',
   '/manifest.json',
-  '/index2.html',
+  '/index.html',
   '/css/style.css',
   '/css/tutorial.css',
   '/js/main.js',
