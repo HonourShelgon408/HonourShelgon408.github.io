@@ -31,10 +31,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
 /** derender note from the DOM  */
 function deleteNote (id) {
     if(id != null && id != undefined){
-        console.log(`.note[data-id='${id}']`);
         const note = document.querySelector(`.note[data-id='${id}']`);        /**css attribute selector=> get element of class with attribute that is 'data-id=*insert id of element*' */
-        console.log("deleteNote note element: " + id);                        /**backticks allow the insertion of variables */
-        console.log(note);
         note.remove();                                                        /**DOM method to remove childNode */
     }
 };
@@ -56,12 +53,10 @@ function toggle(){
     if($('div#nav-tail').hasClass('hidden')){
         $("div#nav-tail").show();
         $("div#nav-tail").removeClass('hidden');
-        //console.log("showing_nav");
     }
     else{
         $("div#nav-tail").hide();
         $("div#nav-tail").addClass('hidden');
-        //console.log("hiding_nav");
     }
 }
 
@@ -86,10 +81,6 @@ $(document).ready(function(){
     $("div#nav-tail").hide();
     $("div#nav-tail").addClass("hidden");
 
-    // $("#nav").innerHTML = $.getJSON('https://ipgeolocation.abstractapi.com/v1/?api_key=<your_api_key>', function(data) {
-    //     console.log(JSON.stringify(data, null, 2));
-    // });
-    
 
     // $("div#nav").mouseleave(function(){
     //     $("div#nav-tail").hide("fast");

@@ -20,7 +20,7 @@ db.collection('noteId').onSnapshot(function(snapshot){
     snapshot.docChanges().forEach(function(change){
         const dbChange = change.type;
         if(dbChange === 'added'){
-            console.log("Note added - id:", change.doc.id);
+            console.log(dbChange, " " , change.doc.id);
             addNote(change.doc.data(),change.doc.id);                              
         }
         else if(dbChange === 'removed'){
@@ -53,7 +53,7 @@ const notesContainer = document.querySelector('.notes');
 notesContainer.addEventListener('click', e => { /**listen for a click anywhere in the notes area, then if that click was in the I tag for the delete, take the ID and send a delete request to Firestore */
     const tagName = e.target.tagName;
     const isDeleteButton = e.target.classList.contains('delete-icon');
-    console.log(isDeleteButton + ":isDeleteButton, " + tagName + ":tagName ");
+    //console.log(isDeleteButton + ":isDeleteButton, " + tagName + ":tagName "); what part of the "note" has been clicked on
     if(tagName === 'I' && tagName != null && tagName != undefined && isDeleteButton === true){
         const id = e.target.getAttribute('data-id');
         //console.log("id: " + id);

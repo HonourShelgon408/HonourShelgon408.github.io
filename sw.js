@@ -68,7 +68,7 @@ self.addEventListener('fetch', event => {
             const cacheClone = fetchRes.clone();
             cache.put(event.request.url, cacheClone); // add & addAll go to the server, get the resource and place it in the cache
             limitCacheSize(filesToCache, 15); //(above) clone fetchRes event object as we dont want to use up the return of the event without returning something to the user - we need to return fetchRes tot he user but also cache it
-            console.log("into the dynamic cache putting " + event.request.url);
+            //console.log("into the dynamic cache putting " + event.request.url);
             return fetchRes;
           })
         })
