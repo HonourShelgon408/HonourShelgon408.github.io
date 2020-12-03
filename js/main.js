@@ -10,7 +10,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
 
 /**render note to the DOM */
   const priorityNotes = document.querySelector('#content');
-  function addNewNote (data, id) {
+  function addNote (data, id) {
       const html = `
       <div class="card-panel row note hoverable" data-id='${id}'>
             <i class="material-icons">toc</i>
