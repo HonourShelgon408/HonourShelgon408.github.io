@@ -71,11 +71,6 @@ nav .sidenav-trigger{
   font-size: 0.8em;
 }
 
-.input-details{
-  height:200px;
-
-}
-
 /* form-styles */
 .add-btn{
   background: var(--title) !important;
