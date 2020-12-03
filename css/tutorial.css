@@ -14,9 +14,6 @@
   width:auto;
 }
 
-.error{
-  color:white;
-}
 
 /* layout styles */
 nav{
@@ -85,4 +82,13 @@ input{
 }
 form .input-field{
   margin-top: 30px;
+}
+
+
+.error{
+  color:white;
+}
+
+#errorText{
+  padding:5px;
 }

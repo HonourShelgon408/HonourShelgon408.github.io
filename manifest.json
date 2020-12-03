@@ -1,8 +1,8 @@
 {
   "name": "PWA",
-  "short_name": "S.Scheduler",
+  "short_name": "Scheduler",
   "lang": "en-UK",
-  "start_url": "index2.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "white",
   "theme_color": "white",
