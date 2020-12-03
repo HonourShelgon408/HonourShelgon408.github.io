@@ -5,10 +5,10 @@ var filesToCache = [ /* array of filenames referenced by relativity */
   '/', /* just the index page default - request urls */
   '/manifest.json',
   '/index.html',
+  '/error.html',
   '/css/style.css',
   '/css/tutorial.css',
   '/js/main.js',
-  '/error.html',
   '/images/appIcon.png',
   '/images/ss-192.png',
   '/images/ss-512.png',
