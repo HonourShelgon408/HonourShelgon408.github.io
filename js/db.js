@@ -29,8 +29,6 @@ db.collection('noteId').onSnapshot(function(snapshot){
         }
     //console.log(change, " ", change.doc.data()), " ", change.doc.id;
     });
-
-    $("#raw_database").append().snapshot.val().key.value;
 });
 
 

@@ -63,7 +63,7 @@
 
     <nav class="z-depth-0 light-blue"> <!--flattens with no drop shadown -->
         <div class="nav-wrapper container">
-            <span><img id="superScheduler" src="/images/ss-192.png" alt="Brand Logo"/></span>
+            <div class="valign-wrapper"><img id="schedulerLogo" src="/images/ss-192.png" alt="Brand Logo"/></div>
             <a href="/index2.html"><span>Scheduler</span></a> <!--title  -->
             <a class="right grey-text text-darken-1"> <!--positions span to right of nav -->
                 <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i> <!-- i tag to display burger icon -->
@@ -116,10 +116,9 @@
         </div>
 
         <div class="input-field input-details">
-            <textarea placeholder="...yourself, and your fears" rows = "10" cols = "40" id="" type="text" class="validate"></textarea>
+            <textarea oninput="auto_grow(this)" placeholder="...yourself, and your fears" rows = "10" cols = "40" id="" type="text" class="validate"></textarea>
             <label class="active" for="body">Details</label>
         </div>
-
 
         <div class="input-field center">
             <button class="btn-small">Add</button>
