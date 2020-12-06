@@ -102,3 +102,8 @@ form .input-field{
 #errorText{
   padding:5px;
 }
+
+.web-icon{
+  max-width: 48px;
+  max-height: 48px;
+}
