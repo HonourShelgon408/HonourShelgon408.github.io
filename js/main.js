@@ -16,7 +16,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
             <i class="material-icons">toc</i>
             <div class="note-details">
                 <div class="note-title truncate">${data.title}</div>
-                <div class="note-ingredients truncate">${data.body}</div>
+                <div class="note-details truncate">${data.body}</div>
             </div>
             <div class="note-delete note-controls">
                 <i class="material-icons delete-icon" data-id="${id}">delete_outline</i>
