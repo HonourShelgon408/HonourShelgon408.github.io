@@ -13,7 +13,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
   
 
   function addNote (data, id) {
-    if(data.title = null){
+    if(data.title == null){
         const html = `
         <div class="card-panel row note hoverable" data-id='${id}'>
             <i class="material-icons">toc</i>
@@ -41,6 +41,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
         </div>
         `;
     }
+    else{
     const html = `
     <div class="card-panel row note hoverable" data-id='${id}'>
         <i class="material-icons">toc</i>
@@ -54,6 +55,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
         </div>
     </div>
     `;
+    }
     content.innerHTML += html;
   };
 
