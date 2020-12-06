@@ -10,19 +10,14 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
 
 /**render note to the DOM */
   const priorityNotes = document.querySelector('#content');
-  if(data.title = null){
-
-  }
-  else if(data.body == null){
-
-  }
+  
 
   function addNote (data, id) {
-      const html = `
-      <div class="card-panel row note hoverable" data-id='${id}'>
+    if(data.title = null){
+        const html = `
+        <div class="card-panel row note hoverable" data-id='${id}'>
             <i class="material-icons">toc</i>
             <div class="note-details">
-                <div class="note-title truncate"><span class="truncate">${data.title}</span></div>
                 <div class="note-details"><span class="truncate">${data.body}</span></div>
             </div>
             <div class="note-delete note-controls">
@@ -30,8 +25,36 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
                 
             </div>
         </div>
-      `;
-      content.innerHTML += html;
+        `;
+    }
+    else if(data.body == null){
+        const html = `
+        <div class="card-panel row note hoverable" data-id='${id}'>
+            <i class="material-icons">toc</i>
+            <div class="note-details">
+                <div class="note-title truncate"><span class="truncate">${data.title}</span></div>
+            </div>
+            <div class="note-delete note-controls">
+                <i class="material-icons delete-icon" data-id="${id}">delete_outline</i>
+                
+            </div>
+        </div>
+        `;
+    }
+    const html = `
+    <div class="card-panel row note hoverable" data-id='${id}'>
+        <i class="material-icons">toc</i>
+        <div class="note-details">
+            <div class="note-title truncate"><span class="truncate">${data.title}</span></div>
+            <div class="note-details"><span class="truncate">${data.body}</span></div>
+        </div>
+        <div class="note-delete note-controls">
+            <i class="material-icons delete-icon" data-id="${id}">delete_outline</i>
+            
+        </div>
+    </div>
+    `;
+    content.innerHTML += html;
   };
 
 
