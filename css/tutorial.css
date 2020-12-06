@@ -20,7 +20,7 @@ textarea{
   height: auto;
   outline: none;
   min-height: 50px;
-  max-height: 100px;
+  max-height: 200px;
   overflow-y: scroll;
   overflow-x: none;
 }
