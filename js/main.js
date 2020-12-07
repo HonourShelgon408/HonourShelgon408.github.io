@@ -20,10 +20,10 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     `;
 
     if(data.title.length >= 1){
-        html += `<div class="note-title truncate">${data.title}</div>`;
+        html += `<div class="note-title trunc">${data.title}</div>`;
     }
     if(data.body.length >= 1){
-        html += `<div class="note-details truncate">${data.body}</div>`;
+        html += `<div class="note-body trunc">${data.body}</div>`;
     }
 
     html += `

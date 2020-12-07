@@ -24,6 +24,7 @@ textarea{
   overflow-y: scroll;
   overflow-x: none;
   white-space: pre-wrap;
+  
 }
 
 /* layout styles */
@@ -62,6 +63,8 @@ nav .sidenav-trigger{
 .note-details{
   grid-area: details;
   margin-top: 6px;
+  font-size: 0.8em;
+
 }
 .note-delete{
   grid-area: delete;
@@ -75,8 +78,9 @@ nav .sidenav-trigger{
 .note-title{
   font-weight: bold;
 }
-.note-details{
-  font-size: 0.8em;
+
+.trunc{
+  text-overflow: ellipsis;
 }
 
 /* form-styles */
