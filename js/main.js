@@ -15,15 +15,16 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
   function convertBreaks(str){
     for(var i = 0; i<str.length; i++){
         if(str[i].match(/\n/g)||[]){
-            str[i] = '\n';
+            str[i] = String.fromCharCode(13);
         }
     }
   }
 
   function addNote(data, id) {
-
-    const title = convertBreaks(data.title);
-    const body = convertBreaks(data.body);
+    const title = data.title;
+    const body = data.body;
+    const cleanTitle = convertBreaks(title);
+    const cleanBody = convertBreaks(body);
 
     html = `
     <div class="card-panel row note hoverable" data-id='${id}'>
@@ -32,10 +33,10 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     `;
 
     if(title.length >= 1){
-        html += `<div class="note-title trunc">${title}</div>`;
+        html += `<div class="note-title trunc">${cleanTitle}</div>`;
     }
     if(body.length >= 1){
-        html += `<div class="note-body trunc">${body}</div>`;
+        html += `<div class="note-body trunc">${cleanBody}</div>`;
     }
 
     html += `
