@@ -38,7 +38,9 @@ form.addEventListener('submit', evt => {
     evt.preventDefault(); //prevent page reload - default behaviour
     const note = {
         title: form.noteTitle.value, /** id of input in form */
-        body: form.noteBody.value
+        body: form.noteBody.value,
+        wallpaper: form.wallpaper.value,
+        rank: form.rank.value
     };
     db.collection('noteId').add(note).catch(function(error){
         console.log(error);
