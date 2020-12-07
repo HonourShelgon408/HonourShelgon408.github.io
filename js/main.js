@@ -8,10 +8,12 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     return check;
   };
 
-/**render note to the DOM */
-  const priorityNotes = document.querySelector('#content');
-  let html = ``;
 
+  const priority = document.querySelector('#priority');
+  const overview = document.querySelector('#overview');
+
+
+  /** insert line breaks into string */
   function convertBreaks(str){
     for(var i = 0; i<str.length; i++){
         if(str[i].match(/\n/g)||[]){
@@ -20,11 +22,11 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     }
   }
 
+  /**render note to the DOM */
   function addNote(data, id) {
+    let html = ``;
     const title = data.title;
     const body = data.body;
-    const cleanTitle = convertBreaks(title);
-    const cleanBody = convertBreaks(body);
 
     html = `
     <div class="card-panel row note hoverable" data-id='${id}'>
@@ -33,10 +35,10 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     `;
 
     if(title.length >= 1){
-        html += `<div class="note-title trunc">${cleanTitle}</div>`;
+        html += `<div class="note-title trunc">${title}</div>`;
     }
     if(body.length >= 1){
-        html += `<div class="note-body trunc">${cleanBody}</div>`;
+        html += `<div class="note-body trunc">${body}</div>`;
     }
 
     html += `
