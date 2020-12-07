@@ -12,18 +12,30 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
   const priorityNotes = document.querySelector('#content');
   let html = ``;
 
+  function convertBreaks(str){
+    for(var i = 0; i<str.length; i++){
+        if(str[i].match(/\n/g)||[]){
+            str[i] = '\n';
+        }
+    }
+  }
+
   function addNote(data, id) {
+
+    const title = convertBreaks(data.title);
+    const body = convertBreaks(data.body);
+
     html = `
     <div class="card-panel row note hoverable" data-id='${id}'>
         <i class="material-icons">toc</i>
         <div class="note-details">
     `;
 
-    if(data.title.length >= 1){
-        html += `<div class="note-title trunc">${data.title}</div>`;
+    if(title.length >= 1){
+        html += `<div class="note-title trunc">${title}</div>`;
     }
-    if(data.body.length >= 1){
-        html += `<div class="note-body trunc">${data.body}</div>`;
+    if(body.length >= 1){
+        html += `<div class="note-body trunc">${body}</div>`;
     }
 
     html += `
