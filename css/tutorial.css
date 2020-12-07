@@ -60,6 +60,10 @@ nav .sidenav-trigger{
   grid-area: image;
   max-width: 60px;
 }
+
+.note-title{
+  font-weight: bold;
+}
 .note-details{
   grid-area: details;
   margin-top: 6px;
@@ -74,9 +78,6 @@ nav .sidenav-trigger{
 }
 .note-delete i{
   font-size: 18px;
-}
-.note-title{
-  font-weight: bold;
 }
 
 .trunc{
