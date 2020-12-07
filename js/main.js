@@ -10,54 +10,47 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
 
 /**render note to the DOM */
   const priorityNotes = document.querySelector('#content');
-  
+  let html = ``;
 
-  function addNote (data, id) {
-    if(data.title == null){
-        const html = `
-        <div class="card-panel row note hoverable" data-id='${id}'>
-            <i class="material-icons">toc</i>
-            <div class="note-details">
-                <div class="note-details truncate">${data.body}</div>
-            </div>
-            <div class="note-delete note-controls">
-                <i class="material-icons delete-icon" data-id="${id}">delete_outline</i>
-                
-            </div>
-        </div>
-        `;
+  function addNote(data, id) {
+    html = `
+    <div class="card-panel row note hoverable" data-id='${id}'>
+        <i class="material-icons">toc</i>
+        <div class="note-details">
+    `;
+
+    if(data.title.length >= 1){
+        html += `<div class="note-title truncate">${data.title}</div>`;
     }
-    else if(data.body == null){
-        const html = `
+    if(data.body.length >= 1){
+        html += `<div class="note-details truncate">${data.body}</div>`;
+    }
+
+    html += `
+        </div>
+        <div class="note-delete note-controls">
+            <i class="material-icons delete-icon" data-id="${id}">delete_outline</i>
+        </div>
+    </div>
+    `;
+    
+    content.innerHTML += html;
+  };
+
+
+
+  const notUsingThis = `
         <div class="card-panel row note hoverable" data-id='${id}'>
             <i class="material-icons">toc</i>
             <div class="note-details">
                 <div class="note-title truncate">${data.title}</div>
+                <div class="note-details truncate">${data.body}</div>
             </div>
             <div class="note-delete note-controls">
                 <i class="material-icons delete-icon" data-id="${id}">delete_outline</i>
-                
             </div>
         </div>
         `;
-    }
-    else{
-    const html = `
-    <div class="card-panel row note hoverable" data-id='${id}'>
-        <i class="material-icons">toc</i>
-        <div class="note-details">
-            <div class="note-title truncate">${data.title}</div>
-            <div class="note-details truncate">${data.body}</div>
-        </div>
-        <div class="note-delete note-controls">
-            <i class="material-icons delete-icon" data-id="${id}">delete_outline</i>
-            
-        </div>
-    </div>
-    `;
-    }
-    content.innerHTML += html;
-  };
 
 
 /** derender note from the DOM  */
