@@ -88,7 +88,8 @@ nav .sidenav-trigger{
 .trunc{
   text-overflow: ellipsis;
   overflow: hidden;
-  max-width:70%;
+  max-width: 95%;
+  white-space: nowrap;
 }
 
 /* form-styles */
