@@ -62,10 +62,12 @@ nav .sidenav-trigger{
   position: relative;
 }
 
+.more-pages{
+  cursor:pointer;
+}
 .note-move{
   cursor: move;
 }
-
 .note-title{
   font-weight: bold;
 }
