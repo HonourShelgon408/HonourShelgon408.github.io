@@ -65,7 +65,7 @@ nav .sidenav-trigger{
 .more-pages{
   cursor:pointer;
 }
-/* .note-move{
+.note-move{
   cursor: move;
 }
 .note-move:hover i{
@@ -73,7 +73,7 @@ nav .sidenav-trigger{
 }
 .note-move:active i{
   cursor:grabbing;
-} */
+}
 
 .note-title{
   font-weight: bold;
