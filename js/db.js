@@ -1,3 +1,8 @@
+//db variable instatntiated in index.html 
+//const db = firebase.firestore();
+//snapshot of firebase db
+
+
 //offline data
 db.enablePersistence().catch(function(error){
     if(error.code == "failed-precondition"){
@@ -8,11 +13,11 @@ db.enablePersistence().catch(function(error){
     }
 });
 
-// real-time listener
+//real-time listener
 //collection gets reference to a firebase database
 //snapshot acts as a listener to return the current state of the database
 db.collection('noteId').onSnapshot(function(snapshot){
-
+    console.log(snapshot.data());
     //console.log("SNAPSHOT: " , snapshot.docChanges());
     //docchanges returns all alterations since last snapshot
 
@@ -23,9 +28,14 @@ db.collection('noteId').onSnapshot(function(snapshot){
             console.log(dbChange, " " , change.doc.id);
             addNote(change.doc.data(),change.doc.id);                              
         }
+        // else if(dbChange === 'modified'){
+        //     console.log(dbChange, " " , change.doc.id);
+        //     updateNote(change.doc.data(),change.doc.id);
+        // }
         else if(dbChange === 'removed'){
             console.log(dbChange, " " , change.doc.id);
             deleteNote(change.doc.id);
+            //line63 deletes the note from the database using the bin icon as the trigger
         }
     //console.log(change, " ", change.doc.data()), " ", change.doc.id;
     });
