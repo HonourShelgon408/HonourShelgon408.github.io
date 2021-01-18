@@ -68,6 +68,13 @@ nav .sidenav-trigger{
 .note-move{
   cursor: move;
 }
+.note-move:hover i{
+  cursor:move;
+}
+.note-move:active i{
+  cursor:grabbing;
+}
+
 .note-title{
   font-weight: bold;
 }
@@ -90,7 +97,6 @@ nav .sidenav-trigger{
 .note-delete i{
   font-size: 18px;
 }
-
 .note-delete:hover i{
   cursor:pointer;
 }

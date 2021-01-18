@@ -35,7 +35,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     html = `
     <div class="card-panel row note hoverable" data-id='${id}'>
         <div class="note-move">
-            <i class="material-icons">toc</i>
+            <i class="material-icons move-icon">toc</i>
         </div>
         <div class="note-details">
     `;
@@ -57,18 +57,6 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     
     content.innerHTML += html;
   };
-
-//not using this - old html for the note display
-        // <div class="card-panel row note hoverable" data-id='${id}'>
-        //     <i class="material-icons">toc</i>
-        //     <div class="note-details">
-        //         <div class="note-title truncate">${data.title}</div>
-        //         <div class="note-details truncate">${data.body}</div>
-        //     </div>
-        //     <div class="note-delete note-controls">
-        //         <i class="material-icons delete-icon" data-id="${id}">delete_outline</i>
-        //     </div>
-        // </div>
 
 
 /** derender note from the DOM  */
