@@ -18,7 +18,7 @@ db.enablePersistence().catch(function(error){
 //snapshot acts as a listener to return the current state of the database
 db.collection('noteId').onSnapshot(function(snapshot){
     console.log(snapshot.data());
-    //console.log("SNAPSHOT: " , snapshot.docChanges());
+    //c onsole.log("SNAPSHOT: " , snapshot.docChanges());
     //docchanges returns all alterations since last snapshot
 
         //loop through changes in db and handle accordingly
@@ -37,7 +37,7 @@ db.collection('noteId').onSnapshot(function(snapshot){
             deleteNote(change.doc.id);
             //line63 deletes the note from the database using the bin icon as the trigger
         }
-    //console.log(change, " ", change.doc.data()), " ", change.doc.id;
+    //c onsole.log(change, " ", change.doc.data()), " ", change.doc.id;
     });
 });
 
@@ -63,13 +63,13 @@ form.addEventListener('submit', evt => {
 /**delete note */
 const notesContainer = document.querySelector('.notes');
 notesContainer.addEventListener('click', e => { /**listen for a click anywhere in the notes area, then if that click was in the I tag for the delete, take the ID and send a delete request to Firestore */
-    console.log(e);
+    console.log(e.target);
     const tagName = e.target.tagName;
     const isDeleteButton = e.target.classList.contains('delete-icon');
-    //console.log(isDeleteButton + ":isDeleteButton, " + tagName + ":tagName "); what part of the "note" has been clicked on
+    //c onsole.log(isDeleteButton + ":isDeleteButton, " + tagName + ":tagName "); what part of the "note" has been clicked on
     if(tagName === 'I' && tagName != null && tagName != undefined && isDeleteButton === true){
         const id = e.target.getAttribute('data-id');
-        //console.log("id: " + id);
+        //c onsole.log("id: " + id);
         db.collection('noteId').doc(id).delete();
     }
 })
