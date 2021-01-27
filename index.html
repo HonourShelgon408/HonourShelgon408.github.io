@@ -125,7 +125,7 @@
 
     <!-- add button for creating new notes -->
     <div class="center">
-        <a id="addButton" class="btn-floating btn-small add-btn sidenav-trigger waves-effect waves-light" data-target="side-form">
+        <a id="addButton" class="btn-floating btn-small add-btn sidenav-trigger waves-effect waves-light" data-target="side-fom">
             <i class="material-icons">add</i>
         </a>
     </div>
@@ -160,17 +160,17 @@
                     type="text" class="validate materialize-textarea"></textarea>
                 <label class="active" for="noteBody">Details</label>
             </div>
-            <div class="input-field input-wallpaper">
-                <input id="wallpaper" type="text" value="white" hidden>
-                <label for="wallpaper" hidden></label>
+            <div class="input-field input-wallpaper" hidden=true>
+                <input id="wallpaper" type="text" value="white">
+                <label for="wallpaper"></label>
             </div>
-            <div class="input-field input-rank">
-                <input id="rank" type="text" value="parent" hidden>
-                <label for="rank" hidden></label>
+            <div class="input-field input-rank" hidden=true>
+                <input id="rank" type="text" value="parent">
+                <label for="rank"></label>
             </div>
 
             <div class="input-field col s6">
-                <button class="btn-small">Add</button>
+                <button class="btn-small">Create Note</button>
             </div>
             
         </form>
