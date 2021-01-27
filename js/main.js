@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const update = document.getElementsByClassName('.note-details');
     M.Sidenav.init(forms,{edge: 'left', draggable: 'true'});
 
-    
+
 });
 
 function toggle(){
@@ -106,7 +106,9 @@ $(document).ready(function(){
 
     $('.tooltipped').tooltip();
 
-    $('.note-details').click(alert("clicked"));
+    $('.note-details').click(function(){
+        alert("clicked");
+    });
 
     // $('.input-field').addEventListener("click",function(){
     //     this.addClass('active');
