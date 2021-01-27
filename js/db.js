@@ -75,10 +75,12 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
     if(isDetails){
         console.log("title or body clicked");
         const id = e.target.getAttribute('data-id');
-        console.log(db.collection.doc(id).data());
-        console.log(db.collection.doc(id));
-        document.getElementById('noteTitle').value = id;
-        document.getElementById('noteBody').value = id;
+        const noteToUpdate = db.collection('notes').doc(id);
+        console.log(noteToUpdate.data());
+        console.log(noteToUpdate);
+        const form = document.querySelector('form');
+        form.noteTitle.value = "testTitle";
+        form.noteBody.value = "testBody";
         
     }
 });
