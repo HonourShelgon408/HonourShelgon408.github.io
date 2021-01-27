@@ -73,7 +73,8 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
         db.collection('notes').doc(id).delete();
     }
     if(isDetails){
-        
+        console.log("title or body clicked");
+        document.getElementById('noteTitle').innerHTML = e.target.getAttribute('data-id');
     }
 });
 
