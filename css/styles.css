@@ -65,13 +65,13 @@ nav .sidenav-trigger{
 .more-pages{
   cursor:pointer;
 }
-.note-move{
+.material-icons .note-move{
   cursor: move;
 }
-.note-move:hover i{
+.material-icons .note-move:hover i{
   cursor:move;
 }
-.note-move:active i{
+.material-icons .note-move:active i{
   cursor:grabbing;
 }
 
