@@ -29,7 +29,7 @@ db.collection('noteId').onSnapshot(function(snapshot){
             addNote(change.doc.data(),change.doc.id);                              
         }
         // else if(dbChange === 'modified'){
-        //     console.log(dbChange, " " , change.doc.id);
+        //     console.log(dbChange, " " , change.doc.id, change.doc.data());
         //     updateNote(change.doc.data(),change.doc.id);
         // }
         else if(dbChange === 'removed'){

@@ -69,37 +69,38 @@ function deleteNote(id) {
 
 
 
-/** javascript for index2 */
+                                                                                /** javascript for index2 */
+// document.addEventListener('DOMContentLoaded', function() {
+//     // nav menu
+//     const menus = document.querySelectorAll('.side-menu');
+//     M.Sidenav.init(menus, {edge: 'right', draggable: 'true'});
+//     // add note form
+//     const forms = document.querySelectorAll('.side-form');
+//     M.Sidenav.init(forms, {edge: 'left', draggable: 'true'});
+// });
 
-document.addEventListener('DOMContentLoaded', function() {
-    // nav menu
-    const menus = document.querySelectorAll('.side-menu');
-    M.Sidenav.init(menus, {edge: 'right', draggable: 'true'});
-    // add note form
-    const forms = document.querySelectorAll('.side-form');
-    M.Sidenav.init(forms, {edge: 'left', draggable: 'true'});
-});
+// function toggle(){
+//     if($('div#nav-tail').hasClass('hidden')){
+//         $("div#nav-tail").show();
+//         $("div#nav-tail").removeClass('hidden');
+//     }
+//     else{
+//         $("div#nav-tail").hide();
+//         $("div#nav-tail").addClass('hidden');
+//     }
+// }
 
-function toggle(){
-    if($('div#nav-tail').hasClass('hidden')){
-        $("div#nav-tail").show();
-        $("div#nav-tail").removeClass('hidden');
-    }
-    else{
-        $("div#nav-tail").hide();
-        $("div#nav-tail").addClass('hidden');
-    }
-}
-
-function auto_grow(element) {
-    element.style.height = "10px";
-    element.style.height = (element.scrollHeight)+"px";
-}
+// function auto_grow(element) {
+//     element.style.height = "10px";
+//     element.style.height = (element.scrollHeight)+"px";
+// }
 
 
 $(document).ready(function(){
 
     $('.tooltipped').tooltip();
+
+    $('note').click(alert("clicked"));
 
     // $('.input-field').addEventListener("click",function(){
     //     this.addClass('active');
