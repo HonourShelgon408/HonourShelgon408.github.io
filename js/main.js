@@ -39,14 +39,14 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
         <div class="note-move">
             <i class="material-icons move-icon">toc</i>
         </div>
-        <div class="note-details" data-target="side-form">
+        <div class="note-details">
     `;
 
     if(title.length >= 1){
-        html += `<div class="note-title trunc">${title}</div>`;
+        html += `<div class="note-title trunc" data-target="side-form">${title}</div>`;
     }
     if(body.length >= 1){
-        html += `<div class="note-body trunc">${body}</div>`;
+        html += `<div class="note-body trunc" data-target="side-form">${body}</div>`;
     }
 
     html += `
