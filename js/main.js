@@ -80,21 +80,21 @@ document.addEventListener('DOMContentLoaded', function() {
     M.Sidenav.init(forms, {edge: 'left', draggable: 'true'});
 });
 
-// function toggle(){
-//     if($('div#nav-tail').hasClass('hidden')){
-//         $("div#nav-tail").show();
-//         $("div#nav-tail").removeClass('hidden');
-//     }
-//     else{
-//         $("div#nav-tail").hide();
-//         $("div#nav-tail").addClass('hidden');
-//     }
-// }
+function toggle(){
+    if($('div#nav-tail').hasClass('hidden')){
+        $("div#nav-tail").show();
+        $("div#nav-tail").removeClass('hidden');
+    }
+    else{
+        $("div#nav-tail").hide();
+        $("div#nav-tail").addClass('hidden');
+    }
+}
 
-// function auto_grow(element) {
-//     element.style.height = "10px";
-//     element.style.height = (element.scrollHeight)+"px";
-// }
+function auto_grow(element) {
+    element.style.height = "10px";
+    element.style.height = (element.scrollHeight)+"px";
+}
 
 
 $(document).ready(function(){
