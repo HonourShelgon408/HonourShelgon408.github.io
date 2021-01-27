@@ -16,7 +16,7 @@ db.enablePersistence().catch(function(error){
 //real-time listener
 //collection gets reference to a firebase database
 //snapshot acts as a listener to return the current state of the database
-db.collection('noteId').onSnapshot(function(snapshot){
+db.collection('notes').onSnapshot(function(snapshot){
     //console.log(snapshot.data());
     //c onsole.log("SNAPSHOT: " , snapshot.docChanges());
     //docchanges returns all alterations since last snapshot
@@ -52,7 +52,7 @@ form.addEventListener('submit', evt => {
         wallpaper: form.wallpaper.value,
         rank: form.rank.value
     };
-    db.collection('noteId').add(note).catch(function(error){
+    db.collection('notes').add(note).catch(function(error){
         console.log(error);
     });
     /**wipe the note for the next note */
@@ -70,7 +70,7 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
     if(tagName === 'I' && tagName != null && tagName != undefined && isDeleteButton === true){
         const id = e.target.getAttribute('data-id');
         //c onsole.log("id: " + id);
-        db.collection('noteId').doc(id).delete();
+        db.collection('notes').doc(id).delete();
     }
 })
 

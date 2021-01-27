@@ -31,9 +31,11 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     let html = ``;
     const title = data.title;
     const body = data.body;
+    const identifier = id;
+    console.log(identifier, title, body);
 
     html = `
-    <div class="card-panel row note hoverable" data-id='${id}'>
+    <div class="card-panel row note hoverable" data-id='${identifier}'>
         <div class="note-move">
             <i class="material-icons move-icon">toc</i>
         </div>
