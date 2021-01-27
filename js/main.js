@@ -43,10 +43,10 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     `;
 
     if(title.length >= 1){
-        html += `<div class="note-title trunc" data-id='${identifier}' data-target="side-form">${title}</div>`;
+        html += `<div class="note-title sidenav-trigger trunc" data-id='${identifier}' data-target="side-form">${title}</div>`;
     }
     if(body.length >= 1){
-        html += `<div class="note-body trunc" data-id='${identifier}' data-target="side-form">${body}</div>`;
+        html += `<div class="note-body sidenav-trigger trunc" data-id='${identifier}' data-target="side-form">${body}</div>`;
     }
 
     html += `
@@ -69,8 +69,6 @@ function deleteNote(id) {
     }
 };
 
-
-
 document.addEventListener('DOMContentLoaded', function() {
     // nav menu
     const menus = document.querySelectorAll('.side-menu');
@@ -81,8 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // const update = document.getElementsByClassName('.note-details');
     // M.Sidenav.init(forms,{edge: 'left', draggable: 'true'});
-
-
 });
 
 function toggle(){
