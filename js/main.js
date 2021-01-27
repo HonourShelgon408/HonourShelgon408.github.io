@@ -101,7 +101,7 @@ $(document).ready(function(){
 
     $('.tooltipped').tooltip();
 
-    //$('.note').click(alert("clicked"));
+    $('.note-details').click(alert("clicked"));
 
     // $('.input-field').addEventListener("click",function(){
     //     this.addClass('active');
