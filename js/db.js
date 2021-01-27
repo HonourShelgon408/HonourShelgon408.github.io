@@ -74,7 +74,7 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
     }
 
     if(isDetails){
-        alert("sah dud");
+        console.log("pls");
     }
 });
 
