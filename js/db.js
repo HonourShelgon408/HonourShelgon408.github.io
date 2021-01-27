@@ -41,7 +41,6 @@ db.collection('notes').onSnapshot(function(snapshot){
     });
 });
 
-
 /** add new note object to the database */
 const form = document.querySelector('form');
 form.addEventListener('submit', evt => {
@@ -72,5 +71,12 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
         //c onsole.log("id: " + id);
         db.collection('notes').doc(id).delete();
     }
-})
+});
+
+function updateRecord(id, upTitle, upBody){
+    db.collection('notes').doc(id).update({
+        title: upTitle,
+        body: upBody
+    })
+};
 

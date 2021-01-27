@@ -77,7 +77,12 @@ document.addEventListener('DOMContentLoaded', function() {
     M.Sidenav.init(menus, {edge: 'right', draggable: 'true'});
     // add note form
     const forms = document.querySelectorAll('.side-form');
-    M.Sidenav.init(forms, {edge: 'left', draggable: 'true'});
+    M.Sidenav.init(forms,{edge: 'left', draggable: 'true'});
+
+    const update = document.getElementsByClassName('.note-details');
+    M.Sidenav.init(forms,{edge: 'left', draggable: 'true'});
+
+    
 });
 
 function toggle(){
