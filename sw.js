@@ -40,7 +40,7 @@ self.addEventListener('install', function(event) {
     caches.open(cacheName).then(function(cache) {
       return cache.addAll(filesToCache).then(function(){
         console.log("Service Worker Installed: ", event);
-      }); //need to handle addAll since if one fails they all fail
+      }).catch(console.log(cache)); //need to handle addAll since if one fails they all fail
     })
   );
 });
