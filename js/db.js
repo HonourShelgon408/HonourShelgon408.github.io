@@ -65,11 +65,16 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
     console.log(e.target);
     const tagName = e.target.tagName;
     const isDeleteButton = e.target.classList.contains('delete-icon');
+    const isDetails = e.target.classList.contains('note-details');
     //c onsole.log(isDeleteButton + ":isDeleteButton, " + tagName + ":tagName "); what part of the "note" has been clicked on
     if(tagName === 'I' && tagName != null && tagName != undefined && isDeleteButton === true){
         const id = e.target.getAttribute('data-id');
         //c onsole.log("id: " + id);
         db.collection('notes').doc(id).delete();
+    }
+
+    if(isDetails){
+        alert("sah dud");
     }
 });
 

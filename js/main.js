@@ -79,8 +79,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const forms = document.querySelectorAll('.side-form');
     M.Sidenav.init(forms,{edge: 'left', draggable: 'true'});
 
-    const update = document.getElementsByClassName('.note-details');
-    M.Sidenav.init(forms,{edge: 'left', draggable: 'true'});
+    // const update = document.getElementsByClassName('.note-details');
+    // M.Sidenav.init(forms,{edge: 'left', draggable: 'true'});
 
 
 });
@@ -105,14 +105,6 @@ function auto_grow(element) {
 $(document).ready(function(){
 
     $('.tooltipped').tooltip();
-
-    $('.note-details').click(function(){
-        alert("clicked");
-    });
-
-    // $('.input-field').addEventListener("click",function(){
-    //     this.addClass('active');
-    // });
 
     M.updateTextFields(); //adds active class to an element when someone is typing in it - moves the placeholder to above the typing area
  
