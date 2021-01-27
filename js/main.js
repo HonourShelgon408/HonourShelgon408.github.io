@@ -32,7 +32,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     const title = data.title;
     const body = data.body;
     const identifier = id;
-    console.log(identifier, title, body);
+    //console.log(identifier, title, body);
 
     html = `
     <div class="card-panel row note hoverable" data-id='${identifier}'>
@@ -102,7 +102,7 @@ $(document).ready(function(){
 
     $('.tooltipped').tooltip();
 
-    $('note').click(alert("clicked"));
+    $('.note').click(alert("clicked"));
 
     // $('.input-field').addEventListener("click",function(){
     //     this.addClass('active');
