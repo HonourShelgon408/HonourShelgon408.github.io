@@ -39,7 +39,7 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
         <div class="note-move">
             <i class="material-icons move-icon">toc</i>
         </div>
-        <div class="note-details">
+        <div class="note-details" data-target="side-form">
     `;
 
     if(title.length >= 1){
