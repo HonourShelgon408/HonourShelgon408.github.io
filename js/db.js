@@ -75,15 +75,32 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
     if(isDetails){
         console.log("title or body clicked");
         const id = e.target.getAttribute('data-id');
-        const noteToUpdate = db.collection('notes').doc(id);
-        console.log(noteToUpdate.data());
-        console.log(noteToUpdate);
+        var stuff = getNote(id);
+        console.log(stuff);
         const form = document.querySelector('form');
         form.noteTitle.value = "testTitle";
-        form.noteBody.value = "testBody";
+        form.noteBody.innerHTML = "testBody";
         
     }
 });
+
+function getNote(id){
+    let data = "";
+    var myDoc = db.collection('notes').doc(id);
+    myDoc.get().then(function(doc){
+        if(doc.exists){
+            console.log("Data: ", doc.data());
+            data = doc.data();
+        }
+        else {
+            console.log("Data: no data found");
+            data = "no data";
+        }
+    }).catch(function(error){
+        console.log("Error getting document: ", error);
+    });
+    return data;
+}
 
 function updateRecord(id, upTitle, upBody){
     db.collection('notes').doc(id).update({
