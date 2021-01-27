@@ -8,10 +8,10 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     return check;
   };
 
-  function darkMode(){
-      $('body').classList.toggle('dark-mode');
-      $('card-panel').classList.toggle('dark-mode');
-  }
+//   function darkMode(){
+//       $('body').classList.toggle('dark-mode');
+//       $('card-panel').classList.toggle('dark-mode');
+//   }
 
   const priority = document.querySelector('#priority');
   const overview = document.querySelector('#overview');
