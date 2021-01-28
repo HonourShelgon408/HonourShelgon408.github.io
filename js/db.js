@@ -84,36 +84,22 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
     if(isDetails){
         console.log("title or body clicked");
         const id = e.target.getAttribute('data-id');
-        putNoteFromFirebaseToUpdateForm(id);
-
+        let noteToUpdate = getNoteFromFirebase(id);
+        console.log(noteToUpdate);
+        const updateForm = document.querySelector('#updateForm');
+        updateForm.updateNoteTitle.value = noteToUpdate.title;
+        updateForm.updateNoteBody.value = noteToUpdate.body;
+        
     }
 });
 
-// async function getNoteFromFirebase(id){
-//     let data = "";
-//     var myDoc = db.collection('notes').doc(id);
-//     myDoc.get().then(function(doc){
-//         if(doc.exists){
-//             console.log("Data: ", doc.data());
-//             data = doc.data();
-//         }
-//         else {
-//             console.log("Data: no data found");
-//             data = "no data";
-//         }
-//     }).catch(function(error){
-//         console.log("Error getting document: ", error);
-//     });
-//     return data;
-// }
-
-async function putNoteFromFirebaseToUpdateForm(id){
+function getNoteFromFirebase(id){
     let data = "";
-    let myDoc = db.collection('notes').doc(id);
+    var myDoc = db.collection('notes').doc(id);
     myDoc.get().then(function(doc){
         if(doc.exists){
             console.log("Data: ", doc.data());
-            data = await doc.data();
+            data = doc.data();
         }
         else {
             console.log("Data: no data found");
@@ -122,13 +108,7 @@ async function putNoteFromFirebaseToUpdateForm(id){
     }).catch(function(error){
         console.log("Error getting document: ", error);
     });
-    
-    // let noteToUpdate = getNoteFromFirebase(id);
-    console.log(data);
-    const updateForm = document.querySelector('#updateForm');
-    updateForm.updateNoteTitle.value = data.title;
-    updateForm.updateNoteBody.value = data.body;
-    
+    return data;
 }
 
 function updateRecord(id, upTitle, upBody){
