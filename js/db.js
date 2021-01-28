@@ -84,28 +84,8 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
     if(isDetails){
         console.log("title or body clicked");
         const id = e.target.getAttribute('data-id');
+        putNoteFromFirebaseToUpdateForm(id);
 
-        let data = "";
-        let myDoc = db.collection('notes').doc(id);
-        myDoc.get().then(function(doc){
-            if(doc.exists){
-                console.log("Data: ", doc.data());
-                data = doc.data();
-            }
-            else {
-                console.log("Data: no data found");
-                data = "no data";
-            }
-        }).catch(function(error){
-            console.log("Error getting document: ", error);
-        });
-
-        // let noteToUpdate = getNoteFromFirebase(id);
-        console.log(data);
-        const updateForm = document.querySelector('#updateForm');
-        updateForm.updateNoteTitle.value = data.title;
-        updateForm.updateNoteBody.value = data.body;
-        
     }
 });
 
@@ -126,6 +106,30 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
 //     });
 //     return data;
 // }
+
+async function putNoteFromFirebaseToUpdateForm(id){
+    let data = "";
+    let myDoc = db.collection('notes').doc(id);
+    myDoc.get().then(function(doc){
+        if(doc.exists){
+            console.log("Data: ", doc.data());
+            data = await doc.data();
+        }
+        else {
+            console.log("Data: no data found");
+            data = "no data";
+        }
+    }).catch(function(error){
+        console.log("Error getting document: ", error);
+    });
+    
+    // let noteToUpdate = getNoteFromFirebase(id);
+    console.log(data);
+    const updateForm = document.querySelector('#updateForm');
+    updateForm.updateNoteTitle.value = data.title;
+    updateForm.updateNoteBody.value = data.body;
+    
+}
 
 function updateRecord(id, upTitle, upBody){
     db.collection('notes').doc(id).update({
