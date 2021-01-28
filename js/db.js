@@ -85,10 +85,10 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
         console.log("title or body clicked");
         const id = e.target.getAttribute('data-id');
         var noteToUpdate = getNoteFromFirebase(id);
-        console.log(stuff);
-        const form = document.querySelector('form');
-        form.noteTitle.value = noteToUpdate.title;
-        form.noteBody.value = noteToUpdate.body;
+        console.log(noteToUpdate);
+        const updateForm = document.querySelector('#updateForm');
+        updateForm.noteTitle.value = noteToUpdate.title;
+        updateForm.noteBody.value = noteToUpdate.body;
         
     }
 });
