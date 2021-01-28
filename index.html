@@ -144,7 +144,7 @@
 
     <!-- add note side nav -->
     <div id="side-form" class="sidenav side-form z-depth-5 col s12 l4">
-        <form class="add-note container section">
+        <form id="addForm" class="add-note container section">
             <!-- ID'S IN THIS FORM REFERENCED IN DB.JS TO GET DATA FROM FORM-->
             <h6>Add a New Note</h6>
             <div class="divider"></div>
@@ -186,6 +186,49 @@
         </form>
     </div>
     <!-- END-OF add note side nav -->
+
+    <!-- update note side nav -->
+    <div id="update-form" class="sidenav side-form z-depth-5 col s12 l4">
+        <form id="updateForm" class="update-note container section">
+            <!-- ID'S IN THIS FORM REFERENCED IN DB.JS TO GET DATA FROM FORM-->
+            <h6>Update Note</h6>
+            <div class="divider"></div>
+            <div class="input-field input-id" hidden=false>
+                <input id="updateNoteId" type="text" class="validate">
+                <label class="active" for="updateNoteId">note id</label>
+            </div>
+            <div class="input-field input-title">
+                <input placeholder="...Title..." id="updateNoteTitle" type="text" class="validate">
+                <label class="active" for="updateNoteTitle">Note Title</label>
+            </div>
+            <div class="input-field input-details">
+                <textarea 
+                    oninput="auto_grow(this)" 
+                    placeholder="...body..."
+                    rows="10"
+                    cols="40"
+                    id="updateNoteBody"
+                    type="text"
+                    class="validate materialize-textarea">
+                </textarea>
+                <label class="active" for="updateNoteBody">Details</label>
+            </div>
+            <div class="input-field input-wallpaper" hidden=true>
+                <input id="updateWallpaper" type="text" value="white">
+                <label for="updateWallpaper"></label>
+            </div>
+            <div class="input-field input-rank" hidden=true>
+                <input id="updateRank" type="text" value="parent">
+                <label for="updateRank"></label>
+            </div>
+
+            <div class="input-field col s6">
+                <button class="btn-small">Update Note</button>
+            </div>
+            
+        </form>
+    </div>
+    <!-- END-OF update note side nav -->
 
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script defer src="js/swReg.js"></script> <!-- registers and handles service worker through sw.js -->

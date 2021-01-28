@@ -43,10 +43,10 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     `;
 
     if(title.length >= 1){
-        html += `<div class="note-title sidenav-trigger trunc" data-id='${identifier}' data-target="side-form">${title}</div>`;
+        html += `<div class="note-title sidenav-trigger trunc" data-id='${identifier}' data-target="update-form">${title}</div>`;
     }
     if(body.length >= 1){
-        html += `<div class="note-body sidenav-trigger trunc" data-id='${identifier}' data-target="side-form">${body}</div>`;
+        html += `<div class="note-body sidenav-trigger trunc" data-id='${identifier}' data-target="update-form">${body}</div>`;
     }
 
     html += `

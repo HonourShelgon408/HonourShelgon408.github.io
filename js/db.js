@@ -42,7 +42,7 @@ db.collection('notes').onSnapshot(function(snapshot){
 });
 
 /** add new note object to the database */
-const form = document.querySelector('form');
+const form = document.querySelector('#addForm');
 form.addEventListener('submit', evt => {
     evt.preventDefault(); //prevent page reload - default behaviour
     const note = {
@@ -55,9 +55,18 @@ form.addEventListener('submit', evt => {
         console.log(error);
     });
     /**wipe the note for the next note */
-    form.noteTitle.value = '';                                                                           /** NEED TO UNDO */
+    form.noteTitle.value = '';                                                                           
     form.noteBody.value = '';
 });
+
+/** update note */
+// const updateForm = document.querySelector('#updateForm');
+// updateForm.addEventListener('submit', evt => {
+//     evt.preventDefault(); /**using the ID from the update form (hidden=true) to update the database with custom function */
+//     updateRecord(updateForm.updateNoteId.value, updateForm.updateNoteTitle.value, updateForm.updateNoteBody.value);
+//     form.noteTitle.value = '';                                                                           
+//     form.noteBody.value = '';
+// });
 
 /**delete note */
 const notesContainer = document.querySelector('.notes');
