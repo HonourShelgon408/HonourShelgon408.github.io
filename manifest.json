@@ -1,6 +1,6 @@
 {
-  "name": "PWA",
-  "short_name": "Scheduler",
+  "name": "Super Scheduler",
+  "short_name": "S.Scheduler",
   "lang": "en-UK",
   "start_url": "index.html",
   "display": "standalone",
