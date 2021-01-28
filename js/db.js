@@ -64,8 +64,8 @@ form.addEventListener('submit', evt => {
 // updateForm.addEventListener('submit', evt => {
 //     evt.preventDefault(); /**using the ID from the update form (hidden=true) to update the database with custom function */
 //     updateRecord(updateForm.updateNoteId.value, updateForm.updateNoteTitle.value, updateForm.updateNoteBody.value);
-//     form.noteTitle.value = '';                                                                           
-//     form.noteBody.value = '';
+//     updateForm.updateNoteTitle.value = '';                                                                           
+//     updateForm.updateNoteBody.value = '';
 // });
 
 /**delete note */
@@ -87,8 +87,8 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
         var noteToUpdate = getNoteFromFirebase(id);
         console.log(noteToUpdate);
         const updateForm = document.querySelector('#updateForm');
-        updateForm.noteTitle.value = noteToUpdate.title;
-        updateForm.noteBody.value = noteToUpdate.body;
+        updateForm.updateNoteTitle.value = noteToUpdate.title;
+        updateForm.updateNoteBody.value = noteToUpdate.body;
         
     }
 });
