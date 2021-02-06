@@ -29,12 +29,13 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
   /**render note to the DOM */
   function addNote(data, id) {
     let html = ``;
-    const title = data.title.substring(0,10);
-    const body = data.body.substring(0,10);
+    const fontSize = 12;
+    const letters = (content.scrollWidth / fontSize) - 5;
+    const title = data.title.substring(0,letters);
+    const body = data.body.substring(0,letters);
     const identifier = id;
     //console.log(identifier, title, body);
-    console.log("scroll height: ",content.scrollHeight, ", scroll width: ", content.scrollWidth, ", client width: ", content.clientWidth )
-
+    
     html = `
     <div class="card-panel row note hoverable" data-id='${identifier}'>
         <div class="note-move">
