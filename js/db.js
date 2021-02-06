@@ -84,7 +84,9 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
     if(isDetails){
         console.log("title or body clicked");
         const id = e.target.getAttribute('data-id');
-        let noteToUpdate = getNoteFromFirebase(id).then(()=>{
+        let populate = function(){
+            noteToUpdate = getNoteFromFirebase(id);
+        }.then(()=>{
             console.log(noteToUpdate);
             const updateForm = document.querySelector('#updateForm');
             updateForm.updateNoteTitle.value = noteToUpdate.title;
@@ -95,7 +97,7 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
 
 async function getNoteFromFirebase(id){
     let data = "";
-    var myDoc = db.collection('notes').doc(id);
+    var myDoc = await db.collection('notes').doc(id);
     myDoc.get().then(function(doc){
         if(doc.exists){
             console.log("Data: ", doc.data());
