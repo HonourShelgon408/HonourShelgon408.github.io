@@ -34,6 +34,10 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     const title = data.title.substring(0,letters);
     const body = data.body.substring(0,letters);
     const identifier = id;
+
+    //TODO -- CHANGE NOTIFICATION ICON DEPENDENT ON RELATED RECORDS FOR REMINDERS
+    //notifications -> notifications_active -> notifications_none
+
     //console.log(identifier, title, body);
     
     html = `
@@ -52,10 +56,10 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     }
     html += `
         </div> <!-- closing note-details class div -->
-        <div>
-
+        <div class="note-options">
+            <i class="material-icons bell-icon data-id="${id}">notifications</i>
         </div>
-        <div class="note-delete note-controls">
+        <div class="note-delete">
             <i class="material-icons delete-icon" data-id="${id}">delete_outline</i>
         </div>
     </div>

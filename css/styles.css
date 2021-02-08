@@ -57,8 +57,8 @@ nav .sidenav-trigger{
   padding: 10px;
   box-shadow: 0px 1px 3px rgba(90,90,90,0.1);
   display: grid;
-  grid-template-columns: 2fr 6fr 1fr;
-  grid-template-areas: "image details delete";
+  grid-template-columns: 2fr 5fr 1fr 1fr;
+  grid-template-areas: "image details options delete";
   position: relative;
 }
 
@@ -86,7 +86,13 @@ nav .sidenav-trigger{
   grid-area: details;
   margin-top: 6px;
   font-size: 0.8em;
-
+}
+.note-options{
+  grid-area: options;
+  position: absolute;
+  vertical-align: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .note-delete{
   grid-area: delete;
