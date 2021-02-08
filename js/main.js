@@ -50,8 +50,10 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     if(body.length >= 1){
         html += `<div class="note-body sidenav-trigger trunc" data-id='${identifier}' data-target="update-form">${body}</div>`;
     }
-
     html += `
+        </div> <!-- closing note-details class div -->
+        <div>
+
         </div>
         <div class="note-delete note-controls">
             <i class="material-icons delete-icon" data-id="${id}">delete_outline</i>
