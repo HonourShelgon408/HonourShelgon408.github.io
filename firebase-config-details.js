@@ -9,4 +9,4 @@ const firebase_global = {
             measurementId: "G-1EC78QP9Q1"
         };
 
-export default firebaseConfig;
+export default firebase_global;
