@@ -64,6 +64,7 @@
 
         messaging.onMessage(function(payload){
             console.log('onMessage: ', payload)
+            console.log(payload.notification.title, payload.notification.body);
         });
 
     //   console.log(firebase);
