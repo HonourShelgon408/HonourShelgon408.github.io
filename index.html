@@ -90,7 +90,7 @@
         function handleTokenRefresh(){
             return firebaseMessaging.getToken()
             .then(function(token){
-                db.collections('tokens').push({
+                db.collection('tokens').push({
                     token: token,
                     noteId: this.data-id ? this.data-id : "null"
                 })
