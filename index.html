@@ -55,6 +55,7 @@
         ===================*/
 
         const firebaseMessaging = firebase.messaging();
+        firebaseMessaging.onTokenRefresh(handleTokenRefresh);
         firebaseMessaging.requestPermission()
         .then(()=>{
             console.log("Have permission.");
@@ -85,6 +86,20 @@
                     console.log(error);
                 });
         });
+
+        function handleTokenRefresh(){
+            return firebaseMessaging.getToken()
+            .then(function(token){
+                db.collections('tokens').push({
+                    token: token,
+                    noteId: this.data-id ? this.data-id : "null"
+                })
+            // updateTokensTable();
+            })
+            .catch(function(error){
+                console.lsog("User didn't grand permission: ", error)
+            });
+        }
 
     //   console.log(firebase);
     //   console.log(db);

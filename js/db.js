@@ -81,6 +81,7 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
         const id = e.target.getAttribute('data-id');
         //c onsole.log("id: " + id);
         db.collection('notes').doc(id).delete();
+        
     }
     if(isDetails){
         console.log("title or body clicked");
