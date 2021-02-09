@@ -93,6 +93,7 @@ nav .sidenav-trigger{
   vertical-align: auto;
   margin-top: auto;
   margin-bottom: auto;
+  font-size: 0.8em;
 }
 .note-delete{
   grid-area: delete;

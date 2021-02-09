@@ -65,7 +65,7 @@ const alarms = false;
 if(alarms == false){
     html += 
     `<div class="note-options">
-        <p><i class="material-icons data-id="${id}">notifications_none</i><input type="text" class="reminderDatePicker datepicker"></p>
+        <i class="material-icons data-id="${id}">notifications_none</i><input type="text" class="reminderDatePicker datepicker">
     </div>`;
 }
 
