@@ -1,7 +1,3 @@
-importScripts('https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js');
-importScripts('https://www.gstatic.com/firebasejs/8.0.2/firebase-messaging.js');
-importScripts('firebase-config-details.js');
-
 var versionNum = 'v3.22';
 var cacheName = 'scheduler-' + versionNum;
 var dynamicCache = 'dynamic-'+ versionNum;
@@ -25,8 +21,6 @@ var filesToCache = [ /* array of filenames referenced by relativity */
    * however they'd get added into the dynamic cache if they were used anyway 
    */
 ];
-
-console.log(firebase_global);
 
 let deferredPrompt;
 self.addEventListener('beforeinstallprompt', (e) => {

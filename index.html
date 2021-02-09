@@ -62,7 +62,9 @@
             console.log("Error Occured: ", error)
         });
 
-        messaging.onMessage();
+        messaging.onMessage(function(payload){
+            console.log('onMessage: ', payload)
+        });
 
     //   console.log(firebase);
     //   console.log(db);

@@ -2,4 +2,26 @@ importScripts('https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js');
 importScripts('https://www.gstatic.com/firebasejs/8.0.2/firebase-messaging.js');
 importScripts('firebase-config-details.js');
 
-console.log(firebase_global);
+firebase_global.initializeApp(firebase_global);
+
+const messaging = firebase.messaging();
+messaging.getToken({vapidKey: "BPWf1tbECVCHpl0gfxdxJJqWg3m5A3KkcVrjxqSFu_RfmuikB4x1D0JSbktt82UU1ipH3lYGVyo6VdO6PObe26o"})
+    .then((currentToken) => {
+        if(currentToken){
+// Send the token to your server and update the UI if necessary
+        }
+        else {
+            console.log('No registration token available. Request permission to generate one.');
+        }
+    }).catch((err) => {
+        console.log('An error occurred while retrieving token. ', err);
+        // ...
+    });
+
+messaging.setBackgroundMessageHandler(function(payload){
+    const title = "hello world";
+    const options = {
+        body: payload.data.status
+    };
+    return self.registration.showNotifications(title, options);
+});
