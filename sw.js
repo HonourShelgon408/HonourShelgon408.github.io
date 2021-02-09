@@ -1,6 +1,6 @@
 importScripts('https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js');
 importScripts('https://www.gstatic.com/firebasejs/8.0.2/firebase-messaging.js');
-import {firebase_global} from "firebase-config-details.js";
+importScripts('firebase-config-details.js');
 
 var versionNum = 'v3.22';
 var cacheName = 'scheduler-' + versionNum;
