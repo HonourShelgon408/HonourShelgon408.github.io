@@ -18,10 +18,14 @@ messaging.getToken({vapidKey: "BPWf1tbECVCHpl0gfxdxJJqWg3m5A3KkcVrjxqSFu_RfmuikB
         // ...
     });
 
-messaging.setBackgroundMessageHandler(function(payload){
+messaging.setBackgroundMessage(function(payload){
+    console.log("Firebase receiving background message", payload);
     const title = "hello world";
     const options = {
-        body: payload.data.status
+        body: payload.data.status,
+        icon: "images/ss-192.png"
     };
     return self.registration.showNotifications(title, options);
 });
+
+
