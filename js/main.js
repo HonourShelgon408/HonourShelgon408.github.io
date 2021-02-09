@@ -8,76 +8,83 @@ window.mobileCheck = function() { //returns "true" if mobile device
     return check;
   };
 
-//   function darkMode(){
-//       $('body').classList.toggle('dark-mode');
-//       $('card-panel').classList.toggle('dark-mode');
-//   }
 
-  const priority = document.querySelector('#priority');
-  const overview = document.querySelector('#overview');
-
-
-  /** insert line breaks into string */
-  function convertBreaks(str){
-    for(var i = 0; i<str.length; i++){
-        if(str[i].match(/\n/g)||[]){
-            str[i] = String.fromCharCode(13);
-        }
-    }
-  }
-
-  /**render note to the DOM */
-  function addNote(data, id) {
-    let html = ``;
-    const fontSize = 12;
-    const letters = (content.scrollWidth / fontSize) - 5;
-    const title = data.title.substring(0,letters);
-    const body = data.body.substring(0,letters);
-    const identifier = id;
-
-    //TODO -- CHANGE NOTIFICATION ICON DEPENDENT ON RELATED RECORDS FOR REMINDERS
-    //notifications -> notifications_active -> notifications_none
-
-    //console.log(identifier, title, body);
+    /*==================
     
-    html = `
-    <div class="card-panel row note hoverable" data-id='${identifier}'>
-        <div class="note-move">
-            <i class="material-icons move-icon">toc</i>
-        </div>
-        <div class="note-details">
-    `;
+    Query Selectors
+    
+    ===================*/
 
-    if(title.length >= 1){
-        html += `<div class="note-title sidenav-trigger trunc" data-id='${identifier}' data-target="update-form">${title}</div>`;
-    }
-    if(body.length >= 1){
-        html += `<div class="note-body sidenav-trigger trunc" data-id='${identifier}' data-target="update-form">${body}</div>`;
-    }
-    html += `</div> <!-- closing note-details class div -->`;
-    const alarms = false;
-    if(alarms == false){
-        html += 
-        `<div class="note-options">
-            <i class="material-icons bell-icon data-id="${id}">notifications_none</i>
-        </div>`;
-    }
+const priority = document.querySelector('#priority');
+const overview = document.querySelector('#overview');
 
-    // if(alarms == true){
-    //     html += `
-    //     <div class="note-options">
-    //         <i class="material-icons bell-icon data-id="${id}">notifications_active</i>
-    //     </div> `;
-    // }
-    html += `
-        <div class="note-delete">
-            <i class="material-icons delete-icon" data-id="${id}">delete_outline</i>
-        </div>
+
+    /*==================
+    
+    Functions
+    
+    ===================*/
+
+
+/** insert line breaks into string */
+function convertBreaks(str){
+for(var i = 0; i<str.length; i++){
+    if(str[i].match(/\n/g)||[]){
+        str[i] = String.fromCharCode(13);
+    }
+}
+}
+
+/**render note to the DOM */
+function addNote(data, id) {
+let html = ``;
+const fontSize = 12;
+const letters = (content.scrollWidth / fontSize) - 5;
+const title = data.title.substring(0,letters);
+const body = data.body.substring(0,letters);
+const identifier = id;
+
+//TODO -- CHANGE NOTIFICATION ICON DEPENDENT ON RELATED RECORDS FOR REMINDERS
+//notifications -> notifications_active -> notifications_none
+
+html = `
+<div class="card-panel row note hoverable" data-id='${identifier}'>
+    <div class="note-move">
+        <i class="material-icons move-icon">toc</i>
     </div>
-    `;
-    
-    content.innerHTML += html;
-  };
+    <div class="note-details">
+`;
+
+if(title.length >= 1){
+    html += `<div class="note-title sidenav-trigger trunc" data-id='${identifier}' data-target="update-form">${title}</div>`;
+}
+if(body.length >= 1){
+    html += `<div class="note-body sidenav-trigger trunc" data-id='${identifier}' data-target="update-form">${body}</div>`;
+}
+html += `</div> <!-- closing note-details class div -->`;
+const alarms = false;
+if(alarms == false){
+    html += 
+    `<div class="note-options">
+        <i class="material-icons bell-icon data-id="${id}">notifications_none</i>
+    </div>`;
+}
+
+// if(alarms == true){
+//     html += `
+//     <div class="note-options">
+//         <i class="material-icons bell-icon data-id="${id}">notifications_active</i>
+//     </div> `;
+// }
+html += `
+    <div class="note-delete">
+        <i class="material-icons delete-icon" data-id="${id}">delete_outline</i>
+    </div>
+</div>
+`;
+
+content.innerHTML += html;
+};
 
 
 /** derender note from the DOM  */
@@ -88,6 +95,19 @@ function deleteNote(id) {
     }
 };
 
+/**makes the textarea increase height as user types */
+function auto_grow(element) {
+    element.style.height = "10px";
+    element.style.height = (element.scrollHeight)+"px";
+}
+
+
+        /*==================
+        
+        MATERIALIZE MENU AND FEATURE FUNCTIONS
+        
+        ===================*/
+
 document.addEventListener('DOMContentLoaded', function() {
     // nav menu
     const menus = document.querySelectorAll('.side-menu');
@@ -95,36 +115,30 @@ document.addEventListener('DOMContentLoaded', function() {
     // add note form
     const forms = document.querySelectorAll('.side-form');
     M.Sidenav.init(forms,{edge: 'left', draggable: 'true'});
-
+    // bell-icons
     const bell = document.querySelectorAll('.bell-icon');
     M.Datepicker.init(bell,options);
-
-    // const update = document.getElementsByClassName('.note-details');
-    // M.Sidenav.init(forms,{edge: 'left', draggable: 'true'});
+    
+    $('.tooltipped').tooltip();
+    /*adds active class to an element when someone is typing in it - moves the placeholder to above the typing area*/
+    M.updateTextFields(); 
 });
 
-function toggle(){
-    if($('div#nav-tail').hasClass('hidden')){
-        $("div#nav-tail").show();
-        $("div#nav-tail").removeClass('hidden');
-    }
-    else{
-        $("div#nav-tail").hide();
-        $("div#nav-tail").addClass('hidden');
-    }
-}
 
-function auto_grow(element) {
-    element.style.height = "10px";
-    element.style.height = (element.scrollHeight)+"px";
-}
+        /*==================
+        
+        FIREBASE MESSAGING
+        
+        ===================*/
 
 
 $(document).ready(function(){
 
-    $('.tooltipped').tooltip();
-
-    M.updateTextFields(); //adds active class to an element when someone is typing in it - moves the placeholder to above the typing area
+        /*==================
+        
+        PRACTICALLY LEGACY CODE FOR THE OLD INDEX.HTML
+        
+        ===================*/
  
     $("#totalContent").hide();
     $("#shortContent").show();
@@ -149,7 +163,20 @@ $(document).ready(function(){
     });
 
     function subscribeToNotifications(){
-        
+
     }
+
+    function toggle(){
+        if($('div#nav-tail').hasClass('hidden')){
+            $("div#nav-tail").show();
+            $("div#nav-tail").removeClass('hidden');
+        }
+        else{
+            $("div#nav-tail").hide();
+            $("div#nav-tail").addClass('hidden');
+        }
+    }
+    
+    
 
 });
