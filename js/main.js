@@ -54,14 +54,16 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     if(body.length >= 1){
         html += `<div class="note-body sidenav-trigger trunc" data-id='${identifier}' data-target="update-form">${body}</div>`;
     }
-    html += `
-        </div> <!-- closing note-details class div -->
-        <div class="note-options">
+    html += `</div> <!-- closing note-details class div -->`;
+    const alarms = false;
+    if(alarms == false){
+        html += 
+        `<div class="note-options">
             <i class="material-icons bell-icon data-id="${id}">notifications_none</i>
-        </div>
-        `;
+        </div>`;
+    }
 
-    // if(data.alarms = true){
+    // if(alarms == true){
     //     html += `
     //     <div class="note-options">
     //         <i class="material-icons bell-icon data-id="${id}">notifications_active</i>
