@@ -4,8 +4,8 @@
   "lang": "en-UK",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "white",
-  "theme_color": "white",
+  "background_color": "black",
+  "theme_color": "black",
   "icons": [
     {
       "src": "/images/ss-192.png",
