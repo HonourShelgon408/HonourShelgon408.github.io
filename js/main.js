@@ -66,7 +66,7 @@ const alarms = false;
 if(alarms == false){
     html += 
     `<div class="note-options">
-        <i class="material-icons bell-icon data-id="${id}">notifications_none</i>
+        <i class="material-icons bell-icon datepicker data-id="${id}">notifications_none</i>
     </div>`;
 }
 
