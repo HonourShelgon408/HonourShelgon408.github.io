@@ -55,6 +55,19 @@
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
         const db = firebase.firestore();
+        const messaging = firebase.messaging();
+        messaging.requestPermission()
+        .then(function(){
+            console.log("Have permission.");
+            return messaging.getToken();
+        })
+        .then(function(token){
+            console.log(token);
+            // updateTokensTable();
+        })
+        .catch(function(error){
+            console.log("Error Occured: ", error)
+        });
     //   console.log(firebase);
     //   console.log(db);
 

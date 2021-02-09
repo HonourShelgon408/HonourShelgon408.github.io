@@ -57,8 +57,17 @@ window.mobileCheck = function() { //returns boolean "true" if mobile device
     html += `
         </div> <!-- closing note-details class div -->
         <div class="note-options">
-            <i class="material-icons bell-icon data-id="${id}">notifications</i>
+            <i class="material-icons bell-icon data-id="${id}">notifications_none</i>
         </div>
+        `;
+
+    // if(data.alarms = true){
+    //     html += `
+    //     <div class="note-options">
+    //         <i class="material-icons bell-icon data-id="${id}">notifications_active</i>
+    //     </div> `;
+    // }
+    html += `
         <div class="note-delete">
             <i class="material-icons delete-icon" data-id="${id}">delete_outline</i>
         </div>
