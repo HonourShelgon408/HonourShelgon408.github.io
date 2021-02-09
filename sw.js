@@ -1,6 +1,6 @@
 importScripts('https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js');
 importScripts('https://www.gstatic.com/firebasejs/8.0.2/firebase-messaging.js');
-import config from "firebase-config-details.js";
+import {firebase_global} from "firebase-config-details.js";
 
 var versionNum = 'v3.4';
 var cacheName = 'scheduler-' + versionNum;
@@ -26,7 +26,7 @@ var filesToCache = [ /* array of filenames referenced by relativity */
    */
 ];
 
-console.log(config);
+console.log(firebase_global);
 
 let deferredPrompt;
 self.addEventListener('beforeinstallprompt', (e) => {

@@ -1,4 +1,4 @@
-const firebaseConfig = {
+const firebase_global = {
             apiKey: "AIzaSyBqo_x81m26uliOXF9k8Sz3fE1ZGOXu6wU",
             authDomain: "pwa-scheduler-a9307.firebaseapp.com",
             databaseURL: "https://pwa-scheduler-a9307.firebaseio.com",
