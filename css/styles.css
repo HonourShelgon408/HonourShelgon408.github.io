@@ -143,3 +143,15 @@ form .input-field{
   max-width: 48px;
   max-height: 48px;
 }
+
+.notificationBox{
+  float:right;
+  bottom:0px;
+  right:0px;
+  background-color: white;
+}
+.notificationBoxField{
+  margin:5px;
+  background-color: antiquewhite;
+  border-radius: 2%;
+}

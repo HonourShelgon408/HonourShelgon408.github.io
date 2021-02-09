@@ -1,5 +1,5 @@
 
-window.mobileCheck = function() { //returns boolean "true" if mobile device
+window.mobileCheck = function() { //returns "true" if mobile device
     let check = false;
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
         // true for mobile device
@@ -95,6 +95,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // add note form
     const forms = document.querySelectorAll('.side-form');
     M.Sidenav.init(forms,{edge: 'left', draggable: 'true'});
+
+    const bell = document.querySelectorAll('.bell-icon');
+    M.Datepicker.init(bell,options);
 
     // const update = document.getElementsByClassName('.note-details');
     // M.Sidenav.init(forms,{edge: 'left', draggable: 'true'});

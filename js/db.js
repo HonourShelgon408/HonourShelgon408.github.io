@@ -75,6 +75,7 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
     const tagName = e.target.tagName;
     const isDeleteButton = e.target.classList.contains('delete-icon');
     const isDetails = e.target.classList.contains('note-title') || e.target.classList.contains('note-body');
+    const isBellIcon = e.target.classList.contains('bell-icon');
     //c onsole.log(isDeleteButton + ":isDeleteButton, " + tagName + ":tagName "); what part of the "note" has been clicked on
     if(tagName === 'I' && tagName != null && tagName != undefined && isDeleteButton === true){
         const id = e.target.getAttribute('data-id');
@@ -92,6 +93,9 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
             updateForm.updateNoteTitle.value = noteToUpdate.title;
             updateForm.updateNoteBody.value = noteToUpdate.body;
         });   
+    }
+    if(isBellIcon){
+        
     }
 });
 
