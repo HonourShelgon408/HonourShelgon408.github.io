@@ -8,5 +8,3 @@ const firebase_global = {
             appId: "1:418459451060:web:adebb639b89724c36821e1",
             measurementId: "G-1EC78QP9Q1"
         };
-
-export default firebase_global;
