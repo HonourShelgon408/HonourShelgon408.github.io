@@ -42,13 +42,12 @@ const fontSize = 12;
 const letters = (content.scrollWidth / fontSize) - 5;
 const title = data.title.substring(0,letters);
 const body = data.body.substring(0,letters);
-const identifier = id;
 
 //TODO -- CHANGE NOTIFICATION ICON DEPENDENT ON RELATED RECORDS FOR REMINDERS
 //notifications -> notifications_active -> notifications_none
 
 html = `
-<div class="card-panel row note hoverable" data-id='${identifier}'>
+<div class="card-panel row note hoverable" data-id='${id}'>
     <div class="note-move">
         <i class="material-icons move-icon">toc</i>
     </div>
@@ -56,17 +55,17 @@ html = `
 `;
 
 if(title.length >= 1){
-    html += `<div class="note-title sidenav-trigger trunc" data-id='${identifier}' data-target="update-form">${title}</div>`;
+    html += `<div class="note-title sidenav-trigger trunc" data-id='${id}' data-target="update-form">${title}</div>`;
 }
 if(body.length >= 1){
-    html += `<div class="note-body sidenav-trigger trunc" data-id='${identifier}' data-target="update-form">${body}</div>`;
+    html += `<div class="note-body sidenav-trigger trunc" data-id='${id}' data-target="update-form">${body}</div>`;
 }
 html += `</div> <!-- closing note-details class div -->`;
 const alarms = false;
 if(alarms == false){
     html += 
     `<div class="note-options">
-        <i class="material-icons bell-icon datepicker data-id="${id}">notifications_none</i>
+        <p><i class="material-icons data-id="${id}">notifications_none</i><input type="text" class="reminderDatePicker datepicker"></p>
     </div>`;
 }
 
@@ -76,12 +75,11 @@ if(alarms == false){
 //         <i class="material-icons bell-icon data-id="${id}">notifications_active</i>
 //     </div> `;
 // }
-html += `
-    <div class="note-delete">
+html += 
+    `<div class="note-delete">
         <i class="material-icons delete-icon" data-id="${id}">delete_outline</i>
     </div>
-</div>
-`;
+</div>`;
 
 content.innerHTML += html;
 };
@@ -116,14 +114,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const forms = document.querySelectorAll('.side-form');
     M.Sidenav.init(forms,{edge: 'left', draggable: 'true'});
     // bell-icons
-    const bell = document.querySelectorAll('.bell-icon');
-    const bellOptions = {
+    const reminderDatePicker = document.querySelectorAll('.reminderDatePicker');
+    const reminderOptions = {
         autoClose: true,
         firstDay: 1,
         yearRange: 1,
         showDaysInNextAndPreviousMonths: true
     }
-    M.Datepicker.init(bell,bellOptions);
+    M.Datepicker.init(reminderDatePicker,reminderOptions);
     
     $('.tooltipped').tooltip();
     /*adds active class to an element when someone is typing in it - moves the placeholder to above the typing area*/

@@ -60,13 +60,14 @@ form.addEventListener('submit', evt => {
 });
 
 /** update note */
-// const updateForm = document.querySelector('#updateForm');
-// updateForm.addEventListener('submit', evt => {
-//     evt.preventDefault(); /**using the ID from the update form (hidden=true) to update the database with custom function */
-//     updateRecord(updateForm.updateNoteId.value, updateForm.updateNoteTitle.value, updateForm.updateNoteBody.value);
-//     updateForm.updateNoteTitle.value = '';                                                                           
-//     updateForm.updateNoteBody.value = '';
-// });
+const updateForm = document.querySelector('#updateForm');
+updateForm.addEventListener('submit', evt => {
+    evt.preventDefault(); /**using the ID from the update form (hidden=true) to update the database with custom function */
+    console.log(updateForm.updateNoteId.value, updateForm.updateNoteTitle.value, updateForm.updateNoteBody.value);
+    updateRecord(updateForm.updateNoteId.value, updateForm.updateNoteTitle.value, updateForm.updateNoteBody.value);
+    updateForm.updateNoteTitle.value = '';                                                                           
+    updateForm.updateNoteBody.value = '';
+});
 
 /**delete note */
 const notesContainer = document.querySelector('.notes');
@@ -81,7 +82,6 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
         const id = e.target.getAttribute('data-id');
         //c onsole.log("id: " + id);
         db.collection('notes').doc(id).delete();
-        
     }
     if(isDetails){
         console.log("title or body clicked");
@@ -94,6 +94,7 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
             updateForm.updateNoteTitle.value = noteToUpdate.title;
             updateForm.updateNoteBody.value = noteToUpdate.body;
         });   
+        populate;
     }
     if(isBellIcon){
         
