@@ -148,6 +148,8 @@ $(document).ready(function(){
         $("#shortContent").hide(function(){$("#totalContent").addClass("hidden");});
     });
 
-
+    function subscribeToNotifications(){
+        
+    }
 
 });
