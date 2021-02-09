@@ -117,7 +117,13 @@ document.addEventListener('DOMContentLoaded', function() {
     M.Sidenav.init(forms,{edge: 'left', draggable: 'true'});
     // bell-icons
     const bell = document.querySelectorAll('.bell-icon');
-    M.Datepicker.init(bell,options);
+    const bellOptions = {
+        autoClose: true,
+        firstDay: 1,
+        yearRange: 1,
+        showDaysInNextAndPreviousMonths: true
+    }
+    M.Datepicker.init(bell,bellOptions);
     
     $('.tooltipped').tooltip();
     /*adds active class to an element when someone is typing in it - moves the placeholder to above the typing area*/
