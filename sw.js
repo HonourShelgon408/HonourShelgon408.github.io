@@ -26,6 +26,7 @@ var filesToCache = [ /* array of filenames referenced by relativity */
    */
 ];
 
+console.log(config);
 
 let deferredPrompt;
 self.addEventListener('beforeinstallprompt', (e) => {
