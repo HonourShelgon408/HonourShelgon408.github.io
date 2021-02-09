@@ -61,7 +61,7 @@
             return firebaseMessaging.getToken();
         })
         .then(function(token){
-            db.ref('/tokens').push({
+            db.collections('tokens').push({
                 token: token,
                 noteId: this.data-id ? this.data-id : "null"
             })
