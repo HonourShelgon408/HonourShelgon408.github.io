@@ -65,7 +65,7 @@ function addNote(data, id) {
     if(alarms == false){
         html += 
         `<div class="note-options">
-            <i class="material-icons data-id="${id}">notifications_none</i><input type="text" class="reminderDatePicker datepicker">
+            <input type="text" class="datepicker">
         </div>`;
 
         // html += 
