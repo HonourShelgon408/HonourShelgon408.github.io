@@ -113,12 +113,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const forms = document.querySelectorAll('.side-form');
     M.Sidenav.init(forms,{edge: 'left', draggable: 'true'});
     // bell-icons
-    const reminderDatePicker = document.querySelectorAll('.reminderDatePicker');
+    const reminderDatePicker = document.querySelectorAll('.datepicker');
     const reminderOptions = {
-        autoClose: true,
-        firstDay: 1,
-        yearRange: 1,
-        showDaysInNextAndPreviousMonths: true
+        // autoClose: true,
+        // firstDay: 1,
+        // yearRange: 1,
+        // showDaysInNextAndPreviousMonths: true
     }
     M.Datepicker.init(reminderDatePicker,reminderOptions);
     
