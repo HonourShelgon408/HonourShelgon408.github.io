@@ -77,17 +77,19 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
     const isDeleteButton = e.target.classList.contains('delete-icon');
     const isDetails = e.target.classList.contains('note-title') || e.target.classList.contains('note-body');
     const isBellIcon = e.target.classList.contains('bell-icon');
-    //c onsole.log(isDeleteButton + ":isDeleteButton, " + tagName + ":tagName "); what part of the "note" has been clicked on
+   
     if(tagName === 'I' && tagName != null && tagName != undefined && isDeleteButton === true){
         const id = e.target.getAttribute('data-id');
         //c onsole.log("id: " + id);
         db.collection('notes').doc(id).delete();
     }
     if(isDetails){
-        console.log("title or body clicked");
         const id = e.target.getAttribute('data-id');
-        getNoteFromFirebase(id);
-
+        const data = getNoteFromFirebase(id);
+        const updateForm = document.querySelector('#updateForm');
+        updateForm.updateNoteId.value = id;
+        updateForm.updateNoteTitle.value = data.title;
+        updateForm.updateNoteBody.value = data.body;
     }
     if(isBellIcon){
         
@@ -110,11 +112,11 @@ async function getNoteFromFirebase(id){
     var myDoc = await db.collection('notes').doc(id);
     myDoc.get().then(function(doc){
         if(doc.exists){
-            console.log("Data: ", doc.data());
+            console.log("Note from firebase: ", doc.data());
             data = doc.data();
         }
         else {
-            console.log("Data: no data found");
+            console.log("No note from firebase found");
             data = "no data";
         }
     }).catch(function(error){
