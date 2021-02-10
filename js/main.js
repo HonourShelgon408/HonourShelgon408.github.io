@@ -67,6 +67,16 @@ if(alarms == false){
     `<div class="note-options">
         <i class="material-icons data-id="${id}">notifications_none</i><input type="text" class="reminderDatePicker datepicker">
     </div>`;
+
+    // html += 
+    // `
+    // <div class="input-field inline">
+    //     <input id="email_inline" type="email" class="validate">
+    //     <label for="email_inline">Email</label>
+    //     <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+    // </div>
+    // `;
+
 }
 
 // if(alarms == true){

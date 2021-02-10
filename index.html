@@ -57,27 +57,27 @@
         ===================*/
 
         const FIREBASE_MESSAGING = firebase.messaging();
-        FIREBASE_MESSAGING.onTokenRefresh(handleTokenRefresh());
+        
         FIREBASE_MESSAGING.onMessage(function(payload){
                 console.log('onMessage: ', payload)
                 console.log(payload.notification.title, payload.notification.body);
             });
         FIREBASE_MESSAGING.requestPermission()
         .then(()=>{
-            console.log("Have permission.");
+            console.log("Have permission from firebase.");
             return FIREBASE_MESSAGING.getToken();
         })
         .then((token) => {
-            db.collections('tokens').push({
-                token: token,
-                noteId: this.data-id ? this.data-id : "null"
+            db.collections('tokens').set({
+                tokenNum: token
             })
             // updateTokensTable();
         })
         .catch(function(error){
             console.log("User didn't grand permission: ", error)
         });
-
+        
+        FIREBASE_MESSAGING.onTokenRefresh(handleTokenRefresh());
         function handleTokenRefresh(){
             return FIREBASE_MESSAGING.getToken()
             .then(function(token){
