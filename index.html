@@ -66,7 +66,7 @@
             console.log("Have permission.");
             return firebaseMessaging.getToken();
         })
-        .then(function(token){
+        .then((token) => {
             db.collections('tokens').push({
                 token: token,
                 noteId: this.data-id ? this.data-id : "null"
@@ -85,9 +85,6 @@
         }
 
        
-
-
-
     //   console.log(firebase);
     //   console.log(db);
 
