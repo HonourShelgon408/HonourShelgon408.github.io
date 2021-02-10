@@ -29,24 +29,26 @@
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-messaging.js"></script>
+    <script src="firebase-messaging-sw.js"></script>
 
     <!-- <script src="./firebase-init.js"></script> -->
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-analytics.js"></script>
+
     <script>
         
         /*==================
         
-        INITIALIZE FIREBASE FIRESTORE
+        INITIALIZE FIREBASE
         
         ===================*/
         
         const firebaseConfig = firebase_global;
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
-        const db = firebase.firestore();
+        const db = firebase.firestore(); //...dont change this variable
         
         /*==================
         
@@ -54,10 +56,13 @@
         
         ===================*/
 
-        const firebaseMessaging = firebase.messaging();
-        firebaseMessaging.onTokenRefresh(handleTokenRefresh);
+        const FIREBASE_MESSAGING = firebase.messaging();
+        receiveMessage();
+        firebaseMessaging.onTokenRefresh(handleTokenRefresh());
+        
         firebaseMessaging.requestPermission()
         .then(()=>{
+            requestPermission();
             console.log("Have permission.");
             return firebaseMessaging.getToken();
         })
@@ -72,34 +77,16 @@
             console.log("User didn't grand permission: ", error)
         });
 
-        firebaseMessaging.onMessage(function(payload){
-            console.log('onMessage: ', payload)
-            console.log(payload.notification.title, payload.notification.body);
-        });
-
-        firebaseMessaging.onTokenRefresh(function(){
-            firebaseMessaging.getToken()
-                .then(function(newToken){
-                    console.log("New token: ", newToken);
-                })
-                .catch(function(error){
-                    console.log(error);
-                });
-        });
-
-        function handleTokenRefresh(){
-            return firebaseMessaging.getToken()
-            .then(function(token){
-                db.collection('tokens').push({
-                    token: token,
-                    noteId: this.data-id ? this.data-id : "null"
-                })
-            // updateTokensTable();
-            })
-            .catch(function(error){
-                console.lsog("User didn't grand permission: ", error)
+        function receiveMessage(){
+            firebaseMessaging.onMessage(function(payload){
+                console.log('onMessage: ', payload)
+                console.log(payload.notification.title, payload.notification.body);
             });
         }
+
+       
+
+
 
     //   console.log(firebase);
     //   console.log(db);

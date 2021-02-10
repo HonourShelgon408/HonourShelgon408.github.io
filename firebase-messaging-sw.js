@@ -6,6 +6,7 @@ importScripts('firebase-config-details.js');
 firebase.initializeApp(firebase_global);
 
 const messaging = firebase.messaging();
+
 messaging.getToken({vapidKey: "BPWf1tbECVCHpl0gfxdxJJqWg3m5A3KkcVrjxqSFu_RfmuikB4x1D0JSbktt82UU1ipH3lYGVyo6VdO6PObe26o"})
     .then((currentToken) => {
         if(currentToken){
@@ -28,5 +29,17 @@ messaging.setBackgroundMessageHandler(function(payload){
     };
     return self.registration.showNotifications(title, options);
 });
-
-
+  
+function handleTokenRefresh(){
+    return firebaseMessaging.getToken()
+    .then(function(token){
+        db.collection('tokens').push({
+            token: token,
+            noteId: this.data-id ? this.data-id : "null"
+        })
+    // updateTokensTable();
+    })
+    .catch(function(error){
+        console.log("User didn't grand permission: ", error)
+    });
+}

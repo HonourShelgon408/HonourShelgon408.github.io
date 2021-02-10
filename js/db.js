@@ -86,20 +86,27 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
     if(isDetails){
         console.log("title or body clicked");
         const id = e.target.getAttribute('data-id');
-        let populate = function(){
-            noteToUpdate = getNoteFromFirebase(id);
-        }.then(()=>{
-            console.log(noteToUpdate);
-            const updateForm = document.querySelector('#updateForm');
-            updateForm.updateNoteTitle.value = noteToUpdate.title;
-            updateForm.updateNoteBody.value = noteToUpdate.body;
-        });   
-        populate;
+        getNoteFromFirebase(id);
+
     }
     if(isBellIcon){
         
     }
 });
+
+        // let populate = function(){
+        //     noteToUpdate = getNoteFromFirebase(id);
+        // }.then(()=>{
+        //     console.log(noteToUpdate);
+        //     const updateForm = document.querySelector('#updateForm');
+        //     updateForm.updateNoteTitle.value = noteToUpdate.title;
+        //     updateForm.updateNoteBody.value = noteToUpdate.body;
+        // });   
+        // populate;
+
+function populateUpdateForm(){
+    
+}
 
 async function getNoteFromFirebase(id){
     let data = "";
