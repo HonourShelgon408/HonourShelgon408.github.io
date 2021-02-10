@@ -69,7 +69,9 @@
         })
         .then((token) => {
             db.collection('tokens').add({
-                tokenNum: token
+                tokenNum: token,
+                // datetime: moment().format('MMMM Do YYYY, h:mm:ss')
+                datetime: now()
             })
             // updateTokensTable();
         })
@@ -82,7 +84,8 @@
             return FIREBASE_MESSAGING.getToken()
             .then(function(token){
                 db.collection('tokens').add({
-                    tokenNum: token
+                    tokenNum: token,
+                    datetime: now()
                 })
             // updateTokensTable();
             })
@@ -124,7 +127,7 @@
 
     <!-- right-sidenav -->
     <ul id="side-menu" class="sidenav side-menu z-depth-5">
-        <li><a class="subheader">Super Scheduler</a></li>
+        <li><a id="superSchedulerSubHeader" class="subheader">Super Scheduler</a></li>
         <li><a href="/error.html" id="sign_in" class="waves-effect">Sign in</a></li>
         <li><a href="/error.html" class="waves-effect">toAdd - About</a></li> <!-- have about the website - then website goals - then feasibility report pdf inserted, maybe a downlaod link? -->
         <li><a href="/error.html" class="waves-effect">toAdd - Settings</a></li>
@@ -275,7 +278,7 @@
         <p id="notificationBody" class="notificationBoxfield"></p>
     </div>
 
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script? type="text/javascript" src="js/materialize.min.js"></script?>
     <script defer src="js/swReg.js"></script> <!-- registers and handles service worker through sw.js -->
     <script defer src="js/main.js"></script> <!-- javascript for the page -->
     <script defer src="js/db.js"></script> <!-- database for the page -->

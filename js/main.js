@@ -152,6 +152,8 @@ $(document).ready(function(){
         PRACTICALLY LEGACY CODE FOR THE OLD INDEX.HTML
         
         ===================*/
+
+    $('#superSchedulerSubHeader').innerHTML += moment().format('MMMM Do YYYY, h:mm:ss');
  
     $("#totalContent").hide();
     $("#shortContent").show();
