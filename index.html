@@ -64,7 +64,6 @@
             });
         FIREBASE_MESSAGING.requestPermission()
         .then(()=>{
-            requestPermission();
             console.log("Have permission.");
             return FIREBASE_MESSAGING.getToken();
         })
