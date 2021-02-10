@@ -5,9 +5,9 @@ importScripts('firebase-config-details.js');
 
 firebase.initializeApp(firebase_global);
 
-const messaging = firebase.messaging();
+const FIREBASE_MESSAGING = firebase.messaging();
 
-messaging.getToken({vapidKey: "BPWf1tbECVCHpl0gfxdxJJqWg3m5A3KkcVrjxqSFu_RfmuikB4x1D0JSbktt82UU1ipH3lYGVyo6VdO6PObe26o"})
+FIREBASE_MESSAGING.getToken({vapidKey: "BPWf1tbECVCHpl0gfxdxJJqWg3m5A3KkcVrjxqSFu_RfmuikB4x1D0JSbktt82UU1ipH3lYGVyo6VdO6PObe26o"})
     .then((currentToken) => {
         if(currentToken){
 // Send the token to your server and update the UI if necessary
@@ -20,7 +20,7 @@ messaging.getToken({vapidKey: "BPWf1tbECVCHpl0gfxdxJJqWg3m5A3KkcVrjxqSFu_RfmuikB
         // ...
     });
 
-messaging.setBackgroundMessageHandler((payload) => {
+FIREBASE_MESSAGING.setBackgroundMessageHandler((payload) => {
     console.log("Firebase receiving background message", payload);
     const title = "hello world";
     const options = {
@@ -30,16 +30,3 @@ messaging.setBackgroundMessageHandler((payload) => {
     return self.registration.showNotifications(title, options);
 });
   
-function handleTokenRefresh(){
-    return firebaseMessaging.getToken()
-    .then(function(token){
-        db.collection('tokens').push({
-            token: token,
-            noteId: this.data-id ? this.data-id : "null"
-        })
-    // updateTokensTable();
-    })
-    .catch(function(error){
-        console.log("User didn't grand permission: ", error)
-    });
-}
