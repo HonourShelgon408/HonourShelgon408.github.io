@@ -1,3 +1,5 @@
+const moment = require("moment");
+const flatpickr = require("flatpickr");
 
 window.mobileCheck = function() { //returns "true" if mobile device
     let check = false;
@@ -122,15 +124,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // add note form
     const forms = document.querySelectorAll('.side-form');
     M.Sidenav.init(forms,{edge: 'left', draggable: 'true'});
-    // bell-icons
-    const reminderDatePicker = document.querySelectorAll('.datepicker');
-    const reminderOptions = {
-        // autoClose: true,
-        // firstDay: 1,
-        // yearRange: 1,
-        // showDaysInNextAndPreviousMonths: true
-    }
-    let instances = M.Datepicker.init(reminderDatePicker,reminderOptions);
     
     $('.tooltipped').tooltip();
     /*adds active class to an element when someone is typing in it - moves the placeholder to above the typing area*/
@@ -147,8 +140,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 $(document).ready(function(){
 
-
-    $('.datepicker').datepicker();
+    const flatpickr_config = {
+        enableTime: true,
+        dateFormat: "Y-m-d H:i"
+    }
+    flatpickr("#reminderInput", flatpickr_config)
+    
     //$('#superSchedulerSubHeader').innerHTML += moment().format('MMMM Do YYYY, h:mm:ss');
  
     $("#totalContent").hide();
@@ -156,6 +153,7 @@ $(document).ready(function(){
     $("div#nav-tail").hide();
     $("div#nav-tail").addClass("hidden");
 
+    console.log(moment.format("MMMM Do YYYY, h:mm:ss a"));
 
     // $("div#nav").mouseleave(function(){
     //     $("div#nav-tail").hide("fast");
