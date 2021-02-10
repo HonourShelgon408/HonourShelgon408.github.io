@@ -104,9 +104,6 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
         // });   
         // populate;
 
-function populateUpdateForm(){
-    
-}
 
 async function getNoteFromFirebase(id){
     let data = "";

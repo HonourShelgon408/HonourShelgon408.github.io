@@ -1,5 +1,7 @@
-const moment = require("moment");
-const flatpickr = require("flatpickr");
+// const moment = require("moment");
+// const flatpickr = require("flatpickr");
+import {moment} from "moment";
+import {flatpickr} from "flatpickr";
 
 window.mobileCheck = function() { //returns "true" if mobile device
     let check = false;
