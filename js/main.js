@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // yearRange: 1,
         // showDaysInNextAndPreviousMonths: true
     }
-    M.Datepicker.init(reminderDatePicker,reminderOptions);
+    let instances = M.Datepicker.init(reminderDatePicker,reminderOptions);
     
     $('.tooltipped').tooltip();
     /*adds active class to an element when someone is typing in it - moves the placeholder to above the typing area*/
@@ -147,13 +147,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 $(document).ready(function(){
 
-        /*==================
-        
-        PRACTICALLY LEGACY CODE FOR THE OLD INDEX.HTML
-        
-        ===================*/
 
-    $('#superSchedulerSubHeader').innerHTML += moment().format('MMMM Do YYYY, h:mm:ss');
+    $('.datepicker').datepicker();
+    //$('#superSchedulerSubHeader').innerHTML += moment().format('MMMM Do YYYY, h:mm:ss');
  
     $("#totalContent").hide();
     $("#shortContent").show();
