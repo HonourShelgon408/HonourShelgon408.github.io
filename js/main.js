@@ -1,3 +1,4 @@
+import moment from 'moment'
 
 window.mobileCheck = function() { //returns "true" if mobile device
     let check = false;
