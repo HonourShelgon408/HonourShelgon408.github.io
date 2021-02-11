@@ -67,10 +67,10 @@ function addNote(data, id) {
     html += `</div> <!-- closing note-details class div -->`;
     const alarms = false;
     if(alarms == false){
-        // html += 
-        // `<div class="note-options">
-        //     <i class="material-icons">notification_none</i>
-        // </div>`;
+        html += 
+        `<div class="note-options">
+            <i class="material-icons">notifications_none</i>
+        </div>`;
 
         // html += 
         // `
