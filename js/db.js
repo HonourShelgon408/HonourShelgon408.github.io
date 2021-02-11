@@ -16,7 +16,7 @@ db.enablePersistence().catch(function(error){
 //real-time listener
 //collection gets reference to a firebase database
 //snapshot acts as a listener to return the current state of the database
-db.collection('notes').onSnapshot(function(snapshot){
+db.collection('notes').orderBy("title").onSnapshot(function(snapshot){
     //console.log(snapshot.data());
     //c onsole.log("SNAPSHOT: " , snapshot.docChanges());
     //docchanges returns all alterations since last snapshot
