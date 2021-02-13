@@ -100,6 +100,11 @@ function getNoteFromFirebase(id, updateFormCallback){
         if(doc.exists){
             console.log("doc.exists");
             data = doc.data();
+
+            let newArray = {id: id, stats: data}
+            console.log(newArray);
+            console.log(data);
+            updateFormCallback(data);
         }
         else {
             console.log("doc doesnt exist");
@@ -108,10 +113,6 @@ function getNoteFromFirebase(id, updateFormCallback){
     }).catch(function(error){
         console.log("Error getting document: ", error);
     });
-    let newArray = {id: id, stats: data}
-    console.log(newArray);
-    console.log(data);
-    updateFormCallback(data);
 }
 
 function populateUpdateForm(data){
