@@ -111,17 +111,17 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
         // populate;
 
 
-async function getNoteFromFirebase(id){
+function getNoteFromFirebase(id){
     let data = "";
-    var myDoc = await db.collection('notes').doc(id);
+    var myDoc = db.collection('notes').doc(id);
     myDoc.get().then(function(doc){
         if(doc.exists){
-            console.log("Note from firebase: ", doc.data());
+            //console.log("Note from firebase: ", doc.data());
             data = doc.data();
         }
         else {
-            console.log("No note from firebase found");
-            data = "no data";
+            //console.log("No note from firebase found");
+            data = [];
         }
     }).catch(function(error){
         console.log("Error getting document: ", error);

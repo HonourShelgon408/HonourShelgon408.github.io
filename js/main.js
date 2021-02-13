@@ -155,8 +155,6 @@ $(document).ready(function(){
     $("div#nav-tail").hide();
     $("div#nav-tail").addClass("hidden");
 
-    console.log(moment.format("MMMM Do YYYY, h:mm:ss a"));
-
     // $("div#nav").mouseleave(function(){
     //     $("div#nav-tail").hide("fast");
     // });
