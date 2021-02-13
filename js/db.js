@@ -86,19 +86,44 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
     }
     if(isDetails){
         const id = e.target.getAttribute('data-id');
-        const data = getNoteFromFirebase(id, () => {
-            console.log(data);
-            const updateForm = document.querySelector('#updateForm');
-            updateForm.updateNoteId.value = id;
-            updateForm.updateNoteTitle.value = data.title;
-            updateForm.updateNoteBody.value = data.body;
-        });
-        
+        getNoteFromFirebase(id, populateUpdateForm);
     }
     if(isBellIcon){
         
     }
 });
+
+function getNoteFromFirebase(id, updateFormCallback){
+    let data = "";
+    var myDoc = db.collection('notes').doc(id);
+    myDoc.get().then(function(doc){
+        if(doc.exists){
+            data = doc.data();
+        }
+        else {
+            data = [];
+        }
+    }).catch(function(error){
+        console.log("Error getting document: ", error);
+    });
+    updateFormCallback(data);
+}
+
+function populateUpdateForm(data){
+    console.log(data);
+    const updateForm = document.querySelector('#updateForm');
+    updateForm.updateNoteId.value = id;
+    updateForm.updateNoteTitle.value = data.title;
+    updateForm.updateNoteBody.value = data.body;
+}
+
+function updateRecord(id, upTitle, upBody){
+    db.collection('notes').doc(id).update({
+        title: upTitle,
+        body: upBody
+    })
+};
+
 
         // let populate = function(){
         //     noteToUpdate = getNoteFromFirebase(id);
@@ -109,30 +134,3 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
         //     updateForm.updateNoteBody.value = noteToUpdate.body;
         // });   
         // populate;
-
-
-function getNoteFromFirebase(id){
-    let data = "";
-    var myDoc = db.collection('notes').doc(id);
-    myDoc.get().then(function(doc){
-        if(doc.exists){
-            //console.log("Note from firebase: ", doc.data());
-            data = doc.data();
-        }
-        else {
-            //console.log("No note from firebase found");
-            data = [];
-        }
-    }).catch(function(error){
-        console.log("Error getting document: ", error);
-    });
-    return data;
-}
-
-function updateRecord(id, upTitle, upBody){
-    db.collection('notes').doc(id).update({
-        title: upTitle,
-        body: upBody
-    })
-};
-
