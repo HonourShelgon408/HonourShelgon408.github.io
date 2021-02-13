@@ -98,9 +98,11 @@ function getNoteFromFirebase(id, updateFormCallback){
     var myDoc = db.collection('notes').doc(id);
     myDoc.get().then(function(doc){
         if(doc.exists){
+            console.log("doc.exists");
             data = doc.data();
         }
         else {
+            console.log("doc doesnt exist");
             data = [];
         }
     }).catch(function(error){
