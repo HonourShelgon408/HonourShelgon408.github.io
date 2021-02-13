@@ -86,12 +86,14 @@ notesContainer.addEventListener('click', e => { /**listen for a click anywhere i
     }
     if(isDetails){
         const id = e.target.getAttribute('data-id');
-        const data = getNoteFromFirebase(id);
-        console.log(data);
-        const updateForm = document.querySelector('#updateForm');
-        updateForm.updateNoteId.value = id;
-        updateForm.updateNoteTitle.value = data.title;
-        updateForm.updateNoteBody.value = data.body;
+        const data = getNoteFromFirebase(id, () => {
+            console.log(data);
+            const updateForm = document.querySelector('#updateForm');
+            updateForm.updateNoteId.value = id;
+            updateForm.updateNoteTitle.value = data.title;
+            updateForm.updateNoteBody.value = data.body;
+        });
+        
     }
     if(isBellIcon){
         
