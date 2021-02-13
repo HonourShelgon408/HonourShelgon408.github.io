@@ -108,7 +108,8 @@ function getNoteFromFirebase(id, updateFormCallback){
     }).catch(function(error){
         console.log("Error getting document: ", error);
     });
-    data.push({id: id});
+    let newArray = {id: id, stats: data}
+    console.log(newArray);
     console.log(data);
     updateFormCallback(data);
 }
