@@ -104,7 +104,7 @@ function getNoteFromFirebase(id, updateFormCallback){
             let newArray = {id: id, stats: data}
             console.log(newArray);
             console.log(data);
-            updateFormCallback(data);
+            updateFormCallback(newArray);
         }
         else {
             console.log("doc doesnt exist");
@@ -118,9 +118,9 @@ function getNoteFromFirebase(id, updateFormCallback){
 function populateUpdateForm(data){
     console.log(data);
     const updateForm = document.querySelector('#updateForm');
-    updateForm.updateNoteId.value = id;
-    updateForm.updateNoteTitle.value = data.title;
-    updateForm.updateNoteBody.value = data.body;
+    updateForm.updateNoteId.value = data.id;
+    updateForm.updateNoteTitle.value = data.stats.title;
+    updateForm.updateNoteBody.value = data.stats.body;
 }
 
 function updateRecord(id, upTitle, upBody){
