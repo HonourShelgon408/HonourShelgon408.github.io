@@ -132,6 +132,19 @@ document.addEventListener('DOMContentLoaded', function() {
     M.updateTextFields(); 
 });
 
+        /*==================
+        
+        FORM SUBMISSION WITH ENTER BUTTON
+        
+        ===================*/
+
+document.getElementsByClassName('input-form').addEventListener('keypress', (key) => {
+    if(key.keycode == 13){
+        e.preventDefault();
+    }
+});
+
+
 
         /*==================
         
@@ -140,13 +153,19 @@ document.addEventListener('DOMContentLoaded', function() {
         ===================*/
 
 
+
+
+
+
+
+
 $(document).ready(function(){
 
     const flatpickr_config = {
         enableTime: true,
         dateFormat: "Y-m-d H:i"
     }
-    flatpickr("#reminderInput", flatpickr_config)
+    flatpickr("#updateNoteReminder", flatpickr_config)
     
     //$('#superSchedulerSubHeader').innerHTML += moment().format('MMMM Do YYYY, h:mm:ss');
  
@@ -185,7 +204,6 @@ $(document).ready(function(){
             $("div#nav-tail").addClass('hidden');
         }
     }
-    
     
 
 });

@@ -180,7 +180,7 @@
 
     <!-- add note side nav -->
     <div id="side-form" class="sidenav side-form z-depth-5 col s12 l4">
-        <form id="addForm" class="add-note container section">
+        <form id="addForm" class="add-note container section input-form">
             <!-- ID'S IN THIS FORM REFERENCED IN DB.JS TO GET DATA FROM FORM-->
             <h6>Add a New Note</h6>
             <div class="divider"></div>
@@ -220,7 +220,7 @@
 
     <!-- update note side nav -->
     <div id="update-form" class="sidenav side-form z-depth-5 col s12 l4">
-        <form id="updateForm" class="update-note container section">
+        <form id="updateForm" class="update-note container section input-form">
             <!-- ID'S IN THIS FORM REFERENCED IN DB.JS TO GET DATA FROM FORM-->
             <h6>Update Note</h6>
             <div class="divider"></div>
@@ -243,15 +243,15 @@
                 </textarea>
                 <label class="active" for="updateNoteBody">Details</label>
             </div>
-            <div id="reminderInput">
-                
+            <div id="updateNoteReminder">
+                <!-- populated by flatpickr in main.js -->
             </div>
             <div class="input-field input-wallpaper" hidden=true>
                 <input id="updateWallpaper" type="text" value="white">
-                <label for="updateWallpaper"></label>
+                <label for="updateNoteWallpaper"></label>
             </div>
             <div class="input-field input-rank" hidden=true>
-                <input id="updateRank" type="text" value="parent">
+                <input id="updateNoteRank" type="text" value="parent">
                 <label for="updateRank"></label>
             </div>
 

@@ -27,7 +27,6 @@ db.collection('notes').orderBy("title").onSnapshot(function(snapshot){
         if(dbChange === 'added'){
             console.log(dbChange, " " , change.doc.id);
             addNote(change.doc.data(),change.doc.id);
-
         }
         // else if(dbChange === 'modified'){
         //     console.log(dbChange, " " , change.doc.id, change.doc.data());
@@ -65,9 +64,13 @@ const updateForm = document.querySelector('#updateForm');
 updateForm.addEventListener('submit', evt => {
     evt.preventDefault(); /**using the ID from the update form (hidden=true) to update the database with custom function */
     console.log(updateForm.updateNoteId.value, updateForm.updateNoteTitle.value, updateForm.updateNoteBody.value);
-    updateRecord(updateForm.updateNoteId.value, updateForm.updateNoteTitle.value, updateForm.updateNoteBody.value);
+    updateRecord(updateForm);
+    updateForm.updateNoteId.value = '';
     updateForm.updateNoteTitle.value = '';                                                                           
     updateForm.updateNoteBody.value = '';
+    updateForm.updateReminder.value = '';
+    updateForm.updateNoteWallpaper.value = '';
+    updateForm.updateNoteRank.value = '';
 });
 
 /**delete note */
@@ -123,20 +126,18 @@ function populateUpdateForm(data){
     updateForm.updateNoteBody.value = data.stats.body;
 }
 
-function updateRecord(id, upTitle, upBody){
-    db.collection('notes').doc(id).update({
-        title: upTitle,
-        body: upBody
+function updateRecord(updateForm){
+    const id = updateForm.updateNoteId.value;
+    const upTitle = updateForm.updateNoteId.value;
+    const upBody = updateForm.updateNoteId.value;
+    const upWallpaper = updateForm.updateNoteId.value;
+    const upRank = updateForm.updateNoteId.value;
+    const upReminder = updateForm.updateNoteId.value;
+    db.collection('notes').doc(updateForm.updateNoteId.value).update({
+        title: updateForm.updateNoteTitle.value,
+        body: updateForm.updateNoteBody.value,
+        wallpaper: updateNoteWallpaper.CHANGETHIS.valuepaper,
+        rank: updateForm.updateNoteRank.value,
+        reminder: updateForm.updateNoteReminder.value
     })
 };
-
-
-        // let populate = function(){
-        //     noteToUpdate = getNoteFromFirebase(id);
-        // }.then(()=>{
-        //     console.log(noteToUpdate);
-        //     const updateForm = document.querySelector('#updateForm');
-        //     updateForm.updateNoteTitle.value = noteToUpdate.title;
-        //     updateForm.updateNoteBody.value = noteToUpdate.body;
-        // });   
-        // populate;
