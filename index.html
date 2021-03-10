@@ -59,44 +59,50 @@
         
         ===================*/
 
-        const FIREBASE_MESSAGING = firebase.messaging();
+        // const FIREBASE_MESSAGING = firebase.messaging();
         
-        FIREBASE_MESSAGING.requestPermission()
-        .then(()=>{
-            console.log("Have permission from firebase.");
-            return FIREBASE_MESSAGING.getToken();
-        })
-        .then((token) => {
-            db.collection('tokens').add({
-                tokenNum: token,
-                date: date().now()
-                // datetime: moment().format('MMMM Do YYYY, h:mm:ss')
-            });
-            console.log(token);
-            // updateTokensTable();
-        })
-        .catch(function(error){
-            console.log("User didn't grand permission: ", error)
-        });
+        // FIREBASE_MESSAGING.requestPermission()
+        // .then(()=>{
+        //     console.log("Have permission from firebase.");
+        //     return FIREBASE_MESSAGING.getToken();
+        // })
+        // .then((token) => {
+        //     let updateTokens = async ()=>{
+        //         let tokenIfAlreadyExists = await db.collection('tokens').where("tokenNum" , "==" , token);
+        //         tokenIfAlreadyExists.then(console.log("token check", tokenIfAlreadyExists));
+        //         if(tokenIfAlreadyExists != null){
+        //             db.collection('tokens').add({
+        //                 tokenNum: token,
+        //                 date: date().now()
+        //                 // datetime: moment().format('MMMM Do YYYY, h:mm:ss')
+        //             });
+        //             console.log(token);
+        //         }
+        //         console.log("token not async", tokenIfAlreadyExists)
+        //     }
+        // })
+        // .catch(function(error){
+        //     console.log("User didn't grand permission: ", error)
+        // });
 
-        FIREBASE_MESSAGING.onMessage(function(payload){
-            console.log('onMessage: ', payload)
-            console.log(payload.notification.title, payload.notification.body);
-        });
+        // FIREBASE_MESSAGING.onMessage(function(payload){
+        //     console.log('onMessage: ', payload)
+        //     console.log(payload.notification.title, payload.notification.body);
+        // });
         
-        FIREBASE_MESSAGING.onTokenRefresh(handleTokenRefresh());
-        function handleTokenRefresh(){
-            return FIREBASE_MESSAGING.getToken()
-            .then(function(token){
-                db.collection('tokens').add({
-                    tokenNum: token
-                })
-            // updateTokensTable();
-            })
-            .catch(function(error){
-                console.log("User didn't grand permission: ", error)
-            });
-        }
+        // FIREBASE_MESSAGING.onTokenRefresh(handleTokenRefresh());
+        // function handleTokenRefresh(){
+        //     return FIREBASE_MESSAGING.getToken()
+        //     .then(function(token){
+        //         db.collection('tokens').add({
+        //             tokenNum: token
+        //         })
+        //     // updateTokensTable();
+        //     })
+        //     .catch(function(error){
+        //         console.log("User didn't grand permission: ", error)
+        //     });
+        // }
        
     //   console.log(firebase);
     //   console.log(db);
