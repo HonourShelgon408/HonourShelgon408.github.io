@@ -68,10 +68,9 @@ updateForm.addEventListener('submit', evt => {
     updateForm.updateNoteId.value = '';
     updateForm.updateNoteTitle.value = '';                                                                           
     updateForm.updateNoteBody.value = '';
-    updateForm.updateReminder.value = '';
+    updateForm.updateNoteReminder.value = '';
     updateForm.updateNoteWallpaper.value = '';
     updateForm.updateNoteRank.value = '';
-    updateForm.updateNoteReminder.value = '';
 });
 
 /**delete note */
