@@ -77,7 +77,7 @@ updateForm.addEventListener('submit', evt => {
 /**delete note */
 const notesContainer = document.querySelector('.notes');
 notesContainer.addEventListener('click', e => { /**listen for a click anywhere in the notes area, then if that click was in the I tag for the delete, take the ID and send a delete request to Firestore */
-    console.log(e.target);
+    // console.log(e.target); //what has been clicked on in the DOM
     const tagName = e.target.tagName;
     const isDeleteButton = e.target.classList.contains('delete-icon');
     const isDetails = e.target.classList.contains('note-title') || e.target.classList.contains('note-body');
@@ -102,7 +102,6 @@ function getNoteFromFirebase(id, updateFormCallback){
     var myDoc = db.collection('notes').doc(id);
     myDoc.get().then(function(doc){
         if(doc.exists){
-            console.log("doc.exists");
             data = doc.data();
             let dataObj = {id: id, stats: data};
             updateFormCallback(dataObj);
@@ -117,7 +116,7 @@ function getNoteFromFirebase(id, updateFormCallback){
 }
 
 function populateUpdateForm(data){
-    console.log(data);
+    console.log("updateform data", data);
     const updateForm = document.querySelector('#updateForm');
     updateForm.updateNoteTitle.classList.add("active");
     updateForm.updateNoteBody.classList.add("active");

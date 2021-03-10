@@ -1,4 +1,4 @@
-var versionNum = 'v3.25';
+var versionNum = 'v3.27';
 var cacheName = 'scheduler-' + versionNum;
 var dynamicCache = 'dynamic-'+ versionNum;
 var filesToCache = [ /* array of filenames referenced by relativity */
@@ -15,7 +15,9 @@ var filesToCache = [ /* array of filenames referenced by relativity */
   '/images/ss-maskable.png',
   'https://cdn.onlinewebfonts.com/svg/img_305138.png',/** icon for phone home screen and URL search */
   'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css', /** interesting css libraries */
-  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' /** just hamburger icon currently */
+  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', /** just hamburger icon currently */
+  'https://cdn.jsdelivr.net/npm/flatpickr'
+
   /**
    * decided not to cache the settings/about/signin/login/contact us pages since its not guarenteed that a user would require these, 
    * however they'd get added into the dynamic cache if they were used anyway 
@@ -37,8 +39,8 @@ showInstallPromotion();
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(cacheName).then(function(cache) {
-      return cache.addAll(filesToCache).then(function(e){
-        console.log("Service Worker Installed: ", e);
+      return cache.addAll(filesToCache).then(()=>{
+        console.log("Service Worker Installed");
       }).catch(console.log(cache)); //need to handle addAll since if one fails they all fail
     })
   );
@@ -48,7 +50,6 @@ self.addEventListener('install', function(event) {
 self.addEventListener('activate', function(event){
   event.waitUntil(
     caches.keys().then(keys => {  //caches.keys returns the keys of the caches in the browser - ie: dynamic-v5
-      console.log(keys);
       return Promise.all(keys /*takes array of promises (our keys), when each resolves the return is resolves - forces js to wait*/
         .filter(key => key !== cacheName) /* if the caches found dont match the name, it is kept in the array then we map the delete function to it */
         .map(key => caches.delete(key))) /* caches.delete is a promise to delete a cache */

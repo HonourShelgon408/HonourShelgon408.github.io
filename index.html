@@ -42,11 +42,6 @@
 
     <script>
 
-const flatpickr_config = {
-        enableTime: true,
-        dateFormat: "Y-m-d H:i"
-    }
-    flatpickr("#updateNoteReminder", flatpickr_config);
         
         /*==================
         
@@ -57,7 +52,7 @@ const flatpickr_config = {
         const firebaseConfig = firebase_global;
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
-        const db = firebase.firestore(); //...dont change this variable
+        const db = firebase.firestore(); //...dont change this variable - "db" is used everywhere
         
         /*==================
         
@@ -261,7 +256,11 @@ const flatpickr_config = {
 
             <!-- populated by flatpickr in main.js -->
             <div id="updateNoteReminder">
+                <script>
+
+                </script>
             </div>
+            <label for="updateNoteReminder">Set a reminder....</label>
 
             <div class="input-field input-wallpaper" hidden=true>
                 <input id="updateNoteWallpaper" type="text" value="white">
