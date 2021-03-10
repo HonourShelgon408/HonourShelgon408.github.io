@@ -21,6 +21,7 @@ window.mobileCheck = function() { //returns "true" if mobile device
 
 const priority = document.querySelector('#priority');
 const overview = document.querySelector('#overview');
+const createNoteButton = document.querySelector('#createNote');
 
 
     /*==================
@@ -138,11 +139,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         ===================*/
 
-document.getElementsByClassName('input-form').addEventListener('keypress', (key) => {
-    if(key.keycode == 13){
-        e.preventDefault();
-    }
-});
+// document.getElementsByClassName('input-form').addEventListener('keypress', (key) => {
+//     if(key.keycode == 13){
+//         e.preventDefault();
+//     }
+// });
 
 
 
@@ -165,7 +166,13 @@ $(document).ready(function(){
         enableTime: true,
         dateFormat: "Y-m-d H:i"
     }
-    flatpickr("#updateNoteReminder", flatpickr_config)
+    flatpickr("#updateNoteReminder", flatpickr_config);
+
+    createNoteButton.addEventListener("click", () => {
+        const createForm = document.getElementsById('addForm');
+        createForm.noteTitle.value = '';
+        createForm.noteBody.value = '';
+    });
     
     //$('#superSchedulerSubHeader').innerHTML += moment().format('MMMM Do YYYY, h:mm:ss');
  

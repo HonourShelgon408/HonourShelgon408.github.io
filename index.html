@@ -61,10 +61,6 @@
 
         const FIREBASE_MESSAGING = firebase.messaging();
         
-        FIREBASE_MESSAGING.onMessage(function(payload){
-                console.log('onMessage: ', payload)
-                console.log(payload.notification.title, payload.notification.body);
-            });
         FIREBASE_MESSAGING.requestPermission()
         .then(()=>{
             console.log("Have permission from firebase.");
@@ -73,12 +69,19 @@
         .then((token) => {
             db.collection('tokens').add({
                 tokenNum: token,
+                date: date().now()
                 // datetime: moment().format('MMMM Do YYYY, h:mm:ss')
-            })
+            });
+            console.log(token);
             // updateTokensTable();
         })
         .catch(function(error){
             console.log("User didn't grand permission: ", error)
+        });
+
+        FIREBASE_MESSAGING.onMessage(function(payload){
+            console.log('onMessage: ', payload)
+            console.log(payload.notification.title, payload.notification.body);
         });
         
         FIREBASE_MESSAGING.onTokenRefresh(handleTokenRefresh());
@@ -211,7 +214,7 @@
             </div>
 
             <div class="input-field col s6">
-                <button class="btn-small">Create Note</button>
+                <button class="btn-small" id="createNote">Create Note</button>
             </div>
             
         </form>
@@ -247,12 +250,15 @@
                 <!-- populated by flatpickr in main.js -->
             </div>
             <div class="input-field input-wallpaper" hidden=true>
-                <input id="updateWallpaper" type="text" value="white">
+                <input id="updateNoteWallpaper" type="text" value="white">
                 <label for="updateNoteWallpaper"></label>
             </div>
             <div class="input-field input-rank" hidden=true>
                 <input id="updateNoteRank" type="text" value="parent">
-                <label for="updateRank"></label>
+                <label for="updateNoteRank"></label>
+            </div>
+            <div>
+                <input 
             </div>
 
             <div class="input-field col s6">

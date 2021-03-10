@@ -55,7 +55,7 @@ form.addEventListener('submit', evt => {
         console.log(error);
     });
     /**wipe the note for the next note */
-    form.noteTitle.value = '';                                                                           
+    form.noteTitle.value = '';
     form.noteBody.value = '';
 });
 
@@ -63,7 +63,7 @@ form.addEventListener('submit', evt => {
 const updateForm = document.querySelector('#updateForm');
 updateForm.addEventListener('submit', evt => {
     evt.preventDefault(); /**using the ID from the update form (hidden=true) to update the database with custom function */
-    console.log(updateForm.updateNoteId.value, updateForm.updateNoteTitle.value, updateForm.updateNoteBody.value);
+    console.log(updateForm);
     updateRecord(updateForm);
     updateForm.updateNoteId.value = '';
     updateForm.updateNoteTitle.value = '';                                                                           
@@ -71,6 +71,7 @@ updateForm.addEventListener('submit', evt => {
     updateForm.updateReminder.value = '';
     updateForm.updateNoteWallpaper.value = '';
     updateForm.updateNoteRank.value = '';
+    updateForm.updateNoteReminder.value = '';
 });
 
 /**delete note */
@@ -127,16 +128,17 @@ function populateUpdateForm(data){
 }
 
 function updateRecord(updateForm){
-    const id = updateForm.updateNoteId.value;
-    const upTitle = updateForm.updateNoteId.value;
-    const upBody = updateForm.updateNoteId.value;
-    const upWallpaper = updateForm.updateNoteId.value;
-    const upRank = updateForm.updateNoteId.value;
-    const upReminder = updateForm.updateNoteId.value;
+    // const id = updateForm.updateNoteId.value;
+    // const upTitle = updateForm.updateNoteId.value;
+    // const upBody = updateForm.updateNoteId.value;
+    // const upWallpaper = updateForm.updateNoteId.value;
+    // const upRank = updateForm.updateNoteId.value;
+    // const upReminder = updateForm.updateNoteId.value;
+
     db.collection('notes').doc(updateForm.updateNoteId.value).update({
         title: updateForm.updateNoteTitle.value,
         body: updateForm.updateNoteBody.value,
-        wallpaper: updateNoteWallpaper.CHANGETHIS.valuepaper,
+        wallpaper: updateForm.updateNoteWallpaper.value,
         rank: updateForm.updateNoteRank.value,
         reminder: updateForm.updateNoteReminder.value
     })
