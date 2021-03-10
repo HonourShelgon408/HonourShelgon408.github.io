@@ -146,20 +146,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // });
 
 
-
-        /*==================
-        
-        FIREBASE MESSAGING
-        
-        ===================*/
-
-
-
-
-
-
-
-
 $(document).ready(function(){
 
     const flatpickr_config = {
