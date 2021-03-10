@@ -146,7 +146,8 @@ $(document).ready(function(){
 
     const flatpickr_config = {
         enableTime: true,
-        dateFormat: "Y-m-d H:i"
+        dateFormat: "Y-m-d H:i",
+        altInput: True
     }
     flatpickr("#updateNoteReminder", flatpickr_config);
     const reminderRef = document.getElementById('updateNoteReminder');
