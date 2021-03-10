@@ -41,6 +41,12 @@
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-analytics.js"></script>
 
     <script>
+
+const flatpickr_config = {
+        enableTime: true,
+        dateFormat: "Y-m-d H:i"
+    }
+    flatpickr("#updateNoteReminder", flatpickr_config);
         
         /*==================
         
@@ -252,7 +258,7 @@
                 </textarea>
                 <label class="active" for="updateNoteBody">Details</label>
             </div>
-            
+
             <!-- populated by flatpickr in main.js -->
             <div id="updateNoteReminder">
             </div>
