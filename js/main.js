@@ -149,6 +149,8 @@ $(document).ready(function(){
         dateFormat: "Y-m-d H:i"
     }
     flatpickr("#updateNoteReminder", flatpickr_config);
+    const reminderRef = document.getElementById('updateNoteReminder');
+    console.log(reminderRef);
 
     createNoteButton.addEventListener("click", () => {
         const createForm = document.getElementsById('addForm');
