@@ -37,7 +37,7 @@ showInstallPromotion();
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(cacheName).then(function(cache) {
-      return await cache.addAll(filesToCache).then(function(e){
+      return cache.addAll(filesToCache).then(function(e){
         console.log("Service Worker Installed: ", e);
       }).catch(console.log(cache)); //need to handle addAll since if one fails they all fail
     })
