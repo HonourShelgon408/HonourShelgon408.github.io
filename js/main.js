@@ -148,6 +148,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
 $(document).ready(function(){
 
+    /**delete note */
+const notesContainer = document.querySelector('.notes');
+notesContainer.addEventListener('click', e => { /**listen for a click anywhere in the notes area, then if that click was in the I tag for the delete, take the ID and send a delete request to Firestore */
+    console.log(e.target);
+    const tagName = e.target.tagName;
+    const isDeleteButton = e.target.classList.contains('delete-icon');
+    const isDetails = e.target.classList.contains('note-title') || e.target.classList.contains('note-body');
+    const isBellIcon = e.target.classList.contains('bell-icon');
+   
+    if(tagName === 'I' && tagName != null && tagName != undefined && isDeleteButton === true){
+        const id = e.target.getAttribute('data-id');
+        //c onsole.log("id: " + id);
+        db.collection('notes').doc(id).delete();
+    }
+    if(isDetails){
+        const id = e.target.getAttribute('data-id');
+        getNoteFromFirebase(id, populateUpdateForm);
+    }
+    if(isBellIcon){
+        
+    }
+});
+
     const flatpickr_config = {
         enableTime: true,
         dateFormat: "Y-m-d H:i"
