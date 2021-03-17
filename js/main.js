@@ -182,10 +182,6 @@ $(document).ready(function(){
         $("#shortContent").hide(function(){$("#totalContent").addClass("hidden");});
     });
 
-    function subscribeToNotifications(){
-
-    }
-
     function toggle(){
         if($('div#nav-tail').hasClass('hidden')){
             $("div#nav-tail").show();
@@ -194,6 +190,13 @@ $(document).ready(function(){
         else{
             $("div#nav-tail").hide();
             $("div#nav-tail").addClass('hidden');
+        }
+    }
+
+    function defaultFormValues(form){
+        const elementsRef = document.getElementById(form).elements;
+        for(let i=0;i<elementsRef.length;i++){
+            elementsRef[i].value = '';
         }
     }
     

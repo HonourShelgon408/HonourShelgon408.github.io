@@ -61,7 +61,9 @@ form.addEventListener('submit', evt => {
 
 /** update note */
 const updateForm = document.querySelector('#updateForm');
+
 updateForm.addEventListener('submit', evt => {
+    // defaultFormValues(updateForm);
     evt.preventDefault(); /**using the ID from the update form (hidden=true) to update the database with custom function */
     console.log(updateForm);
     updateRecord(updateForm);
@@ -71,6 +73,7 @@ updateForm.addEventListener('submit', evt => {
     updateForm.updateNoteReminder.value = '';
     updateForm.updateNoteWallpaper.value = '';
     updateForm.updateNoteRank.value = '';
+    
 });
 
 /**delete note */
